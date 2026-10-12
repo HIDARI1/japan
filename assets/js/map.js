@@ -55,9 +55,15 @@
     return [...groups.values()];
   }
 
+  // Photo d'une activité liée à ce lieu, s'il y en a une
+  const stepPhoto = (stepId) => {
+    for (const d of J.data.jours) for (const a of d.activites) if (a.etape === stepId && (a.photos || []).length) return a.photos[0];
+    return null;
+  };
   function popupHTML(items, p) {
     const days = [...new Set(items.filter((x) => x.dayId).map((x) => x.dayId))];
-    return `<b>${esc(items[0].nom)}</b>${items.length > 1 ? `<div class="pop-meta">${items.slice(1).map((x) => esc(x.nom)).filter((n, i, a) => a.indexOf(n) === i && n !== items[0].nom).join(' · ')}</div>` : ''}
+    const photo = items.map((x) => x.stepId && stepPhoto(x.stepId)).find(Boolean);
+    return `${photo ? `<img class="pop-img" src="${esc(photo)}" alt="" loading="lazy">` : ''}<b>${esc(items[0].nom)}</b>${items.length > 1 ? `<div class="pop-meta">${items.slice(1).map((x) => esc(x.nom)).filter((n, i, a) => a.indexOf(n) === i && n !== items[0].nom).join(' · ')}</div>` : ''}
       <div class="pop-meta">${esc(items[0].adresse || '')}</div>
       ${days.length ? `<div class="pop-meta">${days.map((id) => `J${J.dayIndex(id) + 1}`).join(', ')}</div>` : ''}
       <div class="pop-actions">
@@ -90,7 +96,7 @@
         const label = isHotel ? '宿' : ++n;
         if (!J.hasCoords(s)) return;
         const m = L.marker([s.lat, s.lon], { icon: icon(isHotel ? 'hotel' : `c-${J.dayColorCity(day)}`, label), title: s.nom, riseOnHover: true })
-          .bindPopup(popupHTML([{ nom: s.nom, adresse: s.adresse, dayId }], s)).addTo(layer);
+          .bindPopup(popupHTML([{ nom: s.nom, adresse: s.adresse, dayId, stepId: s.id }], s)).addTo(layer);
         markers.set(s.id, m);
         if (prev) {
           L.polyline([[prev.lat, prev.lon], [s.lat, s.lon]], { color, weight: 4, opacity: 0.85, dashArray: s.mode === 'transit' ? '2 9' : null, lineCap: 'round' }).addTo(layer);

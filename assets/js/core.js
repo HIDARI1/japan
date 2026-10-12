@@ -147,10 +147,29 @@
     day.activites.forEach((a) => { if (a.ville && a.ville !== 'trajet' && !out.includes(a.ville)) out.push(a.ville); });
     return out.length ? out : ['trajet'];
   };
-  J.dayColorCity = (day) => day.nuit || J.dayCities(day)[0];
+  // Couleur d'un jour = ville principale visitée (une excursion à Nara est « Nara »), sinon ville de la nuit
+  J.dayColorCity = (day) => { const c = J.dayCities(day)[0]; return c !== 'trajet' ? c : (day.nuit || 'trajet'); };
+  // Adresse d'une activité : la sienne, sinon celle du lieu lié sur la carte, sinon le logement pour l'hébergement
+  J.actAddress = (a, day) => {
+    if (a.adresse && a.adresse.trim()) return a.adresse.trim();
+    const step = a.etape != null ? J.idx.step.get(a.etape)?.step : null;
+    if (step && step.adresse) return step.adresse;
+    if (a.categorie === 'hotel' && day && day.nuit) return J.idx.hotel.get(day.nuit)?.adresse || '';
+    return '';
+  };
   J.city = (id) => J.idx.city.get(id) || { id, nom: id || '—', kanji: '' };
   J.cat = (id) => J.idx.cat.get(id) || J.idx.cat.get('autre') || { id, label: id, emoji: '📌', couleur: '#888' };
-  J.isReserved = (a) => /^RÉSERVÉ(?![\p{L}])/u.test(a.notes || '');
+  // « réservé(e)(s) » dans le nom ou les infos, sauf tournure négative (« non réservé », « pas réservé », « sans créneau réservé »)
+  J.isReserved = (a) => {
+    const t = `${a.nom || ''} ${a.notes || ''}`;
+    const re = /(?<!\p{L})r[ée]serv[ée]e?s?(?!\p{L})/giu;
+    let m;
+    while ((m = re.exec(t))) {
+      const before = t.slice(Math.max(0, m.index - 30), m.index);
+      if (!/(?:^|[^\p{L}])(?:non|pas|sans)(?:[^\p{L}][^.;,!?]*)?$/iu.test(before)) return true;
+    }
+    return false;
+  };
   J.lastDayISO = () => J.dayISO(J.data.jours[J.data.jours.length - 1]);
   J.todayDay = () => { const iso = J.todayISO(); return J.data.jours.find((d) => J.dayISO(d) === iso) || null; };
   J.tripPhase = () => {
@@ -333,10 +352,17 @@
     },
     async clear() { try { await tx('readwrite', (s) => s.clear()); J.emit('photos'); } catch { /* rien */ } },
   };
+  /* Photos d'une activité = celles du dossier assets/photos (data) + celles ajoutées sur l'appareil */
+  J.actPhotos = async (act) => {
+    const fixed = (act.photos || []).map((src) => ({ src, name: act.nom, fixed: true }));
+    const mine = (await J.photos.get(act.id)).map((p) => ({ src: p.data, name: p.name || act.nom }));
+    return fixed.concat(mine);
+  };
   J.fillGallery = async (el, actId) => {
     if (!el) return;
-    const list = await J.photos.get(actId);
-    el.innerHTML = list.map((p, i) => `<button type="button" data-photo="${actId}:${i}" aria-label="Agrandir la photo ${i + 1}"><img src="${p.data}" alt="${J.esc(p.name || 'Photo')}" loading="lazy"></button>`).join('');
+    const act = J.idx.act.get(+actId)?.act;
+    const list = act ? await J.actPhotos(act) : [];
+    el.innerHTML = list.map((p, i) => `<button type="button" data-photo="${actId}:${i}" aria-label="Agrandir la photo ${i + 1}"><img src="${J.esc(p.src)}" alt="${J.esc(p.name || 'Photo')}" loading="lazy" decoding="async"></button>`).join('');
   };
   J.openPhoto = (src, alt) => {
     const lb = J.$('#lightbox');
@@ -389,6 +415,8 @@
     right: '<path d="m9 18 6-6-6-6"/>',
     chevron: '<path d="m6 15 6-6 6 6"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+    cards: '<rect x="5" y="4" width="14" height="16" rx="2"/><path d="M2 7v10M22 7v10"/>',
+    list: '<path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/>',
   };
   J.icon = (name) => `<svg viewBox="0 0 24 24" aria-hidden="true">${P[name] || ''}</svg>`;
 

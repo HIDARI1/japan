@@ -1,11 +1,11 @@
 /* Japon 2026 — service worker : le site reste utilisable hors connexion.
    Fichiers du site et données : réseau d'abord (les modifications des JSON sont vues tout de suite),
    copie locale si pas de réseau. Polices et tuiles de carte déjà vues : copie locale d'abord. */
-const VERSION = 'japon-v2-3';
+const VERSION = 'japon-v2-4';
 const CORE = [
   './', 'index.html', 'manifest.webmanifest',
   'assets/css/style.css',
-  'assets/js/core.js', 'assets/js/art.js', 'assets/js/fx.js', 'assets/js/home.js', 'assets/js/itinerary.js', 'assets/js/activities.js',
+  'assets/js/core.js', 'assets/js/art.js', 'assets/js/fx.js', 'assets/js/home.js', 'assets/js/itinerary.js', 'assets/js/carousel.js', 'assets/js/activities.js',
   'assets/js/map.js', 'assets/js/tools.js', 'assets/js/editor.js', 'assets/js/app.js',
   'assets/vendor/leaflet/leaflet.js', 'assets/vendor/leaflet/leaflet.css',
   'assets/img/icon.svg', 'assets/img/icon-180.png', 'assets/img/icon-192.png', 'assets/img/icon-512.png',

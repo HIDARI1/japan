@@ -13,20 +13,22 @@ Tout le contenu est dans des fichiers JSON, modifiables avec n’importe quel é
 
 | Fichier | Contenu |
 |---|---|
-| `data/jours.json` | les 16 jours : titre, logement de la nuit (`nuit`), notes, activités (`heure`, `nom`, `categorie`, `ville`, `cout`, `notes`, `description`, `etape` = lieu sur la carte) |
+| `data/jours.json` | les 16 jours : titre, logement de la nuit (`nuit`), notes, activités (`heure`, `nom`, `categorie`, `ville`, `cout`, `notes` = infos importantes, `description` = description courte, `adresse`, `photos` = fichiers de `assets/photos/`, `etape` = lieu sur la carte) |
 | `data/trajets.json` | les étapes de trajet de chaque jour, avec leur position (`lat`, `lon`) |
-| `data/hebergements.json` | les 5 logements |
+| `data/hebergements.json` | les 4 logements (Osaka, Kyoto, Fuji, Tokyo) |
 | `data/voyage.json` | nom du voyage, date et heure de départ (compte à rebours), mention du pied de page |
 | `data/checklist.json` | la checklist « à vérifier & réserver » (tirée des notes du programme) |
 | `data/categories.json`, `data/villes.json` | libellés, emojis et couleurs |
+
+Pour ajouter une photo à une activité de façon permanente : déposer l’image dans `assets/photos/` et ajouter son chemin dans le champ `photos` de l’activité. Les photos ajoutées depuis le site (📷 ou glisser-déposer sur la carte de l’activité) restent sur l’appareil.
 
 On peut aussi tout modifier directement dans le site (boutons ✎, 🗑 et « + Ajouter ») : ces changements restent sur l’appareil. Pour les rendre permanents : **Outils → Données → Télécharger** les fichiers modifiés, puis les remplacer dans `data/`.
 
 Aperçu du mode « Jour J » avant le départ : ajouter `?now=2026-12-24T12:30` à l’adresse (ex. `http://localhost:8000/?now=2026-12-24T12:30#/aujourdhui`).
 
-## Dossiers
+## Dossiers locaux (non publiés sur GitHub, voir `.gitignore`)
 
-- `_old/` : copie intacte de l’ancien site (`programme-japon.html` + export `itineraire-japoni.json`, réimportable via Outils → Données).
+- `_old/` : l’ancien site (`programme-japon.html` + export `itineraire-japoni.json`), l’export de la version de l’ami et `data-v1/` (données avant son intégration). Ces exports se réimportent via Outils → Données.
 - `_templates/` : les templates fournis, décompressés.
 
 ## Crédits

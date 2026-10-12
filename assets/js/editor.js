@@ -19,7 +19,8 @@
     const info = id ? J.idx.act.get(id) : null;
     const day = info ? info.day : J.day(dayId);
     if (!day) return;
-    const a = info ? info.act : { nom: '', heure: '', categorie: 'visite', ville: J.dayColorCity(day), cout: 0, notes: '', description: '' };
+    const a = info ? info.act : { nom: '', heure: '', categorie: 'visite', ville: J.dayColorCity(day), cout: 0, notes: '', description: '', adresse: '' };
+    const timeType = !a.heure || /^\d{2}:\d{2}$/.test(a.heure) ? 'time' : 'text';
     const cats = J.data.categories.map((c) => ({ value: c.id, label: `${c.emoji} ${c.labelLong || c.label}` }));
     const villes = J.data.villes.map((v) => ({ value: v.id, label: v.nom }));
     const jours = J.data.jours.map((d, i) => ({ value: d.id, label: `J${i + 1} — ${J.dayLabel(d)}` }));
@@ -30,13 +31,14 @@
       done: info ? 'Enregistré' : 'Ajoutée',
       body: `<div class="form-grid cols-2">
           <label class="field span-2"><span>Nom</span><input class="input" name="nom" value="${esc(a.nom)}" placeholder="Nom de l’activité…" autocomplete="off"></label>
-          <label class="field"><span>Heure</span><input class="input" type="time" name="heure" value="${esc(a.heure || '')}"></label>
+          <label class="field span-2"><span>Adresse</span><input class="input" name="adresse" value="${esc(a.adresse || '')}" placeholder="${esc(J.actAddress(a, day) || 'Adresse ou lieu précis…')}" autocomplete="off"></label>
+          <label class="field"><span>Heure</span><input class="input" type="${timeType}" name="heure" value="${esc(a.heure || '')}" ${timeType === 'text' ? 'placeholder="HH:MM"' : ''}></label>
           <label class="field"><span>Coût estimé (€)</span><input class="input" type="number" name="cout" min="0" step="1" inputmode="decimal" placeholder="0" value="${+a.cout || ''}"></label>
           <label class="field"><span>Catégorie</span><select class="select" name="categorie">${options(cats, a.categorie)}</select></label>
           <label class="field"><span>Ville</span><select class="select" name="ville">${options(villes, a.ville)}</select></label>
           <label class="field span-2"><span>Jour</span><select class="select" name="jour">${options(jours, day.id)}</select></label>
-          <label class="field span-2"><span>Notes / infos pratiques</span><textarea class="textarea" name="notes" placeholder="Adresse, horaires, conseils…">${esc(a.notes || '')}</textarea></label>
-          <label class="field span-2"><span>Description de l’activité</span><textarea class="textarea" name="description" placeholder="Décris ce que tu veux voir, pourquoi tu as choisi ce lieu…">${esc(a.description || '')}</textarea></label>
+          <label class="field span-2"><span>Description courte</span><textarea class="textarea" name="description" placeholder="Décris ce que tu veux voir, pourquoi tu as choisi ce lieu…">${esc(a.description || '')}</textarea></label>
+          <label class="field span-2"><span>Infos importantes</span><textarea class="textarea" name="notes" placeholder="Adresse, horaires, conseils…">${esc(a.notes || '')}</textarea></label>
           <div class="field span-2"><span class="field-label">Photos de cette activité (plusieurs possibles)</span>
             <input class="input" type="file" name="photos" accept="image/*" multiple>
             <div class="photo-edit" id="photoEdit"></div>
@@ -47,15 +49,24 @@
         const box = J.$('#photoEdit', dlg);
         const refresh = async () => {
           if (!info) return;
-          const list = await J.photos.get(a.id);
-          box.innerHTML = list.map((p, i) => `<figure><img src="${p.data}" alt="${esc(p.name || 'Photo')}"><button type="button" data-rm="${i}" aria-label="Retirer la photo ${i + 1}">✕</button></figure>`).join('');
+          const fixed = a.photos || [];
+          const mine = await J.photos.get(a.id);
+          box.innerHTML = fixed.map((src, i) => `<figure><img src="${esc(src)}" alt="${esc(a.nom)}"><button type="button" data-rm-fixed="${i}" aria-label="Retirer la photo ${i + 1}">✕</button></figure>`).join('')
+            + mine.map((p, i) => `<figure><img src="${p.data}" alt="${esc(p.name || 'Photo')}"><button type="button" data-rm="${i}" aria-label="Retirer la photo ${fixed.length + i + 1}">✕</button></figure>`).join('');
         };
         box.addEventListener('click', async (e) => {
-          const b = e.target.closest('[data-rm]');
+          const b = e.target.closest('[data-rm], [data-rm-fixed]');
           if (!b) return;
-          const list = await J.photos.get(a.id);
-          list.splice(+b.dataset.rm, 1);
-          await J.photos.put(a.id, list);
+          if (b.dataset.rmFixed != null) {
+            a.photos.splice(+b.dataset.rmFixed, 1);
+            if (!a.photos.length) delete a.photos;
+            J.commit(null, { silent: true });
+            J.emit('photos', a.id);
+          } else {
+            const list = await J.photos.get(a.id);
+            list.splice(+b.dataset.rm, 1);
+            await J.photos.put(a.id, list);
+          }
           refresh();
           J.$$(`[data-gallery="${a.id}"]`).forEach((g) => J.fillGallery(g, a.id));
         });
@@ -66,7 +77,7 @@
         const nom = String(v.nom || '').trim();
         if (!nom) return invalid(form, 'nom', 'Saisis un nom pour l’activité');
         const target = J.day(v.jour) || day;
-        const data = { heure: v.heure || '', nom, categorie: v.categorie, ville: v.ville, cout: parseFloat(v.cout) || 0, notes: String(v.notes || '').trim(), description: String(v.description || '').trim() };
+        const data = { heure: String(v.heure || '').trim(), nom, categorie: v.categorie, ville: v.ville, cout: parseFloat(v.cout) || 0, notes: String(v.notes || '').trim(), description: String(v.description || '').trim(), adresse: String(v.adresse || '').trim() };
         let act = a;
         if (info) {
           Object.assign(act, data);

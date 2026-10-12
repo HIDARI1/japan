@@ -17,23 +17,29 @@
     return segs;
   };
 
-  /* Étapes = villes avec au moins une nuit, dans l'ordre du voyage */
+  /* Étapes = villes visitées dans l'ordre du voyage (une excursion d'une journée compte aussi) */
   J.stages = () => {
     const out = [];
     J.data.jours.forEach((day, i) => {
-      if (!day.nuit) return;
-      let s = out.find((x) => x.city === day.nuit);
-      if (!s) { s = { city: day.nuit, first: day, firstIndex: i, lastIndex: i, nights: 0 }; out.push(s); }
-      s.nights++; s.lastIndex = i;
+      const c = J.dayColorCity(day);
+      if (c === 'trajet') return;
+      let s = out.find((x) => x.city === c);
+      if (!s) { s = { city: c, first: day, firstIndex: i, lastIndex: i }; out.push(s); }
+      s.lastIndex = i;
     });
-    return out.map((s) => ({
-      ...s,
-      from: J.dayDate(s.firstIndex),
-      to: J.dayDate(s.lastIndex + 1),
-      hotel: J.data.hebergements.find((h) => h.ville === s.city || h.id === s.city) || null,
-      acts: J.data.jours.reduce((n, d) => n + d.activites.filter((a) => a.ville === s.city).length, 0),
-    }));
+    return out.map((s) => {
+      const nightIdx = J.data.jours.map((d, i) => (d.nuit === s.city ? i : -1)).filter((i) => i > -1);
+      const nights = nightIdx.length;
+      return {
+        ...s, nights,
+        from: J.dayDate(nights ? nightIdx[0] : s.firstIndex),
+        to: J.dayDate(nights ? nightIdx[nights - 1] + 1 : s.lastIndex),
+        hotel: nights ? J.data.hebergements.find((h) => h.ville === s.city || h.id === s.city) || null : null,
+        acts: J.data.jours.reduce((n, d) => n + d.activites.filter((a) => a.ville === s.city).length, 0),
+      };
+    });
   };
+  J.stageDates = (s) => (s.nights ? `${J.fmt.short(s.from)} → ${J.fmt.short(s.to)} · ${J.plural(s.nights, 'nuit', 'nuits')}` : `${J.fmt.short(s.from)} · excursion d’une journée`);
 
   J.routeLineHTML = () => {
     const segs = J.citySegments();
@@ -113,7 +119,7 @@
     return `<div class="program-day fx-blurin" role="tabpanel">
       ${J.dayHeadHTML(day)}
       <div class="program-grid">
-        <div>${J.timelineHTML(day)}<div class="add-row">${J.addActHTML(day)}<a class="btn btn-sm btn-ghost" href="#/jour/${day.id}">Ouvrir la journée ${J.icon('right')}</a></div></div>
+        <div><div class="acts-bar"><h3 class="acts-title">${J.plural(day.activites.length, 'activité', 'activités')}</h3>${J.viewModeHTML()}</div>${J.activitiesHTML(day)}<div class="add-row">${J.addActHTML(day)}<a class="btn btn-sm btn-ghost" href="#/jour/${day.id}">Ouvrir la journée ${J.icon('right')}</a></div></div>
         <div class="program-side">${J.notesHTML(day)}</div>
       </div>
     </div>`;
@@ -125,6 +131,7 @@
     if (!body) return;
     body.innerHTML = programHTML();
     J.fillGalleries(body);
+    J.mountCarousels(body);
     J.autoGrow(body);
     J.fx.all(body);
     const card = J.$(`[data-pick-day="${id}"]`);
@@ -147,7 +154,7 @@
               <div class="kanji" aria-hidden="true">${esc(v.kanji)}</div>
               <div class="name">${esc(v.nom)}</div>
               <div class="des">
-                <b>${esc(J.fmt.short(s.from))} → ${esc(J.fmt.short(s.to))} · ${J.plural(s.nights, 'nuit', 'nuits')}</b><br>
+                <b>${esc(J.stageDates(s))}</b><br>
                 ${s.hotel ? `${esc(s.hotel.nom)}<br>` : ''}${J.plural(s.acts, 'activité', 'activités')} · ${esc(v.secteur || '')}
               </div>
               <a class="seeMore btn btn-sm" href="#/jour/${s.first.id}">Voir le programme ${J.icon('right')}</a>
@@ -173,7 +180,7 @@
         <div class="wrap section-head reveal">
           <p class="section-label">01 — Programme</p>
           <h2 class="section-title" id="h-prog">Jour par jour, <em>heure par heure</em></h2>
-          <p class="section-intro">Choisis un jour : ses activités s’affichent juste en dessous. Coche ce qui est fait, ajoute tes photos, modifie avec ✎.</p>
+          <p class="section-intro">Choisis un jour : ses activités s’affichent juste en dessous, en carrousel ou en liste. Coche ce qui est fait, ajoute tes photos, modifie avec ✎.</p>
         </div>
         <div class="fc-strip-wrap"><div class="fc-strip" role="tablist" aria-label="Choisir un jour">${fcStripHTML()}</div></div>
         <div class="wrap" id="programBody"></div>

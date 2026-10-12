@@ -29,6 +29,7 @@
     const done = J.done.is(a.id);
     const step = a.etape != null ? J.idx.step.get(a.etape)?.step : null;
     const placed = step && J.hasCoords(step);
+    const addr = J.actAddress(a, day);
     const isNow = st.now && st.now.id === a.id;
     const isNext = st.next && st.next.id === a.id;
     return `<li class="tl-item${done ? ' is-done' : ''}${isNow ? ' is-now' : ''}${isNext ? ' is-next' : ''}" id="a-${a.id}" style="--cat:${esc(cat.couleur)}">
@@ -37,12 +38,13 @@
       <article class="tl-card hover-line">
         <div class="tl-head">${J.checkHTML(a.id, done, `Marquer « ${a.nom} » comme fait`)}<h3 class="tl-name">${esc(a.nom)}</h3>${+a.cout > 0 ? `<span class="cost">${J.eur(a.cout)}</span>` : ''}</div>
         <div class="tl-meta">${isNow ? '<span class="tl-flag">Maintenant</span>' : ''}${isNext ? '<span class="tl-flag next">Ensuite</span>' : ''}${J.isReserved(a) ? '<span class="badge-reserved">Réservé</span>' : ''}${J.catTag(a)}${J.cityChip(a.ville)}</div>
-        ${a.notes ? `<p class="tl-notes">${esc(a.notes)}</p>` : ''}
         ${a.description ? `<p class="tl-desc">${esc(a.description)}</p>` : ''}
+        ${a.notes ? `<p class="tl-notes">${esc(a.notes)}</p>` : ''}
+        ${J.actAddress(a, day) ? `<p class="tl-addr">${J.icon('pin')}<span>${esc(J.actAddress(a, day))}</span></p>` : ''}
         <div class="gallery" data-gallery="${a.id}"></div>
         <div class="tl-actions">
-          ${placed ? `<a class="ibtn" href="#/carte?jour=${day.id}&etape=${step.id}" title="Voir sur la carte" aria-label="Voir ${esc(a.nom)} sur la carte">${J.icon('pin')}</a>
-          <a class="ibtn" href="${esc(J.gmapsTo(step))}" target="_blank" rel="noopener" title="Itinéraire (Google Maps)" aria-label="Itinéraire vers ${esc(a.nom)} dans Google Maps">${J.icon('route')}</a>` : ''}
+          ${placed ? `<a class="ibtn" href="#/carte?jour=${day.id}&etape=${step.id}" title="Voir sur la carte" aria-label="Voir ${esc(a.nom)} sur la carte">${J.icon('pin')}</a>` : ''}
+          ${placed || addr ? `<a class="ibtn" href="${esc(J.gmapsTo(placed ? step : { adresse: addr }))}" target="_blank" rel="noopener" title="Itinéraire (Google Maps)" aria-label="Itinéraire vers ${esc(a.nom)} dans Google Maps">${J.icon('route')}</a>` : ''}
           <label class="ibtn" title="Ajouter des photos">${J.icon('camera')}<span class="sr-only">Ajouter des photos à ${esc(a.nom)}</span><input class="sr-only" type="file" accept="image/*" multiple data-addphoto="${a.id}"></label>
           <span class="tl-actions-sp"></span>
           <button class="ibtn" type="button" data-act-edit="${a.id}" title="Modifier" aria-label="Modifier ${esc(a.nom)}">${J.icon('edit')}</button>
@@ -61,8 +63,9 @@
     return `<ol class="timeline">${acts.map((a) => J.activityItemHTML(a, day, st)).join('')}</ol>`;
   };
 
-  J.dayHeadHTML = (day, { tag = 'h2' } = {}) => {
+  J.dayHeadHTML = (day, { tag = 'h2', stepper = false } = {}) => {
     const i = J.dayIndex(day.id);
+    const prev = J.data.jours[i - 1], next = J.data.jours[i + 1];
     const hotel = day.nuit ? J.idx.hotel.get(day.nuit) : null;
     const cost = J.dayCost(day);
     const isToday = J.dayISO(day) === J.todayISO();
@@ -79,6 +82,10 @@
         ${cost ? `<span class="pill"><span class="cost">${esc(J.eur(cost))}</span> estimés</span>` : ''}
         ${hotel ? `<span class="pill">🏨 ${esc(hotel.nom)}</span>` : ''}
         <button class="ibtn" type="button" data-day-edit="${day.id}" title="Renommer ou supprimer ce jour" aria-label="Renommer ou supprimer ce jour">${J.icon('edit')}</button>
+        ${stepper ? `<span class="day-stepper">
+          ${prev ? `<a class="ibtn" href="#/jour/${prev.id}" title="Jour précédent" aria-label="Jour précédent">${J.icon('left')}</a>` : ''}
+          ${next ? `<a class="ibtn" href="#/jour/${next.id}" title="Jour suivant" aria-label="Jour suivant">${J.icon('right')}</a>` : ''}
+        </span>` : ''}
       </div>
     </header>`;
   };
@@ -182,6 +189,7 @@
     render(route) {
       const el = J.$('[data-view="jour"]');
       const { day, intro, live } = this.resolve(route);
+      if (day && route.query.get('a')) J.carouselFocus(day.id, route.query.get('a'));
       if (!day) {
         el.innerHTML = '<div class="wrap page-head"><h1 class="page-title">Jour introuvable</h1><p class="page-sub"><a href="#/itineraire">Retour à l’itinéraire</a></p></div>';
         return;
@@ -200,13 +208,14 @@
         </nav></div>
         <div class="wrap day-wrap fx-blurin">
           ${intro ? `<div class="intro-card">${intro}</div>` : ''}
-          ${J.dayHeadHTML(day, { tag: 'h1' })}
+          ${J.dayHeadHTML(day, { tag: 'h1', stepper: true })}
           ${st.now || st.next ? `<div class="now-card"><span class="lbl">En ce moment</span>
             ${st.now ? `<div class="now-row"><time>${esc(st.now.heure)}</time><span>${esc(st.now.nom)}</span></div>` : ''}
             ${st.next ? `<div class="now-row"><time>${esc(st.next.heure)}</time><span>Ensuite : ${esc(st.next.nom)}</span></div>` : ''}</div>` : ''}
           <div class="day-grid">
             <div class="day-main" id="dayMain">
-              ${J.timelineHTML(day)}
+              <div class="acts-bar"><h2 class="acts-title">${J.plural(day.activites.length, 'activité', 'activités')}</h2>${J.viewModeHTML()}</div>
+              ${J.activitiesHTML(day)}
               <div class="add-row">${J.addActHTML(day)}</div>
               <nav class="day-nav" aria-label="Jours voisins">
                 ${prev ? `<a class="prev" href="#/jour/${prev.id}"><span class="lbl">← J${i}</span><span class="t">${esc(J.dayLabel(prev))}</span></a>` : '<span></span>'}
@@ -231,11 +240,13 @@
         </div>`;
 
       J.fillGalleries(el);
+      J.mountCarousels(el);
       J.autoGrow(el);
       J.fx.all(el);
       const cur = J.$('.ds-item[aria-current]', el);
       if (cur) { const s = cur.parentElement; s.scrollLeft = cur.offsetLeft - s.clientWidth / 2 + cur.clientWidth / 2; }
-      const target = route.query.get('a') ? J.$(`#a-${route.query.get('a')}`, el) : (live && (J.$('.tl-item.is-now', el) || J.$('.tl-item.is-next', el)));
+      const qa = route.query.get('a');
+      const target = qa ? (J.$(`#a-${qa}`, el) || J.$('.acar', el)) : (live && (J.$('.tl-item.is-now', el) || J.$('.tl-item.is-next', el) || J.$('.acar', el)));
       if (target) requestAnimationFrame(() => { target.scrollIntoView({ block: 'center' }); target.classList.add('is-flash'); });
       bindSwipe(J.$('#dayMain', el), prev, next);
     },
@@ -245,7 +256,7 @@
     if (!zone) return;
     let x0 = null, y0 = null;
     zone.addEventListener('touchstart', (e) => {
-      if (e.target.closest('input, textarea, .gallery, .tl-actions')) { x0 = null; return; }
+      if (e.target.closest('input, textarea, .gallery, .tl-actions, .acar')) { x0 = null; return; }
       x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
     }, { passive: true });
     zone.addEventListener('touchend', (e) => {

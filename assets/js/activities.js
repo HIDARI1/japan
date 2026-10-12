@@ -8,7 +8,7 @@
   const all = () => J.data.jours.flatMap((day) => J.sortedActs(day).map((a) => ({ a, day })));
   const hay = ({ a, day }) => {
     const c = J.cat(a.categorie);
-    return J.norm([a.nom, a.notes, a.description, J.dayLabel(day), day.titre, J.city(a.ville).nom, c.label, c.labelLong].join(' '));
+    return J.norm([a.nom, a.notes, a.description, J.actAddress(a, day), J.dayLabel(day), day.titre, J.city(a.ville).nom, c.label, c.labelLong].join(' '));
   };
   const when = (a, day) => { const i = J.dayIndex(day.id); return `J${i + 1} · ${J.fmt.mid(J.dayDate(i))}${a.heure ? ' · ' + a.heure : ''}`; };
 
@@ -21,7 +21,9 @@
     const done = J.done.is(a.id);
     const step = a.etape != null ? J.idx.step.get(a.etape)?.step : null;
     const long = (a.notes || '').length > 150;
-    return `<article class="act-card hover-line fx-stagger${done ? ' is-done' : ''}" style="--cat:${esc(c.couleur)};--i:${Math.min(i, 14)}">
+    const photo = (a.photos || [])[0];
+    return `<article class="act-card hover-line fx-stagger${done ? ' is-done' : ''}${photo ? ' has-cover' : ''}" style="--cat:${esc(c.couleur)};--i:${Math.min(i, 14)}">
+      ${photo ? `<button class="act-cover" type="button" data-photo="${a.id}:0" aria-label="Agrandir la photo de ${esc(a.nom)}"><img src="${esc(photo)}" alt="" loading="lazy" decoding="async"></button>` : ''}
       <div class="act-top"><a class="act-when" href="#/jour/${day.id}?a=${a.id}">${esc(when(a, day))}</a>${J.cityChip(a.ville)}</div>
       <div class="act-main"><span class="act-emoji" aria-hidden="true">${c.emoji}</span><h3 class="act-name">${esc(a.nom)}</h3></div>
       ${J.isReserved(a) ? '<div class="act-badges"><span class="badge-reserved">Réservé</span></div>' : ''}
@@ -53,7 +55,7 @@
       </div>
       <div class="carousel-track">
         ${items.map(({ a, day }) => `<a class="citem c-${esc(a.ville)}" href="#/jour/${day.id}?a=${a.id}">
-          <div class="citem-art">${J.art.city(a.ville)}</div>
+          <div class="citem-art">${(a.photos || [])[0] ? `<img src="${esc(a.photos[0])}" alt="" loading="lazy" decoding="async">` : J.art.city(a.ville)}</div>
           <div class="overlay">
             <span class="pill">${esc(J.city(a.ville).nom)}</span>
             <div><h3>${esc(a.nom)}</h3><p>${esc(when(a, day))}${+a.cout > 0 ? ' · ' + esc(J.eur(a.cout)) : ''}${J.isReserved(a) ? ' · réservé' : ''}</p></div>

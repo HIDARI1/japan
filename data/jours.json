@@ -13,7 +13,11 @@
         "ville": "trajet",
         "cout": 0,
         "notes": "Départ de Paris. Vérifier terminal, bagages et documents.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/1-1.jpg"
+        ]
       },
       {
         "id": 2,
@@ -23,7 +27,11 @@
         "ville": "trajet",
         "cout": 0,
         "notes": "Prévoir masque de sommeil, écouteurs et boisson.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/2-1.jpg"
+        ]
       }
     ]
   },
@@ -41,7 +49,11 @@
         "ville": "osaka",
         "cout": 0,
         "notes": "Arrivée prévue vers 22h30 ; immigration et récupération des bagages.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/3-1.jpg"
+        ]
       },
       {
         "id": 4,
@@ -51,7 +63,11 @@
         "ville": "osaka",
         "cout": 0,
         "notes": "Rejoindre le logement. Vérifier à l’avance les derniers transports ou prévoir une solution de secours.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/4-1.jpg"
+        ]
       },
       {
         "id": 5,
@@ -62,112 +78,79 @@
         "cout": 0,
         "notes": "Logement dans le secteur Shinsaibashi / Shimanouchi.",
         "description": "",
-        "etape": 2000
-      },
-      {
-        "id": 6,
-        "heure": "23:59",
-        "nom": "Repos",
-        "categorie": "autre",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Aucune grosse activité prévue.",
-        "description": ""
+        "adresse": "",
+        "etape": 2000,
+        "photos": [
+          "assets/photos/5-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 3,
-    "titre": "Lundi 21 décembre — Osaka tranquille",
+    "titre": "Lundi 21 décembre — Katsuo-ji, Shinsekai, Shinsaibashi et Dotonbori",
     "nuit": "osaka",
-    "notes": "Base : Apartment Hotel 11 Shinsaibashi 4, Shimanouchi. Parcours compact à pied/métro : Shinsaibashi et Amerikamura, puis Kuromon, Hozen-ji et Dotonbori ; finir à Shinsekai. Dotonbori illuminé est facultatif au retour si vous avez encore de l’énergie.",
+    "notes": "Départ tôt depuis le logement. Katsuo-ji est au nord d’Osaka : prévoir environ 1 h à 1 h 20 par trajet, avec correspondance et attente du bus. Ordre conseillé au retour : Shinsekai, puis Shinsaibashi et Dotonbori pour finir avec les illuminations. Journée assez chargée ; si le trajet retour prend du retard, raccourcir Shinsekai ou Shinsaibashi. Vérifier les horaires et le bus Hankyu quelques jours avant.",
     "activites": [
       {
-        "id": 7,
-        "heure": "10:00",
-        "nom": "Réveil et matinée tranquille",
-        "categorie": "autre",
+        "id": 8,
+        "heure": "09:30",
+        "nom": "Temple Katsuo-ji",
+        "categorie": "visite",
         "ville": "osaka",
         "cout": 0,
-        "notes": "Pas de départ matinal prévu.",
-        "description": ""
+        "notes": "Adresse : 2914-1 Aomatani, Minoh, Osaka 562-8508, Japon. Prévoir 1 h 30 à 2 h pour les daruma, les jardins, les ponts et les photos. Vérifier les horaires et les conditions d’accès sur le site officiel avant le départ.",
+        "description": "Temple célèbre pour ses nombreuses poupées daruma rouges, symboles de persévérance et de réussite.",
+        "adresse": "",
+        "etape": 3001,
+        "photos": [
+          "assets/photos/8-1.jpg"
+        ]
       },
       {
-        "id": 8,
-        "heure": "11:00",
+        "id": 9,
+        "heure": "13:00",
+        "nom": "Shinsekai et déjeuner",
+        "categorie": "visite",
+        "ville": "osaka",
+        "cout": 0,
+        "notes": "Adresse : secteur de Tsutenkaku, 1-18-6 Ebisuhigashi, Naniwa-ku, Osaka 556-0002, Japon. Balade dans le quartier rétro et déjeuner ; repérer une option halal adaptée.",
+        "description": "Rues rétro, enseignes colorées et vue sur la tour Tsutenkaku.",
+        "adresse": "",
+        "photos": [
+          "assets/photos/9-1.jpg"
+        ],
+        "etape": 3002
+      },
+      {
+        "id": 12,
+        "heure": "15:30",
         "nom": "Shinsaibashi",
         "categorie": "shopping",
         "ville": "osaka",
         "cout": 0,
-        "notes": "Découverte des rues commerçantes.",
-        "description": "",
-        "etape": 3001
-      },
-      {
-        "id": 9,
-        "heure": "12:00",
-        "nom": "Amerikamura",
-        "categorie": "shopping",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Quartier jeune, boutiques et street art.",
-        "description": "",
-        "etape": 3002
-      },
-      {
-        "id": 10,
-        "heure": "13:30",
-        "nom": "Kuromon Market",
-        "categorie": "repas",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Explorer le marché et repérer les options adaptées ; vérifier les ingrédients.",
-        "description": "",
-        "etape": 3003
-      },
-      {
-        "id": 11,
-        "heure": "15:00",
-        "nom": "Hozen-ji",
-        "categorie": "visite",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Petit temple et ruelles autour de Hozenji Yokocho.",
-        "description": "",
-        "etape": 3004
-      },
-      {
-        "id": 12,
-        "heure": "16:00",
-        "nom": "Dotonbori",
-        "categorie": "visite",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Canal, enseignes et photos ; revenir le soir pour les illuminations.",
-        "description": "",
-        "etape": 3005
+        "notes": "Adresse : Shinsaibashi-suji, Chuo-ku, Osaka 542-0085, Japon. Parcourir la galerie commerçante et faire les boutiques. Si la journée prend du retard, raccourcir cette étape.",
+        "description": "Grande galerie commerçante couverte et rues animées.",
+        "adresse": "",
+        "etape": 3003,
+        "photos": [
+          "assets/photos/12-1.jpg"
+        ]
       },
       {
         "id": 13,
-        "heure": "18:00",
-        "nom": "Shinsekai",
+        "heure": "17:00",
+        "nom": "Dotonbori — soirée et illuminations",
         "categorie": "visite",
         "ville": "osaka",
         "cout": 0,
-        "notes": "Quartier rétro en fin de journée.",
-        "description": "",
-        "etape": 3006
-      },
-      {
-        "id": 14,
-        "heure": "20:00",
-        "nom": "Dotonbori illuminé",
-        "categorie": "soiree",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Balade et dîner halal si possible.",
-        "description": "",
-        "etape": 3007
+        "notes": "Adresse : Dotonbori, Chuo-ku, Osaka 542-0071, Japon. Voir le canal, les enseignes lumineuses et le Glico ; dîner dans le quartier en vérifiant les options halal. Retour au logement à pied ou en métro selon l’énergie.",
+        "description": "Terminer la journée dans le quartier le plus animé d’Osaka le soir.",
+        "adresse": "",
+        "etape": 3004,
+        "photos": [
+          "assets/photos/13-1.jpg"
+        ]
       }
     ]
   },
@@ -186,29 +169,11 @@
         "cout": 0,
         "notes": "Quartier spécialisé anime, manga, électronique et jeux vidéo.",
         "description": "",
-        "etape": 4001
-      },
-      {
-        "id": 16,
-        "heure": "10:30",
-        "nom": "Super Potato",
-        "categorie": "shopping",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Boutique rétro gaming ; horaires à vérifier.",
-        "description": "",
-        "etape": 4002
-      },
-      {
-        "id": 17,
-        "heure": "11:30",
-        "nom": "Mandarake",
-        "categorie": "shopping",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Figurines, manga et objets de collection.",
-        "description": "",
-        "etape": 4003
+        "adresse": "",
+        "etape": 4001,
+        "photos": [
+          "assets/photos/15-1.jpg"
+        ]
       },
       {
         "id": 18,
@@ -219,7 +184,11 @@
         "cout": 0,
         "notes": "Boutique de produits Ghibli ; vérifier la succursale et les horaires.",
         "description": "",
-        "etape": 4004
+        "adresse": "",
+        "etape": 4004,
+        "photos": [
+          "assets/photos/18-1.jpg"
+        ]
       },
       {
         "id": 19,
@@ -230,29 +199,26 @@
         "cout": 0,
         "notes": "Continuer à explorer les magasins anime/gaming.",
         "description": "",
-        "etape": 4005
+        "adresse": "",
+        "etape": 4005,
+        "photos": [
+          "assets/photos/19-1.jpg"
+        ]
       },
       {
         "id": 20,
-        "heure": "16:00",
-        "nom": "Arcades / Round1 (optionnel)",
+        "heure": "22:00",
+        "nom": "Arcades / Round1",
         "categorie": "activite",
         "ville": "osaka",
         "cout": 30,
         "notes": "Budget estimé : 30 € ; vérifier les horaires et le coût réel.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/20-1.jpg"
+        ],
         "etape": 4006
-      },
-      {
-        "id": 21,
-        "heure": "19:30",
-        "nom": "Dotonbori le soir",
-        "categorie": "soiree",
-        "ville": "osaka",
-        "cout": 0,
-        "notes": "Retour dans le quartier pour dîner et se promener.",
-        "description": "",
-        "etape": 4007
       }
     ]
   },
@@ -264,35 +230,47 @@
     "activites": [
       {
         "id": 22,
-        "heure": "08:30",
+        "heure": "11:15",
         "nom": "Train Osaka → Kyoto",
         "categorie": "transport",
         "ville": "trajet",
         "cout": 0,
         "notes": "Vérifier l’itinéraire depuis le logement et les horaires.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/22-1.jpg"
+        ]
       },
       {
         "id": 23,
-        "heure": "10:00",
+        "heure": "12:00",
         "nom": "Installation / dépôt des bagages",
         "categorie": "hotel",
         "ville": "kyoto",
         "cout": 0,
         "notes": "Check-in ou dépôt des bagages selon les conditions du logement.",
         "description": "",
-        "etape": 5000
+        "adresse": "",
+        "etape": 5000,
+        "photos": [
+          "assets/photos/23-1.jpg"
+        ]
       },
       {
         "id": 24,
-        "heure": "11:00",
+        "heure": "12:30",
         "nom": "Fushimi Inari",
         "categorie": "visite",
         "ville": "kyoto",
         "cout": 0,
         "notes": "Torii rouges et sentiers ; prévoir du temps pour monter selon l’envie.",
         "description": "",
-        "etape": 5001
+        "adresse": "",
+        "etape": 5001,
+        "photos": [
+          "assets/photos/24-1.jpg"
+        ]
       },
       {
         "id": 25,
@@ -303,7 +281,11 @@
         "cout": 0,
         "notes": "Temple emblématique ; vérifier horaires et billet éventuel.",
         "description": "",
-        "etape": 5002
+        "adresse": "",
+        "etape": 5002,
+        "photos": [
+          "assets/photos/25-1.jpg"
+        ]
       },
       {
         "id": 27,
@@ -314,18 +296,26 @@
         "cout": 0,
         "notes": "Ruelles traditionnelles et boutiques.",
         "description": "",
-        "etape": 5003
+        "adresse": "",
+        "etape": 5003,
+        "photos": [
+          "assets/photos/27-1.jpg"
+        ]
       },
       {
         "id": 26,
-        "heure": "15:30",
+        "heure": "16:30",
         "nom": "Higashiyama",
         "categorie": "visite",
         "ville": "kyoto",
         "cout": 0,
         "notes": "Balade dans le quartier historique.",
         "description": "",
-        "etape": 5004
+        "adresse": "",
+        "etape": 5004,
+        "photos": [
+          "assets/photos/26-1.jpg"
+        ]
       },
       {
         "id": 28,
@@ -336,18 +326,11 @@
         "cout": 0,
         "notes": "Balade en soirée en respectant les règles locales.",
         "description": "",
-        "etape": 5005
-      },
-      {
-        "id": 29,
-        "heure": "20:00",
-        "nom": "Dîner halal à Kyoto",
-        "categorie": "repas",
-        "ville": "kyoto",
-        "cout": 0,
-        "notes": "Choisir et vérifier à l’avance un restaurant halal.",
-        "description": "",
-        "etape": 5006
+        "adresse": "",
+        "etape": 5005,
+        "photos": [
+          "assets/photos/28-1.jpg"
+        ]
       }
     ]
   },
@@ -366,6 +349,10 @@
         "cout": 0,
         "notes": "Partir assez tôt pour rejoindre Kameoka en train. Vérifier l’itinéraire JR exact et garder une marge pour le check-in du bateau.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/95-1.jpg"
+        ],
         "etape": 6000
       },
       {
@@ -377,6 +364,10 @@
         "cout": 0,
         "notes": "Trajet vers JR Kameoka Station (pas Torokko Kameoka Station, sauf si vous choisissez le train touristique). Confirmer la gare d’arrivée selon l’itinéraire choisi.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/96-1.jpg"
+        ],
         "etape": 6001
       },
       {
@@ -388,6 +379,10 @@
         "cout": 0,
         "notes": "Adresse du débarcadère : Hozucho Shimonakajima 2, Kameoka. Être sur place avant 11:00 pour l’accueil et le contrôle du billet.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/97-1.jpg"
+        ],
         "etape": 6002
       },
       {
@@ -399,6 +394,10 @@
         "cout": 0,
         "notes": "RÉSERVÉ : jeudi 24 décembre 2026, créneau 11:30, 3 adultes. Durée indicative environ 2 heures, selon les conditions du fleuve. Prévoir des vêtements très chauds en hiver. Le billet est déjà réservé ; coût non renseigné ici.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/98-1.jpg"
+        ],
         "etape": 6002
       },
       {
@@ -410,6 +409,10 @@
         "cout": 0,
         "notes": "Le bateau descend le fleuve jusqu’à Arashiyama. Privilégier un repas avec ingrédients vérifiés / option halal ; garder du temps si le bateau arrive en retard.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/99-1.jpg"
+        ],
         "etape": 6003
       },
       {
@@ -421,7 +424,11 @@
         "cout": 0,
         "notes": "Balade dans la bambouseraie après le bateau. L’affluence et la lumière peuvent varier ; visite libre, sans créneau réservé.",
         "description": "",
-        "etape": 6004
+        "adresse": "",
+        "etape": 6004,
+        "photos": [
+          "assets/photos/100-1.jpg"
+        ]
       },
       {
         "id": 101,
@@ -432,18 +439,11 @@
         "cout": 0,
         "notes": "À quelques minutes à pied de la zone d’arrivée du bateau et de la bambouseraie.",
         "description": "",
-        "etape": 6005
-      },
-      {
-        "id": 102,
-        "heure": "17:00",
-        "nom": "Retour à Kyoto et soirée libre",
-        "categorie": "transport",
-        "ville": "kyoto",
-        "cout": 0,
-        "notes": "Retour en train depuis Saga-Arashiyama vers Kyoto. Dîner près du logement ou balade si vous avez encore de l’énergie.",
-        "description": "",
-        "etape": 6090
+        "adresse": "",
+        "etape": 6005,
+        "photos": [
+          "assets/photos/101-1.jpg"
+        ]
       }
     ]
   },
@@ -451,7 +451,7 @@
     "id": 7,
     "titre": "Vendredi 25 décembre — Kyoto nord-ouest + centre",
     "nuit": "kyoto",
-    "notes": "Base : logement Kyoto, 211-1 Naginatagiricho. Arashiyama est désormais placé le 24 décembre après la descente en bateau. Le 25, on regroupe Kinkaku-ji et Ryoan-ji au nord-ouest, puis l’expérience kimono/katana et Nishiki Market dans le centre. L’horaire de l’expérience est à adapter à la réservation réelle et à son adresse exacte.",
+    "notes": "Base : logement Kyoto, 211-1 Naginatagiricho. Arashiyama est désormais placé le 24 décembre après la descente en bateau. Le 25, on regroupe Kinkaku-ji et Ryoan-ji au nord-ouest, puis l’expérience kimono/katana et Nishiki Market dans le centre. L’horaire de l’expérience est à adapter à la réservation réelle et à son adresse exacte. Fin d'après-midi : après Nishiki, passage à la rivière Kamogawa près du pont Sanjō (≈ 10–15 min à pied) vers 17h, au coucher du soleil, avant le dîner dans le centre.",
     "activites": [
       {
         "id": 36,
@@ -462,7 +462,11 @@
         "cout": 0,
         "notes": "Visite du pavillon et du jardin. Vérifier les horaires de fin d’année et prévoir environ 45–60 minutes.",
         "description": "",
-        "etape": 7001
+        "adresse": "",
+        "etape": 7001,
+        "photos": [
+          "assets/photos/36-1.jpg"
+        ]
       },
       {
         "id": 103,
@@ -473,7 +477,11 @@
         "cout": 0,
         "notes": "À proximité de Kinkaku-ji ; bon complément géographique sans traverser Kyoto. Vérifier les horaires et le tarif.",
         "description": "",
-        "etape": 7002
+        "adresse": "",
+        "etape": 7002,
+        "photos": [
+          "assets/photos/103-1.jpg"
+        ]
       },
       {
         "id": 104,
@@ -483,7 +491,11 @@
         "ville": "kyoto",
         "cout": 0,
         "notes": "Choisir une option adaptée à vos critères alimentaires et garder une marge pour l’activité suivante.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/104-1.jpg"
+        ]
       },
       {
         "id": 105,
@@ -494,7 +506,11 @@
         "cout": 20,
         "notes": "Budget retenu : environ 20 €. L’horaire est indicatif : remplace-le par le créneau réel de réservation et vérifie l’adresse exacte pour ajuster le trajet.",
         "description": "",
-        "etape": 7003
+        "adresse": "",
+        "etape": 7003,
+        "photos": [
+          "assets/photos/105-1.jpg"
+        ]
       },
       {
         "id": 106,
@@ -505,7 +521,26 @@
         "cout": 0,
         "notes": "Balade dans le centre de Kyoto. Les horaires des échoppes peuvent varier en période de fêtes ; ne pas compter sur tous les stands ouverts.",
         "description": "",
-        "etape": 7004
+        "adresse": "",
+        "etape": 7004,
+        "photos": [
+          "assets/photos/106-1.jpg"
+        ]
+      },
+      {
+        "id": 148,
+        "heure": "17:00",
+        "nom": "Rivière Kamogawa — pont Sanjō (Sanjō Ohashi)",
+        "categorie": "nature",
+        "ville": "kyoto",
+        "cout": 0,
+        "notes": "Venir depuis le marché Nishiki (environ 10–15 min à pied vers l'est, via Teramachi puis Sanjō). Coucher du soleil vers 16h50 : arriver à la tombée du jour pour les lumières sur la rivière, les berges et l'ambiance de Pontocho juste à côté. Il fait vite froid au bord de l'eau : prévoir une couche chaude. Le dîner de 18h30 se fait ensuite à pied dans le secteur (Pontocho / centre).",
+        "description": "Balade au bord de la Kamogawa près du pont Sanjō, à la tombée du jour.",
+        "adresse": "Sanjo Ohashi, Kamo River, Nakagyo-ku / Higashiyama-ku, Kyoto, Japan",
+        "etape": 7005,
+        "photos": [
+          "assets/photos/148-1.jpg"
+        ]
       },
       {
         "id": 107,
@@ -515,15 +550,19 @@
         "ville": "kyoto",
         "cout": 0,
         "notes": "Restaurant halal à choisir et vérifier à l’avance ; retour facile vers le logement à Shimogyo-ku.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/107-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 8,
-    "titre": "Samedi 26 décembre — Nara (nuit sur place)",
-    "nuit": "nara",
-    "notes": "Départ depuis le logement de Kyoto avec les bagages, puis arrivée à Nara. Si possible, déposer les bagages à l’hôtel près de Kintetsu Nara avant de visiter. Parc de Nara, Todai-ji et Kasuga Taisha sont dans le même secteur ; vérifier les heures de fermeture hivernales.",
+    "titre": "Samedi 26 décembre — Nara (aller-retour depuis Kyoto)",
+    "nuit": "kyoto",
+    "notes": "Aller-retour dans la journée depuis le logement de Kyoto (Shimogyo-ku), sans changer d'hébergement : pas besoin de bagages. Parc de Nara, Todai-ji et Kasuga Taisha sont dans le même secteur ; vérifier les heures de fermeture hivernales (Todai-ji ferme tôt) et prévoir le retour vers Kyoto vers 17h.",
     "activites": [
       {
         "id": 42,
@@ -533,18 +572,11 @@
         "ville": "trajet",
         "cout": 0,
         "notes": "Vérifier le départ et choisir la ligne selon le logement.",
-        "description": ""
-      },
-      {
-        "id": 47,
-        "heure": "18:00",
-        "nom": "Check-in à Nara",
-        "categorie": "hotel",
-        "ville": "nara",
-        "cout": 0,
-        "notes": "Nuit près de Kintetsu Nara si possible.",
         "description": "",
-        "etape": 8000
+        "adresse": "",
+        "photos": [
+          "assets/photos/42-1.jpg"
+        ]
       },
       {
         "id": 43,
@@ -555,7 +587,11 @@
         "cout": 0,
         "notes": "Rencontrer les daims ; respecter les consignes et ne pas les taquiner.",
         "description": "",
-        "etape": 8001
+        "adresse": "",
+        "etape": 8001,
+        "photos": [
+          "assets/photos/43-1.jpg"
+        ]
       },
       {
         "id": 44,
@@ -566,7 +602,11 @@
         "cout": 0,
         "notes": "Grand Bouddha et temple ; vérifier horaires et billet.",
         "description": "",
-        "etape": 8002
+        "adresse": "",
+        "etape": 8002,
+        "photos": [
+          "assets/photos/44-1.jpg"
+        ]
       },
       {
         "id": 45,
@@ -577,67 +617,48 @@
         "cout": 0,
         "notes": "Sanctuaire et sentiers dans la forêt.",
         "description": "",
-        "etape": 8003
+        "adresse": "",
+        "etape": 8003,
+        "photos": [
+          "assets/photos/45-1.jpg"
+        ]
       },
       {
-        "id": 46,
-        "heure": "16:00",
-        "nom": "Balade dans Nara",
-        "categorie": "visite",
-        "ville": "nara",
+        "id": 116,
+        "heure": "17:00",
+        "nom": "Retour à Kyoto",
+        "categorie": "transport",
+        "ville": "trajet",
         "cout": 0,
-        "notes": "Explorer tranquillement les environs.",
+        "notes": "Retour au logement de Kyoto en fin d'après-midi ; départ matinal le lendemain pour le Shinkansen.",
         "description": "",
-        "etape": 8004
-      },
-      {
-        "id": 48,
-        "heure": "19:00",
-        "nom": "Dîner et nuit à Nara",
-        "categorie": "repas",
-        "ville": "nara",
-        "cout": 0,
-        "notes": "Repérer un restaurant adapté et préparer le départ du lendemain.",
-        "description": ""
+        "adresse": "",
+        "photos": [
+          "assets/photos/116-1.jpg"
+        ],
+        "etape": 8090
       }
     ]
   },
   {
     "id": 9,
-    "titre": "Dimanche 27 décembre — Nara → Kawaguchiko / Fuji",
+    "titre": "Dimanche 27 décembre — Kyoto → Kawaguchiko / Fuji",
     "nuit": "fuji",
-    "notes": "Départ depuis Nara. Trajet conseillé à vérifier au moment de réserver : Nara → Kyoto Station, Shinkansen Kyoto → Tokyo, puis bus réservé vers Kawaguchiko/Fuji-Q Highland. Prévoir une marge pour les correspondances et confirmer l’arrêt de bus exact avant de partir.",
+    "notes": "Départ depuis le logement de Kyoto. Trajet conseillé à vérifier au moment de réserver : Kyoto Station → Shinkansen vers Tokyo, puis bus réservé vers Kawaguchiko/Fuji-Q Highland. ATTENTION : les horaires du Shinkansen (07:30), du bus (11:10 vs « vers 13:00 » dans la note) et de l'arrivée (15:00) ne sont pas cohérents entre eux : confirmer les billets réels. Prévoir une marge pour les correspondances et confirmer l'arrêt de bus exact.",
     "activites": [
       {
-        "id": 49,
-        "heure": "07:00",
-        "nom": "Départ de Nara",
-        "categorie": "transport",
-        "ville": "nara",
-        "cout": 0,
-        "notes": "Départ matinal conseillé ; vérifier les correspondances et réserver le shinkansen.",
-        "description": "",
-        "etape": 9000
-      },
-      {
-        "id": 50,
-        "heure": "07:30",
-        "nom": "Train vers Kyoto / Tokyo",
-        "categorie": "transport",
-        "ville": "trajet",
-        "cout": 0,
-        "notes": "Itinéraire et horaires à confirmer selon les billets.",
-        "description": ""
-      },
-      {
         "id": 51,
-        "heure": "08:30",
+        "heure": "07:30",
         "nom": "Shinkansen vers Tokyo",
         "categorie": "transport",
         "ville": "trajet",
         "cout": 0,
         "notes": "Temps de correspondance à prévoir.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/51-1.jpg"
+        ]
       },
       {
         "id": 52,
@@ -647,7 +668,12 @@
         "ville": "trajet",
         "cout": 0,
         "notes": "Option évoquée : départ Tokyo JR Express Bus Station vers 13h00 ; vérifier la gare de départ et le billet.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/52-1.jpg"
+        ],
+        "etape": 9002
       },
       {
         "id": 53,
@@ -658,6 +684,10 @@
         "cout": 0,
         "notes": "Arrivée visée vers 15h ; horaires à confirmer.",
         "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/53-1.jpg"
+        ],
         "etape": 9002
       },
       {
@@ -669,7 +699,11 @@
         "cout": 0,
         "notes": "Logement vers Kawaguchiko / Fujiyoshida.",
         "description": "",
-        "etape": 9003
+        "adresse": "",
+        "etape": 9003,
+        "photos": [
+          "assets/photos/54-1.jpg"
+        ]
       },
       {
         "id": 55,
@@ -679,7 +713,11 @@
         "ville": "fuji",
         "cout": 0,
         "notes": "Selon météo, lumière et fatigue ; ne pas forcer si arrivée tardive.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/55-1.jpg"
+        ]
       },
       {
         "id": 56,
@@ -689,7 +727,11 @@
         "ville": "fuji",
         "cout": 0,
         "notes": "Préparer la journée vélo du lendemain.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/56-1.jpg"
+        ]
       }
     ]
   },
@@ -700,27 +742,6 @@
     "notes": "Base : 5-chōme-4-19 Matsuyama, Fujiyoshida. La journée du 28 décembre est maintenant centrée sur Fuji-Q Highland et sa zone officielle NARUTO × BORUTO Fuji Hidden Leaf Village. Chureito est placé tôt le matin, puis parc pour la majeure partie de la journée. Je déconseille d’ajouter aussi la boucle vélo du lac Kawaguchi, Fuji Speedway et l’onsen de Gotemba : ils sont dans des secteurs différents et rendraient la journée trop chargée. Vérifier les horaires et billets de Fuji-Q pour le 28/12.",
     "activites": [
       {
-        "id": 60,
-        "heure": "07:15",
-        "nom": "Pagode Chureito — tôt le matin",
-        "categorie": "visite",
-        "ville": "fuji",
-        "cout": 0,
-        "notes": "Partir tôt pour profiter de la lumière et tenter une vue dégagée sur le Fuji. Il y a beaucoup d’escaliers ; prévoir des vêtements chauds.",
-        "description": "",
-        "etape": 10001
-      },
-      {
-        "id": 108,
-        "heure": "08:45",
-        "nom": "Petit-déjeuner / retour vers Fuji-Q Highland",
-        "categorie": "repas",
-        "ville": "fuji",
-        "cout": 0,
-        "notes": "Vérifier les horaires d’ouverture officiels du parc le 28 décembre et les transports depuis le logement.",
-        "description": ""
-      },
-      {
         "id": 109,
         "heure": "09:30",
         "nom": "Fuji-Q Highland — entrée et repérage du parc",
@@ -729,199 +750,270 @@
         "cout": 0,
         "notes": "Vérifier l’horaire d’ouverture du 28/12, le type de billet et si l’entrée générale / les attractions nécessitent des tickets séparés.",
         "description": "",
-        "etape": 10002
-      },
-      {
-        "id": 110,
-        "heure": "10:00",
-        "nom": "NARUTO × BORUTO Fuji Hidden Leaf Village",
-        "categorie": "activite",
-        "ville": "fuji",
-        "cout": 30,
-        "notes": "C’est la zone Naruto/Boruto de Fuji-Q Highland, au pied du mont Fuji (et non Nijigen no Mori à Awaji). Budget indicatif conservé : environ 30 €, à vérifier selon le billet et les attractions choisies. Prévoir du temps pour les décors, boutiques et activités.",
-        "description": "",
-        "etape": 10003
-      },
-      {
-        "id": 111,
-        "heure": "12:30",
-        "nom": "Déjeuner / Ichiraku et restauration du parc",
-        "categorie": "repas",
-        "ville": "fuji",
-        "cout": 0,
-        "notes": "Les restaurants à thème peuvent ne pas être halal. Vérifier les ingrédients et les options avant de commander ; prévoir une solution de repli.",
-        "description": ""
-      },
-      {
-        "id": 112,
-        "heure": "13:30",
-        "nom": "Naruto × Boruto — attractions, photos et boutiques",
-        "categorie": "activite",
-        "ville": "fuji",
-        "cout": 0,
-        "notes": "Profiter de la zone thématique et des attractions disponibles le jour même. Consulter l’état d’ouverture en direct et les éventuelles files.",
-        "description": "",
-        "etape": 10003
+        "adresse": "",
+        "etape": 10002,
+        "photos": [
+          "assets/photos/109-1.jpg"
+        ]
       },
       {
         "id": 113,
-        "heure": "16:00",
-        "nom": "Fin d’après-midi à Fuji-Q / photos du mont Fuji",
+        "heure": "12:30",
+        "nom": "Fin de Fuji-Q / photos du mont Fuji",
         "categorie": "visite",
         "ville": "fuji",
         "cout": 0,
         "notes": "Selon les heures d’ouverture, la météo et l’énergie : photos dans le secteur du parc, puis retour vers Fujiyoshida.",
-        "description": ""
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/113-1.jpg"
+        ],
+        "etape": 10002
       },
       {
-        "id": 114,
-        "heure": "18:00",
-        "nom": "Dîner et retour au logement à Fujiyoshida",
-        "categorie": "repas",
+        "id": 117,
+        "heure": "13:30",
+        "nom": "Louer 3 vélos",
+        "categorie": "autre",
         "ville": "fuji",
         "cout": 0,
-        "notes": "Choisir un repas compatible avec vos critères alimentaires et préparer le départ vers Tokyo du lendemain.",
+        "notes": "",
         "description": "",
-        "etape": 10004
+        "adresse": "Japon, 〒403-0005 Yamanashi, Fujiyoshida, Kamiyoshida, 2 Chome−5−1 富士急ターミナルビル Q-STA 1F",
+        "photos": [
+          "assets/photos/117-1.jpg"
+        ]
+      },
+      {
+        "id": 118,
+        "heure": "14:30",
+        "nom": "Pagode Chureito",
+        "categorie": "visite",
+        "ville": "fuji",
+        "cout": 0,
+        "notes": "",
+        "description": "",
+        "adresse": "2-chome-4-1 Asama, Fujiyoshida, Yamanashi 403-0011, Japon",
+        "etape": 10001,
+        "photos": [
+          "assets/photos/118-1.jpg"
+        ]
+      },
+      {
+        "id": 119,
+        "heure": "15:00",
+        "nom": "Lac Kawaguchi",
+        "categorie": "visite",
+        "ville": "fuji",
+        "cout": 0,
+        "notes": "",
+        "description": "",
+        "adresse": "Fujikawaguchiko, District de Minamitsuru, Préfecture de Yamanashi, Japon",
+        "photos": [
+          "assets/photos/119-1.jpg"
+        ]
+      },
+      {
+        "id": 120,
+        "heure": "17:00",
+        "nom": "Onsen",
+        "categorie": "activite",
+        "ville": "fuji",
+        "cout": 0,
+        "notes": "",
+        "description": "",
+        "adresse": "",
+        "photos": [
+          "assets/photos/120-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 11,
-    "titre": "Mardi 29 décembre — Kawaguchiko → Tokyo",
+    "titre": "Mardi 29 décembre — Kawaguchiko → Tokyo, installation et Kagurazaka",
     "nuit": "tokyo",
-    "notes": "Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku (secteur Waseda/Kagurazaka). Le 29 est surtout une journée de transfert : installation puis découverte de Waseda/Kagurazaka ou Shinjuku. J’ai déplacé Tokyo Tower Café au 31 décembre pour le grouper avec teamLab Borderless, situé dans le même secteur général.",
+    "notes": "Journée de transfert, sans grosse attraction. Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku. L’adresse du logement est corrigée ici ; l’adresse précédente pointait par erreur vers Fujiyoshida. Si le trajet arrive plus tard, supprimer Kagurazaka et aller directement au logement.",
     "activites": [
       {
-        "id": 65,
-        "heure": "07:30",
-        "nom": "Matin tranquille et dernières vues du Fuji",
-        "categorie": "nature",
-        "ville": "fuji",
-        "cout": 0,
-        "notes": "Profiter du ciel si le Fuji est visible.",
-        "description": ""
-      },
-      {
-        "id": 66,
-        "heure": "10:00",
-        "nom": "Check-out et départ vers Tokyo",
+        "id": 121,
+        "heure": "12:00",
+        "nom": "Bus / train Kawaguchiko → Tokyo",
         "categorie": "transport",
         "ville": "trajet",
         "cout": 0,
-        "notes": "Vérifier le bus/train choisi et les horaires.",
-        "description": ""
+        "notes": "Horaire indicatif à remplacer par celui du billet réservé. Prévoir le temps de trajet jusqu’au logement.",
+        "description": "",
+        "adresse": "Kawaguchiko Station → Shinjuku Expressway Bus Terminal, Tokyo, Japan",
+        "photos": [
+          "assets/photos/121-1.jpg"
+        ]
       },
       {
-        "id": 67,
-        "heure": "13:00",
-        "nom": "Installation à Tokyo",
+        "id": 122,
+        "heure": "16:00",
+        "nom": "Installation au logement de Tokyo",
         "categorie": "hotel",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Déposer les bagages selon les conditions du logement.",
-        "description": ""
+        "notes": "Déposer les bagages, faire le check-in et prendre une pause.",
+        "description": "",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "etape": 11000,
+        "photos": [
+          "assets/photos/122-1.jpg"
+        ]
       },
       {
-        "id": 69,
-        "heure": "17:30",
-        "nom": "Exploration du quartier",
+        "id": 123,
+        "heure": "17:00",
+        "nom": "Balade dans Kagurazaka",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Balade légère après le trajet.",
+        "notes": "Petites rues, boutiques et ambiance de quartier ; activité flexible après le trajet.",
         "description": "",
-        "etape": 11001
+        "adresse": "Kagurazaka, Shinjuku-ku, Tokyo, Japan",
+        "etape": 11001,
+        "photos": [
+          "assets/photos/123-1.jpg"
+        ]
       },
       {
-        "id": 70,
+        "id": 124,
         "heure": "19:00",
-        "nom": "Tokyo de nuit",
-        "categorie": "soiree",
+        "nom": "Dîner halal et retour au logement",
+        "categorie": "repas",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Dîner et premières vues nocturnes.",
-        "description": ""
+        "notes": "Choisir un restaurant halal ouvert pendant la période du Nouvel An ; vérifier les horaires.",
+        "description": "",
+        "adresse": "Kagurazaka / Waseda, Shinjuku-ku, Tokyo, Japan",
+        "etape": 11002,
+        "photos": [
+          "assets/photos/124-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 12,
-    "titre": "Mercredi 30 décembre — Samouraï + Shibuya",
+    "titre": "Mercredi 30 décembre — Harajuku, Tower Records et Shibuya Sky",
     "nuit": "tokyo",
-    "notes": "Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku. Faire l’expérience samouraï selon son adresse confirmée, puis Shibuya, Hachiko, shopping et Shibuya Sky au coucher du soleil. Réserver Shibuya Sky et prévoir du temps de transport entre Shinjuku/Waseda et Shibuya.",
+    "notes": "Journée regroupée géographiquement : Meiji-jingu → Harajuku → Omotesando → Tower Records → Shibuya. Réserver Shibuya Sky à l’avance. Le 30 décembre est proche du Nouvel An : certains magasins peuvent fermer plus tôt.",
     "activites": [
       {
-        "id": 71,
-        "heure": "10:00",
-        "nom": "Expérience samouraï",
-        "categorie": "activite",
-        "ville": "tokyo",
-        "cout": 55,
-        "notes": "Budget choisi : environ 55 €. Réservation et adresse exacte à confirmer.",
-        "description": "",
-        "etape": 12001
-      },
-      {
         "id": 72,
-        "heure": "13:00",
-        "nom": "Shibuya",
+        "heure": "09:00",
+        "nom": "Meiji-jingu",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Explorer le quartier et ses grands carrefours.",
+        "notes": "Grand sanctuaire entouré de forêt. En période de fêtes, prévoir de l’affluence.",
         "description": "",
-        "etape": 12003
+        "adresse": "1-1 Yoyogikamizonocho, Shibuya-ku, Tokyo 151-8557, Japan",
+        "etape": 12001,
+        "photos": [
+          "assets/photos/72-1.jpg"
+        ]
       },
       {
-        "id": 73,
-        "heure": "13:30",
-        "nom": "Hachiko",
+        "id": 125,
+        "heure": "10:30",
+        "nom": "Takeshita Street et Harajuku",
+        "categorie": "shopping",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Rue connue pour la mode japonaise et les boutiques originales ; vérifier les horaires des magasins.",
+        "description": "",
+        "adresse": "1 Chome Jingumae, Shibuya-ku, Tokyo, Japan",
+        "etape": 12002,
+        "photos": [
+          "assets/photos/125-1.jpg"
+        ]
+      },
+      {
+        "id": 126,
+        "heure": "12:00",
+        "nom": "Omotesando et déjeuner",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Statue près de la gare de Shibuya.",
+        "notes": "Promenade et pause déjeuner avant Shibuya.",
         "description": "",
-        "etape": 12002
+        "adresse": "Omotesando, Jingumae, Shibuya-ku, Tokyo, Japan",
+        "etape": 12003,
+        "photos": [
+          "assets/photos/126-1.jpg"
+        ]
+      },
+      {
+        "id": 127,
+        "heure": "13:30",
+        "nom": "Tower Records Shibuya",
+        "categorie": "shopping",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Grand magasin de musique sur plusieurs étages.",
+        "description": "",
+        "adresse": "1-22-14 Jinnan, Shibuya-ku, Tokyo 150-0041, Japan",
+        "etape": 12004,
+        "photos": [
+          "assets/photos/127-1.jpg"
+        ]
       },
       {
         "id": 74,
-        "heure": "14:00",
+        "heure": "14:30",
         "nom": "Shopping à Shibuya",
         "categorie": "shopping",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Boutiques selon les envies.",
-        "description": ""
+        "notes": "Boutiques, anime/gaming et souvenirs ; regrouper les achats dans ce quartier.",
+        "description": "",
+        "adresse": "Shibuya Scramble Square / Center-gai, Shibuya-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/74-1.jpg"
+        ]
       },
       {
         "id": 75,
-        "heure": "16:30",
+        "heure": "17:00",
         "nom": "Shibuya Sky",
         "categorie": "activite",
         "ville": "tokyo",
         "cout": 20,
-        "notes": "Budget choisi : environ 20 €. Réserver un créneau, idéalement proche du coucher du soleil.",
+        "notes": "Budget prévu : environ 20 € par personne. Réserver un créneau ; l’horaire du coucher de soleil est très demandé. Le soleil se couche vers 16h35 fin décembre à Tokyo : pour voir le coucher, viser un créneau vers 16h00–16h15 plutôt que 17h00.",
         "description": "",
-        "etape": 12004
+        "adresse": "Shibuya Scramble Square, 2-24-12 Shibuya, Shibuya-ku, Tokyo 150-0002, Japan",
+        "etape": 12006,
+        "photos": [
+          "assets/photos/75-1.jpg"
+        ]
       },
       {
         "id": 76,
-        "heure": "18:00",
-        "nom": "Shibuya de nuit",
+        "heure": "18:30",
+        "nom": "Shibuya de nuit et dîner",
         "categorie": "soiree",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Découvrir les illuminations et dîner.",
-        "description": ""
+        "notes": "Néons, shopping et dîner halal.",
+        "description": "",
+        "adresse": "Shibuya Crossing / Center-gai, Shibuya-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/76-1.jpg"
+        ],
+        "etape": 12005
       }
     ]
   },
   {
     "id": 13,
-    "titre": "Jeudi 31 décembre — Harry Potter + Tokyo Tower + teamLab réservé",
+    "titre": "Jeudi 31 décembre — Harry Potter, Tokyo Tower et teamLab Borderless",
     "nuit": "tokyo",
-    "notes": "Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku. Harry Potter est prévu le matin. Tokyo Tower Café est placé avant teamLab pour rester dans le même secteur. Le créneau confirmé de teamLab Borderless est le 31/12/2026 de 19:30 à 20:00 pour 3 adultes. Cette journée est chargée : vérifier l’horaire du billet Harry Potter, les horaires de Tokyo Tower et les conditions du réveillon. Si Harry Potter dure plus longtemps que prévu, supprimer le café plutôt que risquer de manquer teamLab.",
+    "notes": "Journée chargée mais teamLab est déjà noté comme réservé à 19:30–20:00 pour 3 adultes. Vérifier l’horaire exact de Harry Potter et les horaires spéciaux du 31 décembre. Si le Studio Tour dure trop longtemps, supprimer Tokyo Tower Café et la balade, pas teamLab.",
     "activites": [
       {
         "id": 77,
@@ -930,30 +1022,55 @@
         "categorie": "activite",
         "ville": "tokyo",
         "cout": 30,
-        "notes": "Budget indiqué : environ 30 €. Réservation nécessaire ; vérifier le créneau exact du billet et prévoir plusieurs heures sur place.",
+        "notes": "Budget indicatif : environ 30 € par personne. Réservation obligatoire ; la durée de visite peut atteindre plusieurs heures. Confirmer le créneau du billet.",
         "description": "",
-        "etape": 13001
+        "adresse": "1-1-7 Kasugacho, Nerima-ku, Tokyo 179-0074, Japan",
+        "etape": 13001,
+        "photos": [
+          "assets/photos/77-1.jpg"
+        ]
       },
       {
-        "id": 115,
-        "heure": "14:00",
-        "nom": "Déjeuner et trajet vers Azabudai / Tokyo Tower",
-        "categorie": "transport",
+        "id": 129,
+        "heure": "13:30",
+        "nom": "Déjeuner et trajet vers Minato / Azabudai",
+        "categorie": "repas",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Horaire indicatif après la visite Harry Potter. Garder une marge pour le métro et les horaires particuliers du 31 décembre.",
-        "description": ""
+        "notes": "Horaire indicatif : adapter selon l’heure de sortie du Studio Tour. Garder une marge pour les transports du 31 décembre.",
+        "description": "",
+        "adresse": "Azabudai Hills, Minato-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/129-1.jpg"
+        ],
+        "etape": 13003
       },
       {
-        "id": 68,
-        "heure": "17:00",
-        "nom": "Tokyo Tower Café / secteur de Tokyo Tower",
-        "categorie": "activite",
+        "id": 130,
+        "heure": "16:00",
+        "nom": "Tokyo Tower Café",
+        "categorie": "repas",
         "ville": "tokyo",
         "cout": 10,
-        "notes": "Budget retenu : environ 10 €. Placé avant teamLab pour limiter les allers-retours. Vérifier impérativement l’ouverture et les conditions d’accès le 31 décembre.",
+        "notes": "Budget choisi : environ 10 €. Vérifier l’ouverture du café et l’accès le 31 décembre ; supprimer cette étape si Harry Potter se termine tard.",
         "description": "",
+        "adresse": "Tokyo Tower, 4-2-8 Shibakoen, Minato-ku, Tokyo 105-0011, Japan",
         "etape": 13002
+      },
+      {
+        "id": 131,
+        "heure": "17:00",
+        "nom": "Balade à Azabudai Hills",
+        "categorie": "visite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Balade autour du complexe avant l’entrée à teamLab ; horaires spéciaux possibles.",
+        "description": "",
+        "adresse": "Azabudai Hills, 1-2-4 Azabudai, Minato-ku, Tokyo, Japan",
+        "etape": 13003,
+        "photos": [
+          "assets/photos/131-1.jpg"
+        ]
       },
       {
         "id": 79,
@@ -962,152 +1079,272 @@
         "categorie": "activite",
         "ville": "tokyo",
         "cout": 30,
-        "notes": "RÉSERVÉ : jeudi 31 décembre 2026, créneau d’entrée 19:30–20:00, 3 adultes, billet Entrance Pass. Arriver dans le créneau demandé et vérifier les consignes officielles du billet. Budget indicatif du planning : environ 30 € par personne.",
+        "notes": "RÉSERVÉ : jeudi 31 décembre 2026, créneau d’entrée 19:30–20:00, 3 adultes, billet Entrance Pass. Arriver dans le créneau indiqué. Budget indicatif : environ 30 € par personne.",
         "description": "",
-        "etape": 13003
+        "adresse": "Azabudai Hills Garden Plaza B, B1, 1-2-4 Azabudai, Minato-ku, Tokyo, Japan",
+        "etape": 13004,
+        "photos": [
+          "assets/photos/79-1.jpg"
+        ]
       },
       {
         "id": 80,
-        "heure": "21:30",
+        "heure": "21:45",
         "nom": "Nouvel An à Tokyo",
         "categorie": "soiree",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Après teamLab, choisir une soirée réaliste selon l’heure de sortie. Vérifier les événements, restrictions et transports du réveillon ; ne pas compter automatiquement sur toutes les lignes toute la nuit.",
-        "description": ""
+        "notes": "Après teamLab, choisir un lieu de réveillon réaliste selon l’heure de sortie. Vérifier les restrictions, l’affluence et les transports ; ne pas supposer que toutes les lignes circulent toute la nuit.",
+        "description": "",
+        "adresse": "Minato-ku / Tokyo, Japan",
+        "photos": [
+          "assets/photos/80-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 14,
-    "titre": "Vendredi 1er janvier — Tokyo tranquille",
+    "titre": "Vendredi 1er janvier — Kaminarimon, Asakusa, Ueno et Akihabara",
     "nuit": "tokyo",
-    "notes": "Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku. Le 1er janvier, beaucoup de commerces et attractions peuvent avoir des horaires spéciaux. Privilégier un sanctuaire et une balade à proximité ; ne compter sur Round1 que si l’ouverture est confirmée.",
+    "notes": "Journée de Nouvel An : Asakusa est prioritaire pour l’ambiance du hatsumode, mais l’affluence peut être très forte. Les commerces d’Ueno et d’Akihabara peuvent fermer le 1er janvier ; si les boutiques anime sont une priorité, déplacer Akihabara au 2 janvier et alléger cette journée.",
     "activites": [
       {
         "id": 81,
-        "heure": "10:00",
-        "nom": "Réveil tranquille",
+        "heure": "09:00",
+        "nom": "Réveil tranquille et départ vers Asakusa",
         "categorie": "autre",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Journée légère après le Nouvel An.",
-        "description": ""
+        "notes": "Départ souple après le réveillon ; vérifier les horaires des transports.",
+        "description": "",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "etape": 14000,
+        "photos": [
+          "assets/photos/81-1.jpg"
+        ]
       },
       {
-        "id": 82,
-        "heure": "11:00",
-        "nom": "Sanctuaire / ambiance du Nouvel An",
+        "id": 132,
+        "heure": "10:00",
+        "nom": "Porte Kaminarimon",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Choisir un sanctuaire accessible et vérifier l’affluence et les transports.",
+        "notes": "Grande porte rouge emblématique d’Asakusa. Affluence importante attendue le jour du Nouvel An.",
         "description": "",
-        "etape": 14001
+        "adresse": "2-3-1 Asakusa, Taito-ku, Tokyo 111-0032, Japan",
+        "etape": 14001,
+        "photos": [
+          "assets/photos/132-1.jpg"
+        ]
       },
       {
-        "id": 83,
-        "heure": "13:00",
-        "nom": "Balade dans Tokyo",
+        "id": 133,
+        "heure": "10:30",
+        "nom": "Temple Senso-ji et rue Nakamise",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Garder une journée flexible ; de nombreux commerces peuvent avoir des horaires spéciaux.",
+        "notes": "Découverte du temple et de la rue commerçante ; stands et boutiques peuvent être bondés ou fonctionner avec des horaires spéciaux.",
         "description": "",
-        "etape": 14002
+        "adresse": "2-3-1 Asakusa, Taito-ku, Tokyo 111-0032, Japan",
+        "etape": 14002,
+        "photos": [
+          "assets/photos/133-1.jpg"
+        ]
+      },
+      {
+        "id": 134,
+        "heure": "12:00",
+        "nom": "Balade à Asakusa et vue sur Tokyo Skytree",
+        "categorie": "visite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Promenade dans le quartier ; Skytree est visible depuis plusieurs points de la rivière Sumida.",
+        "description": "",
+        "adresse": "Sumida Park, 1-2 Hanakawado, Taito-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/134-1.jpg"
+        ],
+        "etape": 14003
+      },
+      {
+        "id": 136,
+        "heure": "14:00",
+        "nom": "Ueno et Ameyoko",
+        "categorie": "visite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Marché animé et rues commerçantes. Vérifier quelles boutiques sont ouvertes.",
+        "description": "",
+        "adresse": "Ameyoko Shopping Street, Ueno, Taito-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/136-1.jpg"
+        ],
+        "etape": 14004
+      },
+      {
+        "id": 137,
+        "heure": "15:30",
+        "nom": "Akihabara — anime, gaming et jeux rétro",
+        "categorie": "shopping",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Magasins de figurines, jeux vidéo, électronique et culture anime. Beaucoup de boutiques peuvent être fermées le 1er janvier : vérifier les horaires et inverser avec un autre quartier si nécessaire.",
+        "description": "",
+        "adresse": "Akihabara Electric Town, Soto-Kanda, Chiyoda-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/137-1.jpg"
+        ],
+        "etape": 14005
       },
       {
         "id": 84,
-        "heure": "16:00",
+        "heure": "18:00",
         "nom": "Arcades / Round1 (si ouvert)",
         "categorie": "activite",
         "ville": "tokyo",
         "cout": 30,
-        "notes": "Budget prévu : environ 30 €. Vérifier l’ouverture le 1er janvier.",
+        "notes": "Budget prévu : environ 30 € par personne. À garder seulement si l’établissement choisi confirme son ouverture le 1er janvier.",
         "description": "",
-        "etape": 14003
-      },
-      {
-        "id": 85,
-        "heure": "19:00",
-        "nom": "Dîner",
-        "categorie": "repas",
-        "ville": "tokyo",
-        "cout": 0,
-        "notes": "Vérifier l’ouverture et l’offre halal à l’avance.",
-        "description": ""
-      },
-      {
-        "id": 86,
-        "heure": "20:30",
-        "nom": "Dernière soirée tranquille",
-        "categorie": "soiree",
-        "ville": "tokyo",
-        "cout": 0,
-        "notes": "Éviter un programme trop chargé.",
-        "description": ""
+        "adresse": "Round1 Akihabara, Tokyo, Japan",
+        "photos": [
+          "assets/photos/84-1.jpg"
+        ]
       }
     ]
   },
   {
     "id": 15,
-    "titre": "Samedi 2 janvier — Tokyo, shopping et souvenirs",
+    "titre": "Samedi 2 janvier — Yotsugi, Persona 5, Tama River et Shinjuku",
     "nuit": "tokyo",
-    "notes": "Base Tokyo : 14-7 Kaitaichō, Shinjuku-ku. Garder les achats et souvenirs dans un même secteur (par exemple Shinjuku, Shibuya ou Akihabara) plutôt que de traverser Tokyo plusieurs fois. Vérifier les horaires du 2 janvier.",
+    "notes": "Journée plus originale, avec déplacements entre Katsushika, Setagaya, Ota et Shinjuku. Yotsugi et Tama River sont des étapes extérieures ; vérifiez la météo et les temps de transport. Le lieu associé à Persona 5 peut être un immeuble privé et ne doit pas être traité comme un café touristique ouvert. Le sumo gratuit est une option de recherche, pas une réservation confirmée.",
     "activites": [
       {
-        "id": 87,
-        "heure": "10:00",
-        "nom": "Derniers quartiers à explorer",
+        "id": 138,
+        "heure": "09:00",
+        "nom": "Yotsugi — statues Captain Tsubasa",
         "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Choisir les quartiers selon ce qu’il reste à voir.",
-        "description": ""
+        "notes": "Balade pour repérer les statues de Captain Tsubasa dans le quartier. Elles sont réparties autour de Yotsugi/Katsushika ; vérifier les emplacements avant le départ.",
+        "description": "",
+        "adresse": "Yotsugi Station, 1-15-1 Yotsugi, Katsushika-ku, Tokyo, Japan",
+        "etape": 15001,
+        "photos": [
+          "assets/photos/138-1.jpg"
+        ]
       },
       {
-        "id": 88,
-        "heure": "11:30",
-        "nom": "Shopping et souvenirs",
-        "categorie": "shopping",
+        "id": 139,
+        "heure": "11:00",
+        "nom": "Trajet vers Sangenjaya",
+        "categorie": "transport",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Prévoir du temps pour les achats anime/gaming.",
+        "notes": "Prévoir environ 40–55 minutes selon l’itinéraire et les correspondances.",
         "description": "",
-        "etape": 15001
+        "adresse": "Yotsugi Station → Sangenjaya Station, Tokyo, Japan",
+        "photos": [
+          "assets/photos/139-1.jpg"
+        ]
       },
       {
-        "id": 89,
-        "heure": "14:00",
-        "nom": "Boutiques anime / gaming",
-        "categorie": "shopping",
+        "id": 140,
+        "heure": "12:00",
+        "nom": "LeBlanc Café — lieu associé à Persona 5",
+        "categorie": "visite",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Vérifier les horaires du Nouvel An.",
+        "notes": "Adresse indiquée : New Marina, 2-14-20 Sangenjaya. Il s’agit d’un lieu réel associé à l’inspiration du café de Persona 5, pas nécessairement d’un café thématique ouvert au public. Respecter la vie privée et vérifier l’accès ; ne pas entrer dans un immeuble privé.",
         "description": "",
-        "etape": 15002
+        "adresse": "New Marina, 2-14-20 Sangenjaya, Setagaya-ku, Tokyo, Japan",
+        "etape": 15002,
+        "photos": [
+          "assets/photos/140-1.jpg"
+        ]
       },
       {
-        "id": 90,
-        "heure": "18:00",
-        "nom": "Dernier restaurant halal",
+        "id": 141,
+        "heure": "12:45",
+        "nom": "Déjeuner et balade à Sangenjaya",
         "categorie": "repas",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Réserver si nécessaire et confirmer l’ouverture.",
+        "notes": "Choisir un restaurant selon l’offre halal disponible ; vérifier avant de partir.",
         "description": "",
-        "etape": 15003
+        "adresse": "Sangenjaya, Setagaya-ku, Tokyo, Japan",
+        "photos": [
+          "assets/photos/141-1.jpg"
+        ]
       },
       {
-        "id": 91,
-        "heure": "20:00",
-        "nom": "Retour au logement et bagages",
-        "categorie": "hotel",
+        "id": 142,
+        "heure": "14:00",
+        "nom": "Tama River — secteur Unoki",
+        "categorie": "nature",
         "ville": "tokyo",
         "cout": 0,
-        "notes": "Préparer les bagages et vérifier le trajet vers l’aéroport.",
+        "notes": "Promenade au bord de la rivière si la météo est bonne. L’accès est extérieur et gratuit ; prévoir des vêtements chauds.",
         "description": "",
-        "etape": 15090
+        "adresse": "Tama River riverbank near Unoki Station, Unoki, Ota-ku, Tokyo, Japan",
+        "etape": 15003,
+        "photos": [
+          "assets/photos/142-1.jpg"
+        ]
+      },
+      {
+        "id": 143,
+        "heure": "16:30",
+        "nom": "Shinjuku : Kabukicho et Godzilla Head",
+        "categorie": "visite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Quartier animé, néons et Godzilla Head ; profiter de l’ambiance en fin de journée.",
+        "description": "",
+        "adresse": "Kabukicho 1-chome, Shinjuku-ku, Tokyo, Japan",
+        "etape": 15004,
+        "photos": [
+          "assets/photos/143-1.jpg"
+        ]
+      },
+      {
+        "id": 144,
+        "heure": "18:00",
+        "nom": "Tokyo Metropolitan Government Building — observatoire (option)",
+        "categorie": "visite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Option gratuite si l’observatoire est ouvert ; vérifier les horaires spéciaux du 2 janvier. ⚠️ Selon les sources consultées, l'observatoire gratuit est habituellement fermé du 29 au 31 décembre et les 2–3 janvier : il est probablement fermé le 2 janvier. Vérifier sur le site officiel ; prévoir une alternative.",
+        "description": "",
+        "adresse": "2-8-1 Nishi-Shinjuku, Shinjuku-ku, Tokyo 163-8001, Japan",
+        "etape": 15005,
+        "photos": [
+          "assets/photos/144-1.jpg"
+        ]
+      },
+      {
+        "id": 145,
+        "heure": "19:30",
+        "nom": "Dernier dîner halal et retour aux bagages",
+        "categorie": "repas",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Dernière soirée complète. Préparer les bagages et confirmer le trajet vers l’aéroport.",
+        "description": "",
+        "adresse": "Shinjuku, Tokyo, Japan"
+      },
+      {
+        "id": 146,
+        "heure": "À confirmer",
+        "nom": "Option : rechercher un événement de sumo gratuit",
+        "categorie": "activite",
+        "ville": "tokyo",
+        "cout": 0,
+        "notes": "Non confirmé et non réservé : ne conserver que si un événement réellement gratuit, public et accessible est annoncé pour cette date. Les spectacles de sumo touristiques sont généralement payants ; ne pas se déplacer sans confirmation.",
+        "description": "",
+        "adresse": "Tokyo, Japan"
       }
     ]
   },
@@ -1115,7 +1352,7 @@
     "id": 16,
     "titre": "Dimanche 3 janvier — Retour à Paris",
     "nuit": null,
-    "notes": "Départ depuis le logement de Tokyo, 14-7 Kaitaichō, Shinjuku-ku. Pour un vol à 14h, prévoir une marge confortable pour rejoindre l’aéroport, le check-in et les contrôles. Confirmer l’aéroport (Haneda ou Narita) et l’itinéraire exact avant le départ.",
+    "notes": "Départ depuis le logement de Tokyo, 14-7 Kaitaichō, Shinjuku-ku. Pour le vol de 14h, prévoir une marge confortable. Confirmer l’aéroport (Haneda ou Narita) et l’itinéraire exact avant le départ.",
     "activites": [
       {
         "id": 92,
@@ -1126,6 +1363,7 @@
         "cout": 0,
         "notes": "Vérifier l’heure de check-out et ne rien oublier.",
         "description": "",
+        "adresse": "",
         "etape": 16000
       },
       {
@@ -1137,6 +1375,7 @@
         "cout": 0,
         "notes": "Prévoir une marge confortable ; vérifier l’aéroport exact et les horaires.",
         "description": "",
+        "adresse": "",
         "etape": 16001
       },
       {
@@ -1147,7 +1386,8 @@
         "ville": "trajet",
         "cout": 0,
         "notes": "Vol retour prévu à 14h00.",
-        "description": ""
+        "description": "",
+        "adresse": ""
       }
     ]
   }

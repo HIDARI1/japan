@@ -229,7 +229,8 @@
     return true;
   }
 
-  /* Export de l'ancien site ({ state, config, photos }) → format actuel, sans perdre les positions déjà connues */
+  /* Export de l'ancien site ou de la version de l'ami ({ state, config, photos }) → format actuel,
+     sans perdre les positions déjà connues ni les photos du dossier assets/photos */
   function fromOld(d) {
     const st = d.state || {}, cfg = d.config || {};
     const fait = {};
@@ -240,8 +241,9 @@
         activites: (day.activities || []).map((a) => {
           if (a.done) fait[a.id] = true;
           const old = J.idx.act.get(a.id)?.act;
-          const act = { id: a.id, heure: a.time || '', nom: a.name || '', categorie: a.cat || 'autre', ville: old ? old.ville : (cur ? J.dayColorCity(cur) : 'trajet'), cout: +a.cost || 0, notes: a.notes || '', description: a.description || '' };
+          const act = { id: a.id, heure: a.time || '', nom: a.name || '', categorie: a.cat || 'autre', ville: old ? old.ville : (cur ? J.dayColorCity(cur) : 'trajet'), cout: +a.cost || 0, notes: a.notes || '', description: a.description || '', adresse: (a.address || (old && old.adresse) || '').trim() };
           if (old && old.etape != null) act.etape = old.etape;
+          if (old && old.photos) act.photos = old.photos;
           return act;
         }),
       };

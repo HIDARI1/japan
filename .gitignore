@@ -1,0 +1,14 @@
+# Archives et sources de travail : gardées en local, pas sur GitHub
+_old/
+_templates/
+*.zip
+
+# Réglages locaux des outils
+.claude/
+.vscode/
+.idea/
+
+# Fichiers système
+Thumbs.db
+desktop.ini
+.DS_Store

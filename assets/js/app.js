@@ -132,8 +132,9 @@
       const ph = e.target.closest('[data-photo]');
       if (ph) {
         const [actId, i] = ph.dataset.photo.split(':');
-        const list = await J.photos.get(actId);
-        if (list[+i]) J.openPhoto(list[+i].data, list[+i].name);
+        const act = J.idx.act.get(+actId)?.act;
+        const list = act ? await J.actPhotos(act) : [];
+        if (list[+i]) J.openPhoto(list[+i].src, list[+i].name);
       }
     });
 

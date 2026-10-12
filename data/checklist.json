@@ -3,16 +3,14 @@
     "id": "reservations",
     "titre": "Réservations & billets",
     "items": [
-      { "id": "shinkansen", "texte": "Réserver le shinkansen vers Tokyo (départ de Nara le 27/12)", "sources": [{ "jour": 9, "activite": 49 }] },
-      { "id": "bus-fuji", "texte": "Bus Tokyo → Kawaguchiko / Fuji-Q Highland : vérifier la gare de départ et le billet", "sources": [{ "jour": 9, "activite": 52 }] },
-      { "id": "harry-potter", "texte": "Warner Bros. Studio Tour Tokyo — Harry Potter : réservation nécessaire, vérifier le créneau exact du billet", "sources": [{ "jour": 13, "activite": 77 }] },
-      { "id": "shibuya-sky", "texte": "Shibuya Sky : réserver un créneau, idéalement proche du coucher du soleil", "sources": [{ "jour": 12, "activite": 75 }] },
-      { "id": "samourai", "texte": "Expérience samouraï : réservation et adresse exacte à confirmer", "sources": [{ "jour": 12, "activite": 71 }] },
+      { "id": "shinkansen", "texte": "Shinkansen Kyoto → Tokyo et bus vers Kawaguchiko / Fuji-Q : réserver et confirmer les billets réels (les horaires du planning ne sont pas cohérents entre eux)", "sources": [{ "jour": 9, "activite": 51 }, { "jour": 9, "activite": 52 }] },
+      { "id": "bus-tokyo", "texte": "Bus / train Kawaguchiko → Tokyo : remplacer l’horaire indicatif par celui du billet", "sources": [{ "jour": 11, "activite": 121 }] },
+      { "id": "harry-potter", "texte": "Warner Bros. Studio Tour Tokyo — Harry Potter : réservation obligatoire, confirmer le créneau du billet", "sources": [{ "jour": 13, "activite": 77 }] },
+      { "id": "shibuya-sky", "texte": "Shibuya Sky : réserver un créneau — pour le coucher du soleil (vers 16h35), viser 16h00–16h15", "sources": [{ "jour": 12, "activite": 75 }] },
       { "id": "kimono", "texte": "Expérience kimono + katana : remplacer l’horaire par le créneau réel et vérifier l’adresse exacte", "sources": [{ "jour": 7, "activite": 105 }] },
-      { "id": "fuji-q", "texte": "Fuji-Q Highland : vérifier les horaires et billets du 28/12 (entrée générale / attractions)", "sources": [{ "jour": 10, "activite": 109 }] },
-      { "id": "hotel-nara", "texte": "Hôtel à Nara : à confirmer près de Kintetsu Nara", "sources": [{ "jour": 8, "activite": 47 }] },
-      { "id": "halal-kyoto", "texte": "Dîner halal à Kyoto : choisir et vérifier un restaurant à l’avance", "sources": [{ "jour": 5, "activite": 29 }] },
-      { "id": "halal-tokyo", "texte": "Dernier restaurant halal à Tokyo : réserver si nécessaire et confirmer l’ouverture", "sources": [{ "jour": 15, "activite": 90 }] }
+      { "id": "fuji-q", "texte": "Fuji-Q Highland : vérifier l’horaire d’ouverture du 28/12 et le type de billet (entrée générale / attractions)", "sources": [{ "jour": 10, "activite": 109 }] },
+      { "id": "halal-kyoto", "texte": "Dîner dans le centre de Kyoto : choisir et vérifier un restaurant halal à l’avance", "sources": [{ "jour": 7, "activite": 107 }] },
+      { "id": "halal-tokyo", "texte": "Dîner halal du 29/12 : choisir un restaurant ouvert pendant la période du Nouvel An", "sources": [{ "jour": 11, "activite": 124 }] }
     ]
   },
   {
@@ -22,6 +20,7 @@
       { "id": "vol-aller", "texte": "Vol Paris → Osaka : vérifier terminal, bagages et documents", "sources": [{ "jour": 1, "activite": 1 }] },
       { "id": "nuit-avion", "texte": "Pour la nuit dans l’avion : masque de sommeil, écouteurs et boisson", "sources": [{ "jour": 1, "activite": 2 }] },
       { "id": "arrivee-osaka", "texte": "Arrivée vers 22h30 : vérifier à l’avance les derniers transports vers Shinsaibashi ou prévoir une solution de secours", "sources": [{ "jour": 2, "activite": 4 }] },
+      { "id": "katsuo-ji", "texte": "Katsuo-ji : vérifier les horaires, les conditions d’accès et le bus Hankyu quelques jours avant", "sources": [{ "jour": 3, "activite": 8 }] },
       { "id": "hozugawa-check", "texte": "Bateau Hozugawa : vérifier les trains et l’état de fonctionnement du bateau peu avant la date", "sources": [{ "jour": 6 }] },
       { "id": "aeroport-retour", "texte": "Vol retour : confirmer l’aéroport (Haneda ou Narita) et l’itinéraire exact", "sources": [{ "jour": 16, "activite": 93 }] }
     ]
@@ -30,23 +29,27 @@
     "id": "valise",
     "titre": "Dans la valise",
     "items": [
-      { "id": "chaud", "texte": "Vêtements très chauds : couvrir mains, cou et oreilles (bateau Hozugawa en hiver, Chureito tôt le matin)", "sources": [{ "jour": 6, "activite": 98 }, { "jour": 10, "activite": 60 }] }
+      { "id": "chaud", "texte": "Vêtements très chauds : couvrir mains, cou et oreilles (bateau Hozugawa, bord de la Kamogawa, Tama River)", "sources": [{ "jour": 6, "activite": 98 }, { "jour": 7, "activite": 148 }, { "jour": 15, "activite": 142 }] }
     ]
   },
   {
     "id": "sur-place",
     "titre": "À vérifier la veille",
     "items": [
-      { "id": "den-den", "texte": "Den Den Town : horaires et éventuelles fermetures (Super Potato, succursale Donguri Kyowakoku)", "sources": [{ "jour": 4, "activite": 16 }, { "jour": 4, "activite": 18 }] },
+      { "id": "den-den", "texte": "Donguri Kyowakoku : vérifier la succursale et les horaires", "sources": [{ "jour": 4, "activite": 18 }] },
       { "id": "round1-osaka", "texte": "Arcades / Round1 à Osaka : horaires et coût réel", "sources": [{ "jour": 4, "activite": 20 }] },
       { "id": "kiyomizu", "texte": "Kiyomizu-dera : horaires et billet éventuel", "sources": [{ "jour": 5, "activite": 25 }] },
       { "id": "kinkaku", "texte": "Kinkaku-ji et Ryoan-ji : horaires de fin d’année et tarif", "sources": [{ "jour": 7, "activite": 36 }, { "jour": 7, "activite": 103 }] },
-      { "id": "nara-hiver", "texte": "Nara : heures de fermeture hivernales (Todai-ji, Kasuga Taisha)", "sources": [{ "jour": 8, "activite": 44 }] },
-      { "id": "tokyo-tower", "texte": "Tokyo Tower Café : ouverture et conditions d’accès le 31 décembre", "sources": [{ "jour": 13, "activite": 68 }] },
-      { "id": "teamlab", "texte": "teamLab Borderless : arriver dans le créneau 19:30–20:00 et vérifier les consignes officielles du billet", "sources": [{ "jour": 13, "activite": 79 }] },
-      { "id": "reveillon", "texte": "Réveillon : événements, restrictions et transports du 31/12", "sources": [{ "jour": 13, "activite": 80 }] },
-      { "id": "round1-tokyo", "texte": "Round1 à Tokyo : vérifier l’ouverture le 1er janvier", "sources": [{ "jour": 14, "activite": 84 }] },
-      { "id": "2-janvier", "texte": "Boutiques anime / gaming : vérifier les horaires du Nouvel An (2 janvier)", "sources": [{ "jour": 15, "activite": 89 }] }
+      { "id": "nara-hiver", "texte": "Nara : heures de fermeture hivernales (Todai-ji ferme tôt)", "sources": [{ "jour": 8, "activite": 44 }] },
+      { "id": "tokyo-tower", "texte": "Tokyo Tower Café : ouverture et accès le 31 décembre", "sources": [{ "jour": 13, "activite": 130 }] },
+      { "id": "teamlab", "texte": "teamLab Borderless : arriver dans le créneau 19:30–20:00 indiqué sur le billet", "sources": [{ "jour": 13, "activite": 79 }] },
+      { "id": "reveillon", "texte": "Réveillon : restrictions, affluence et transports du 31/12", "sources": [{ "jour": 13, "activite": 80 }] },
+      { "id": "akihabara-1er", "texte": "Ueno et Akihabara : vérifier les ouvertures du 1er janvier (sinon déplacer Akihabara au 2 janvier)", "sources": [{ "jour": 14, "activite": 137 }] },
+      { "id": "round1-tokyo", "texte": "Round1 à Tokyo : à garder seulement si l’ouverture du 1er janvier est confirmée", "sources": [{ "jour": 14, "activite": 84 }] },
+      { "id": "yotsugi", "texte": "Yotsugi : vérifier les emplacements des statues Captain Tsubasa ; météo et temps de transport", "sources": [{ "jour": 15, "activite": 138 }] },
+      { "id": "persona", "texte": "Lieu associé à Persona 5 : vérifier l’accès (immeuble privé possible), respecter la vie privée", "sources": [{ "jour": 15, "activite": 140 }] },
+      { "id": "tmg", "texte": "Observatoire du Tokyo Metropolitan Government : probablement fermé le 2 janvier — vérifier et prévoir une alternative", "sources": [{ "jour": 15, "activite": 144 }] },
+      { "id": "sumo", "texte": "Sumo gratuit : ne le garder que si un événement public et gratuit est confirmé", "sources": [{ "jour": 15, "activite": 146 }] }
     ]
   }
 ]
