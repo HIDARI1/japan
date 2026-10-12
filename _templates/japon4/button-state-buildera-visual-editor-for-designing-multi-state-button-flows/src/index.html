@@ -1,0 +1,1263 @@
+<header>
+  <h1>Button State Builder</h1>
+
+  <div class="header-right">
+    <a href="https://codepen.io/Margarita-the-solid" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px; background: transparent; color: rgb(41, 121, 255); font-size: 12px; font-weight: 600; font-family: &quot;DM Sans&quot;, sans-serif; text-decoration: none; border-radius: 999px; letter-spacing: 0.01em; border: 1.5px solid rgba(41, 121, 255, 0.4); transition: border-color 0.15s, color 0.15s, background 0.15s;" onmouseover="this.style.borderColor=&#39;#2979FF&#39;;this.style.background=&#39;rgba(41,121,255,0.08)&#39;" onmouseout="this.style.borderColor=&#39;rgba(41,121,255,0.4)&#39;;this.style.background=&#39;transparent&#39;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#2979FF">
+        <path d="M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.03-.03.05-.04.07l-.03.07-.018.06-.015.05L0 8.18v7.497l.003.06.015.05.03.07.043.07.051.07.046.06.051.06.043.04.056.045.046.04 11 7.34c.157.107.36.16.553.16.195 0 .397-.053.554-.16l11-7.34.045-.04.056-.04.044-.04.05-.06.046-.06.05-.07.044-.07.03-.07.015-.05.003-.06V8.182zm-12 8.512l-3.508-2.338 3.508-2.338 3.51 2.338-3.51 2.338zm-4.466-6.8L3.04 12.2 7.534 9.893v.001zm.437 0l3.51 2.338v4.672l-3.51-2.34V9.893zm8.49 0v4.672l-3.51 2.34v-4.672l3.51-2.34zm.437 0l4.495 2.306L16.897 14.6V9.894h-.001z"></path>
+      </svg>
+      Follow on CodePen
+    </a>
+    <span style="font-size:10px;opacity:0.4;font-family:&#39;DM Mono&#39;,monospace">v3.1</span>
+
+    <button class="editor-toggle" id="editor-toggle-btn" onclick="toggleEditor()">✨ New Button Builder</button>
+  </div>
+</header>
+
+<!-- ── HERO / MARKETING ── -->
+<section class="hero-section" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Free tool · No signup</div>
+    <h1 class="hero-headline">Design button states<br><span class="hero-gradient">that feel alive</span></h1>
+    <p class="hero-sub">Build idle → loading → success → error flows visually.<br>Get production-ready CSS + JS in seconds.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">✦ 6 animation types</span>
+      <span class="hero-chip">✦ Gradient builder</span>
+      <span class="hero-chip">✦ Icon + motion</span>
+      <span class="hero-chip">✦ Copy-paste CSS</span>
+    </div>
+    <div class="hero-cta-row">
+      <a class="hero-cta-btn" href="#hero-showcase" onclick="event.preventDefault(); document.querySelector('.hero-showcase').scrollIntoView({behavior:'smooth', block:'center'})">See it in action ↓</a>
+    </div>
+    <p class="hero-cta-hint">Every button below is editable — pick one and make it yours.</p>
+  </div>
+
+  <!-- Showcase of buttons actually built with the tool — auto-playing through their real states -->
+  <div class="hero-showcase">
+    <div class="hshow-card hshow-featured hshow-tilt-l" onclick="editPreset('deploy')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')editPreset('deploy')">
+      <div class="hshow-tag">🎨 Customize this one</div>
+      <div class="hshow-stage">
+        <button class="sb" id="btn-hero-deploy">
+          <div class="sb-bg" id="btn-hero-deploy-bg"></div>
+          <div class="sb-cl" id="btn-hero-deploy-cl">
+            <div class="sb-inner" id="btn-hero-deploy-inner">
+              <div class="sb-icon-wrap" id="btn-hero-deploy-iw"><svg id="btn-hero-deploy-svg" viewBox="0 0 24 24"></svg></div>
+              <span class="sb-label" id="btn-hero-deploy-lbl">CI/CD Deploy</span>
+            </div>
+            <div class="sb-dots" id="btn-hero-deploy-dots"><span></span><span></span><span></span></div>
+            <div class="sb-check" id="btn-hero-deploy-chk"><svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M4 12l5 5L20 7" />
+              </svg></div>
+            <div class="sb-spinner" id="btn-hero-deploy-spin"></div>
+          </div>
+        </button>
+      </div>
+      <div class="state-track" id="track-hero-deploy" style="display:none"></div>
+      <a class="hshow-edit-btn" href="#builder" onclick="event.preventDefault(); event.stopPropagation(); editPreset('deploy')">Customize the Deploy Button →</a>
+    </div>
+    <div class="hshow-card hshow-featured hshow-tilt-c" onclick="editPreset('match')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')editPreset('match')">
+      <div class="hshow-tag">🎨 Customize this one</div>
+      <div class="hshow-stage">
+        <button class="sb" id="btn-hero-match">
+          <div class="sb-bg" id="btn-hero-match-bg"></div>
+          <div class="sb-cl" id="btn-hero-match-cl">
+            <div class="sb-inner" id="btn-hero-match-inner">
+              <div class="sb-icon-wrap" id="btn-hero-match-iw"><svg id="btn-hero-match-svg" viewBox="0 0 24 24"></svg></div>
+              <span class="sb-label" id="btn-hero-match-lbl">Matchmaking</span>
+            </div>
+            <div class="sb-dots" id="btn-hero-match-dots"><span></span><span></span><span></span></div>
+            <div class="sb-check" id="btn-hero-match-chk"><svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M4 12l5 5L20 7" />
+              </svg></div>
+            <div class="sb-spinner" id="btn-hero-match-spin"></div>
+          </div>
+        </button>
+      </div>
+      <div class="state-track" id="track-hero-match" style="display:none"></div>
+      <a class="hshow-edit-btn" href="#builder" onclick="event.preventDefault(); event.stopPropagation(); editPreset('match')">Customize the Matchmaking Button →</a>
+    </div>
+    <div class="hshow-card hshow-featured hshow-tilt-r" onclick="editPreset('like')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')editPreset('like')">
+      <div class="hshow-tag">🎨 Customize this one</div>
+      <div class="hshow-stage">
+        <button class="sb" id="btn-hero-like">
+          <div class="sb-bg" id="btn-hero-like-bg"></div>
+          <div class="sb-cl" id="btn-hero-like-cl">
+            <div class="sb-inner" id="btn-hero-like-inner">
+              <div class="sb-icon-wrap" id="btn-hero-like-iw"><svg id="btn-hero-like-svg" viewBox="0 0 24 24"></svg></div>
+              <span class="sb-label" id="btn-hero-like-lbl">Like Button</span>
+            </div>
+            <div class="sb-dots" id="btn-hero-like-dots"><span></span><span></span><span></span></div>
+            <div class="sb-check" id="btn-hero-like-chk"><svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M4 12l5 5L20 7" />
+              </svg></div>
+            <div class="sb-spinner" id="btn-hero-like-spin"></div>
+          </div>
+        </button>
+      </div>
+      <div class="state-track" id="track-hero-like" style="display:none"></div>
+      <a class="hshow-edit-btn" href="#builder" onclick="event.preventDefault(); event.stopPropagation(); editPreset('like')">Customize the Like Button →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUILDER ── -->
+<div class="app-section" id="builder">
+  <div class="app-body">
+
+    <!-- ── BUILDER STAGE (positioning context so the builder panel can slide in from the right) ── -->
+    <div class="builder-stage" id="builder-stage">
+
+      <!-- ── EXAMPLES MAIN ── -->
+      <main class="examples-main" id="examples-main">
+        <div class="ex-grid" id="ex-grid">
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">1 states · Your Build</div>
+              <div class="ex-title">Custom Button</div>
+              <div class="ex-desc">Idle</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-scale icon-right" id="btn-custom" style="background: rgb(184, 174, 232); color: rgb(17, 17, 17); width: 100%; font-size: 16px; font-weight: 500; letter-spacing: 0px; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial;">
+                <div class="sb-bg" id="btn-custom-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-custom-cl" style="transition: opacity 210ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 210ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-custom-inner" style="display: flex;">
+                    <div class="sb-icon-wrap" id="btn-custom-iw" style="display: none;"><svg id="btn-custom-svg" viewBox="0 0 24 24"></svg></div><span class="sb-label" id="btn-custom-lbl">Continue</span>
+                  </div>
+                  <div class="sb-dots" id="btn-custom-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-custom-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-custom-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-custom">
+              <div class="st-node">
+                <div class="st-pill active" id="tp-custom-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;custom&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">6 states · Payment</div>
+              <div class="ex-title">Checkout Flow</div>
+              <div class="ex-desc">Idle → Confirm → Auth → Charging → Success → Receipt</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-lift icon-right" id="btn-checkout" style="background: rgb(10, 46, 20); color: white; width: 100%; font-size: 14px; font-weight: 500; letter-spacing: 0px; border-radius: 12px; border: 2px solid rgb(9, 193, 42);">
+                <div class="sb-bg" id="btn-checkout-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-checkout-cl" style="transition: opacity 210ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 210ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-checkout-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-float-slow" id="btn-checkout-iw" style="display: flex;"><svg id="btn-checkout-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: rgb(9, 193, 42);">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                      </svg></div><span class="sb-label" id="btn-checkout-lbl">View receipt</span>
+                  </div>
+                  <div class="sb-dots" id="btn-checkout-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-checkout-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-checkout-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-checkout">
+              <div class="st-node">
+                <div class="st-pill" id="tp-checkout-0">
+                  <div class="st-dot"></div>Pay
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-checkout-1">
+                  <div class="st-dot"></div>Confirm
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-checkout-2">
+                  <div class="st-dot"></div>Auth
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-checkout-3">
+                  <div class="st-dot"></div>Charging
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-checkout-4">
+                  <div class="st-dot"></div>Success
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-checkout-5">
+                  <div class="st-dot"></div>Receipt
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;checkout&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">5 states · AI</div>
+              <div class="ex-title">AI Generation</div>
+              <div class="ex-desc">Idle → Thinking → Writing → Reviewing → Done</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-lift icon-right" id="btn-ai" style="background: rgb(191, 255, 0); color: rgb(17, 17, 17); width: 100%; font-size: 15px; font-weight: 700; letter-spacing: 0px; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; box-shadow: rgba(191, 255, 0, 0.667) 0px 0px 20px, rgba(191, 255, 0, 0.267) 0px 0px 40px;">
+                <div class="sb-bg" id="btn-ai-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-ai-cl" style="transition: opacity 130ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 130ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-ai-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-float-slow" id="btn-ai-iw" style="display: flex;"><svg id="btn-ai-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: rgb(17, 17, 17);">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                      </svg></div><span class="sb-label" id="btn-ai-lbl">Ready — View</span>
+                  </div>
+                  <div class="sb-dots" id="btn-ai-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-ai-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-ai-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-ai">
+              <div class="st-node">
+                <div class="st-pill" id="tp-ai-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-ai-1">
+                  <div class="st-dot"></div>Thinking
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-ai-2">
+                  <div class="st-dot"></div>Writing
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-ai-3">
+                  <div class="st-dot"></div>Reviewing
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-ai-4">
+                  <div class="st-dot"></div>Done
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;ai&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">7 states · DevOps</div>
+              <div class="ex-title">Deploy Pipeline</div>
+              <div class="ex-desc">Push → Queue → Build → Test → Ship → Health → Live</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-lift" id="btn-deployci" style="background: rgb(9, 193, 42); color: white; width: 100%; font-size: 15px; font-weight: 500; letter-spacing: 0px; border-radius: 10px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;">
+                <div class="sb-bg" id="btn-deployci-bg" style="transition: opacity 360ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; background: rgb(41, 121, 255);"></div>
+                <div class="sb-cl in" id="btn-deployci-cl" style="transition: opacity 210ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 210ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-deployci-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-float-slow" id="btn-deployci-iw" style="display: flex;"><svg id="btn-deployci-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: white;">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"></path>
+                      </svg></div><span class="sb-label" id="btn-deployci-lbl">Push to Deploy</span>
+                  </div>
+                  <div class="sb-dots" id="btn-deployci-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-deployci-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-deployci-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-deployci">
+              <div class="st-node">
+                <div class="st-pill active" id="tp-deployci-0">
+                  <div class="st-dot"></div>Push
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-1">
+                  <div class="st-dot"></div>Queue
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-2">
+                  <div class="st-dot"></div>Build
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-3">
+                  <div class="st-dot"></div>Test
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-4">
+                  <div class="st-dot"></div>Ship
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-5">
+                  <div class="st-dot"></div>Health
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deployci-6">
+                  <div class="st-dot"></div>Live
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;deployci&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">5 states · Destructive</div>
+              <div class="ex-title">Delete Account</div>
+              <div class="ex-desc">Idle → Warn → Confirm → Deleting → Deleted</div>
+            </div>
+            <div class="ex-stage"><button class="sb" id="btn-delete" style="background: rgb(204, 0, 0); color: white; width: 100%; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; border-radius: 8px; border: 3px solid rgba(255, 80, 80, 0.5); box-shadow: rgba(0, 0, 0, 0.45) 0px 6px 20px;">
+                <div class="sb-bg" id="btn-delete-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-delete-cl" style="transition: opacity 130ms cubic-bezier(0.9, 0, 1, 1), transform 130ms cubic-bezier(0.9, 0, 1, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-delete-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-pulse-fast" id="btn-delete-iw" style="display: flex;"><svg id="btn-delete-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: white;">
+                        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path>
+                      </svg></div><span class="sb-label" id="btn-delete-lbl">Hold to confirm</span>
+                  </div>
+                  <div class="sb-dots" id="btn-delete-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-delete-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-delete-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-delete">
+              <div class="st-node">
+                <div class="st-pill" id="tp-delete-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-delete-1">
+                  <div class="st-dot"></div>Warn
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-delete-2">
+                  <div class="st-dot"></div>Confirm
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-delete-3">
+                  <div class="st-dot"></div>Deleting
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-delete-4">
+                  <div class="st-dot"></div>Deleted
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;delete&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">6 states · Gaming</div>
+              <div class="ex-title">Matchmaking</div>
+              <div class="ex-desc">Idle → Searching → Found → Loading → Countdown → In Game</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-scale" id="btn-match" style="background: linear-gradient(135deg, rgb(13, 71, 161) 0%, rgb(25, 118, 210) 100%); color: white; width: 100%; font-size: 15px; font-weight: 600; letter-spacing: 0px; border-radius: 6px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; box-shadow: rgba(0, 0, 0, 0.45) 0px 6px 20px;">
+                <div class="sb-bg" id="btn-match-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-match-cl" style="transition: opacity 210ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 210ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-match-inner" style="display: flex;">
+                    <div class="sb-icon-wrap" id="btn-match-iw" style="display: flex;"><svg id="btn-match-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: rgb(191, 255, 0);">
+                        <path d="M15 7.5V2H9v5.5l3 3 3-3zM7.5 9H2v6h5.5l3-3-3-3zM9 16.5V22h6v-5.5l-3-3-3 3zM16.5 9l-3 3 3 3H22V9h-5.5z"></path>
+                      </svg></div><span class="sb-label" id="btn-match-lbl">Find Match</span>
+                  </div>
+                  <div class="sb-dots" id="btn-match-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-match-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-match-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-match">
+              <div class="st-node">
+                <div class="st-pill active" id="tp-match-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-match-1">
+                  <div class="st-dot"></div>Search
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-match-2">
+                  <div class="st-dot"></div>Found!
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-match-3">
+                  <div class="st-dot"></div>Loading
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-match-4">
+                  <div class="st-dot"></div>Ready?
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-match-5">
+                  <div class="st-dot"></div>In Game
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;match&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">5 states · Subscription</div>
+              <div class="ex-title">Newsletter Signup</div>
+              <div class="ex-desc">Idle → Checking → Sending → Welcome → Member</div>
+            </div>
+            <div class="ex-stage"><button class="sb icon-right" id="btn-subscribe" style="background: linear-gradient(135deg, rgb(139, 0, 87) 0%, rgb(224, 48, 122) 50%, rgb(255, 105, 180) 100%) 0% 0% / 300% 100%; color: white; width: 100%; font-size: 15px; font-weight: 700; letter-spacing: 0px; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; animation: 1.8s ease 0s infinite normal none running sgrad; box-shadow: rgba(9, 193, 42, 0.667) 0px 0px 20px, rgba(9, 193, 42, 0.267) 0px 0px 40px;">
+                <div class="sb-bg" id="btn-subscribe-bg" style="transition: opacity 200ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; background: rgb(9, 193, 42);"></div>
+                <div class="sb-cl in" id="btn-subscribe-cl" style="transition: opacity 130ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 130ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-subscribe-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-bounce" id="btn-subscribe-iw" style="display: flex;"><svg id="btn-subscribe-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: white;">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                      </svg></div><span class="sb-label" id="btn-subscribe-lbl">You're in! 🎉</span>
+                  </div>
+                  <div class="sb-dots" id="btn-subscribe-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-subscribe-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-subscribe-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-subscribe">
+              <div class="st-node">
+                <div class="st-pill" id="tp-subscribe-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-subscribe-1">
+                  <div class="st-dot"></div>Check
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-subscribe-2">
+                  <div class="st-dot"></div>Sending
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-subscribe-3">
+                  <div class="st-dot"></div>Welcome
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-subscribe-4">
+                  <div class="st-dot"></div>Member
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;subscribe&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">6 states · Security</div>
+              <div class="ex-title">Auth Flow</div>
+              <div class="ex-desc">Idle → Validating → 2FA → Verifying → Welcome → Ready</div>
+            </div>
+            <div class="ex-stage"><button class="sb" id="btn-auth" style="background: rgb(124, 58, 237); color: white; width: 100%; font-size: 14px; font-weight: 500; letter-spacing: 0px; border-radius: 10px; border: 3px solid rgba(191, 255, 0, 0.5);">
+                <div class="sb-bg" id="btn-auth-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-auth-cl" style="transition: opacity 210ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 210ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-auth-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-wiggle-slow" id="btn-auth-iw" style="display: flex;"><svg id="btn-auth-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: rgb(191, 255, 0);">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
+                      </svg></div><span class="sb-label" id="btn-auth-lbl">Verify 2FA</span>
+                  </div>
+                  <div class="sb-dots" id="btn-auth-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-auth-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-auth-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-auth">
+              <div class="st-node">
+                <div class="st-pill" id="tp-auth-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-auth-1">
+                  <div class="st-dot"></div>Validating
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-auth-2">
+                  <div class="st-dot"></div>2FA
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-auth-3">
+                  <div class="st-dot"></div>Verifying
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-auth-4">
+                  <div class="st-dot"></div>Welcome!
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-auth-5">
+                  <div class="st-dot"></div>Ready
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;auth&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">5 states · Files</div>
+              <div class="ex-title">Download Flow</div>
+              <div class="ex-desc">Ready → Starting → Progress → Verifying → Complete</div>
+            </div>
+            <div class="ex-stage"><button class="sb" id="btn-download" style="background: linear-gradient(90deg, rgb(13, 71, 161) 0%, rgb(66, 165, 245) 55%, rgb(13, 71, 161) 100%) 0% 0% / 300% 100%; color: white; width: 100%; font-size: 15px; font-weight: 500; letter-spacing: 0px; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; animation: 3s ease 0s infinite normal none running sgrad;">
+                <div class="sb-bg" id="btn-download-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-download-cl" style="transition: opacity 210ms cubic-bezier(0.4, 0, 0.2, 1), transform 210ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-download-inner" style="display: none;">
+                    <div class="sb-icon-wrap icon-anim-pulse-fast" id="btn-download-iw" style="display: flex;"><svg id="btn-download-svg" viewBox="0 0 24 24" width="20" height="20" style="fill: white;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+                      </svg></div><span class="sb-label" id="btn-download-lbl">Starting…</span>
+                  </div>
+                  <div class="sb-dots" id="btn-download-dots" style="display: flex;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-download-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-download-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-download">
+              <div class="st-node">
+                <div class="st-pill" id="tp-download-0">
+                  <div class="st-dot"></div>Ready
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-download-1">
+                  <div class="st-dot"></div>Starting
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-download-2">
+                  <div class="st-dot"></div>Progress
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-download-3">
+                  <div class="st-dot"></div>Verifying
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-download-4">
+                  <div class="st-dot"></div>Complete
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;download&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">5 states · DevOps</div>
+              <div class="ex-title">CI/CD Deploy</div>
+              <div class="ex-desc">Queue → Building → Testing → Shipping → Live!</div>
+            </div>
+            <div class="ex-stage"><button class="sb" id="btn-deploy" style="background: linear-gradient(90deg, rgb(230, 81, 0) 0%, rgb(255, 108, 47) 50%, rgb(230, 81, 0) 100%) 0% 0% / 300% 100%; color: white; width: 100%; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; border-radius: 8px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; animation: 1.8s ease 0s infinite normal none running sgrad;">
+                <div class="sb-bg" id="btn-deploy-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-deploy-cl" style="transition: opacity 210ms cubic-bezier(0.4, 0, 0.2, 1), transform 210ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-deploy-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-spin" id="btn-deploy-iw" style="display: flex;"><svg id="btn-deploy-svg" viewBox="0 0 24 24" width="18" height="18" style="fill: white;">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path>
+                      </svg></div><span class="sb-label" id="btn-deploy-lbl" style="">Building…</span>
+                  </div>
+                  <div class="sb-dots" id="btn-deploy-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-deploy-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-deploy-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-deploy">
+              <div class="st-node">
+                <div class="st-pill" id="tp-deploy-0">
+                  <div class="st-dot"></div>Queue
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-deploy-1">
+                  <div class="st-dot"></div>Building
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deploy-2">
+                  <div class="st-dot"></div>Testing
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deploy-3">
+                  <div class="st-dot"></div>Shipping
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-deploy-4">
+                  <div class="st-dot"></div>Live!
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;deploy&#39;)">Edit →</button></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-meta">
+              <div class="ex-cat">4 states · Social</div>
+              <div class="ex-title">Like Button</div>
+              <div class="ex-desc">Idle → Press → Liked → Reset</div>
+            </div>
+            <div class="ex-stage"><button class="sb hover-bright" id="btn-like" style="background: rgb(224, 48, 122); color: white; width: auto; margin: 0px auto; font-size: 14px; font-weight: 600; letter-spacing: 0px; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;">
+                <div class="sb-bg" id="btn-like-bg" style="transition: none; opacity: 0; background: transparent;"></div>
+                <div class="sb-cl in" id="btn-like-cl" style="transition: opacity 130ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 130ms cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 1; transform: scale(1);">
+                  <div class="sb-inner" id="btn-like-inner" style="display: flex;">
+                    <div class="sb-icon-wrap icon-anim-bounce" id="btn-like-iw" style="display: flex;"><svg id="btn-like-svg" viewBox="0 0 24 24" width="20" height="20" style="fill: white;">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                      </svg></div><span class="sb-label" id="btn-like-lbl">Liked!</span>
+                  </div>
+                  <div class="sb-dots" id="btn-like-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="sb-check" id="btn-like-chk" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="sb-spinner" id="btn-like-spin" style="display: none;"></div>
+                </div>
+              </button></div>
+            <div class="state-track" id="track-like">
+              <div class="st-node">
+                <div class="st-pill" id="tp-like-0">
+                  <div class="st-dot"></div>Idle
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-like-1">
+                  <div class="st-dot"></div>Press
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill active" id="tp-like-2">
+                  <div class="st-dot"></div>Liked
+                </div>
+                <div class="st-arrow">›</div>
+              </div>
+              <div class="st-node">
+                <div class="st-pill" id="tp-like-3">
+                  <div class="st-dot"></div>Reset
+                </div>
+              </div>
+            </div>
+            <div class="ex-footer"><span style="font-size:9px;color:var(--muted);font-family:&#39;DM Mono&#39;,monospace"></span><button class="ex-edit-btn" onclick="editPreset(&#39;like&#39;)">Edit →</button></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ── BUILDER PANEL (state edit + states + state view, unified) ── -->
+      <div class="builder-panel hidden" id="builder-panel">
+
+        <div class="builder-panel-header">
+          <div class="builder-panel-title">
+            <h2 id="editing-label">Editing: Idle</h2>
+            <span id="gallery-current-label" class="builder-panel-sublabel"></span>
+          </div>
+          <div class="builder-panel-actions">
+            <button class="editor-close" onclick="toggleEditor()">×</button>
+          </div>
+        </div>
+
+        <div class="builder-panel-body">
+
+          <!-- ── STATE EDIT COLUMN ── -->
+          <aside class="editor-panel" id="editor-panel">
+
+            <!-- State flow -->
+            <div class="state-flow" id="state-flow">
+              <div class="state-node"><button class="state-pill active" style="background: rgb(184, 174, 232); color: rgb(17, 17, 17);">
+                  <div class="pill-dot" style="background: rgb(184, 174, 232);"></div><input class="state-pill-label" type="text">
+                </button></div><button class="add-state-btn">+ Add</button>
+            </div>
+
+            <!-- Editor scrollable body -->
+            <div class="editor-body" id="state-config">
+
+              <!-- BG -->
+              <div class="field">
+                <label>Background</label>
+                <div class="swatch-row" id="bg-swatches">
+                  <div class="swatch" data-color="#111111" style="background: rgb(17, 17, 17); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#BFFF00" style="background: rgb(191, 255, 0); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#09C12A" style="background: rgb(9, 193, 42); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#FF6C2F" style="background: rgb(255, 108, 47); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#2979FF" style="background: rgb(41, 121, 255); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#E0307A" style="background: rgb(224, 48, 122); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#7C3AED" style="background: rgb(124, 58, 237); border: 2px solid transparent;"></div>
+                  <div class="swatch" data-color="#FFFFFF" style="background: rgb(255, 255, 255); border: 2px solid rgb(204, 204, 204);"></div>
+                  <div class="swatch" data-color="gradient" title="Gradient" style="background: linear-gradient(135deg, rgb(124, 58, 237), rgb(41, 121, 255), rgb(9, 193, 42));"></div>
+                </div>
+                <div style="display:flex;gap:5px;align-items:center;margin-top:3px;">
+                  <input type="color" id="custom-solid-color" value="#2979FF" style="width:26px;height:26px;border:2px solid var(--border);border-radius:5px;cursor:pointer;padding:1px;background:none;" oninput="setCustomSolid(this.value)">
+                  <input class="color-hex-input" id="custom-solid-hex" value="#2979FF" maxlength="7" oninput="syncHexFromInput(this.value)" placeholder="#HEX">
+                  <span style="font-size:10px;color:var(--muted)">Custom</span>
+                </div>
+              </div>
+
+              <!-- GRADIENT BUILDER -->
+              <div class="field" id="grad-builder-wrap" style="display:none">
+                <label>Gradient Editor</label>
+                <div class="gradient-builder">
+                  <div class="grad-preview" id="grad-preview"></div>
+                  <div class="grad-meta">
+                    <div class="grad-meta-item">
+                      <label>Type</label>
+                      <div class="grad-type-row">
+                        <button class="grad-type-btn active" data-gt="linear" onclick="setGradType(&#39;linear&#39;,this)">Lin</button>
+                        <button class="grad-type-btn" data-gt="radial" onclick="setGradType(&#39;radial&#39;,this)">Rad</button>
+                        <button class="grad-type-btn" data-gt="conic" onclick="setGradType(&#39;conic&#39;,this)">Con</button>
+                      </div>
+                    </div>
+                    <div class="grad-meta-item" id="grad-angle-wrap">
+                      <label>Angle <span class="slider-val" id="grad-angle-val">90°</span></label>
+                      <input type="range" id="grad-angle-slider" min="0" max="360" value="90" oninput="updateGradAngle(this.value)">
+                    </div>
+                  </div>
+                  <div class="grad-stops" id="grad-stops"></div>
+                  <button class="grad-add-stop" onclick="addGradStop()">+ Add Stop</button>
+                  <div style="display:flex;flex-direction:column;gap:5px;">
+                    <div class="grad-anim-row">
+                      <button class="toggle-switch" id="grad-anim-toggle" onclick="toggleGradAnim()"></button>
+                      <span class="toggle-label">Animate gradient</span>
+                    </div>
+                    <div id="grad-anim-speed-wrap" style="display:none">
+                      <div class="select-row-3">
+                        <button class="sel-btn active" data-gas="slow" onclick="setGradAnimSpeed(&#39;slow&#39;,this)">Slow</button>
+                        <button class="sel-btn" data-gas="normal" onclick="setGradAnimSpeed(&#39;normal&#39;,this)">Normal</button>
+                        <button class="sel-btn" data-gas="fast" onclick="setGradAnimSpeed(&#39;fast&#39;,this)">Fast</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WIDTH -->
+              <div class="field">
+                <label>Width</label>
+                <div class="select-row">
+                  <button class="sel-btn active" data-width="full" onclick="setWidth(&#39;full&#39;,this)">Full</button>
+                  <button class="sel-btn" data-width="pill" onclick="setWidth(&#39;pill&#39;,this)">Pill</button>
+                  <button class="sel-btn" data-width="circle" onclick="setWidth(&#39;circle&#39;,this)">Circle</button>
+                  <button class="sel-btn" data-width="auto" onclick="setWidth(&#39;auto&#39;,this)">Auto</button>
+                </div>
+              </div>
+
+              <!-- CONTENT -->
+              <div class="field">
+                <label>Content</label>
+                <div class="select-row">
+                  <button class="sel-btn active" data-content="text" onclick="setContent(&#39;text&#39;,this)">Text</button>
+                  <button class="sel-btn" data-content="dots" onclick="setContent(&#39;dots&#39;,this)">Dots</button>
+                  <button class="sel-btn" data-content="spinner" onclick="setContent(&#39;spinner&#39;,this)">Spinner</button>
+                  <button class="sel-btn" data-content="check" onclick="setContent(&#39;check&#39;,this)">Check</button>
+                  <button class="sel-btn" data-content="icon" onclick="setContent(&#39;icon&#39;,this)">Icon</button>
+                  <button class="sel-btn" data-content="none" onclick="setContent(&#39;none&#39;,this)">None</button>
+                </div>
+              </div>
+
+              <div class="field" id="text-field">
+                <label>Label Text</label>
+                <input class="text-input" id="btn-text-input" value="Continue" oninput="updateTextLabel(this.value)">
+              </div>
+
+              <!-- ICON SECTION -->
+              <div class="field" id="icon-section" style="display:none">
+                <label>Icon</label>
+                <div class="icon-grid" id="icon-grid"><button class="icon-pick" data-icon="bolt" title="bolt"><svg viewBox="0 0 24 24">
+                      <path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM11 20v-5.5H9L13 9v5.5h2L11 20z"></path>
+                    </svg></button><button class="icon-pick" data-icon="star" title="star"><svg viewBox="0 0 24 24">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                    </svg></button><button class="icon-pick" data-icon="heart" title="heart"><svg viewBox="0 0 24 24">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                    </svg></button><button class="icon-pick" data-icon="send" title="send"><svg viewBox="0 0 24 24">
+                      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg></button><button class="icon-pick active" data-icon="arrow" title="arrow"><svg viewBox="0 0 24 24">
+                      <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                    </svg></button><button class="icon-pick" data-icon="check" title="check"><svg viewBox="0 0 24 24">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                    </svg></button><button class="icon-pick" data-icon="lock" title="lock"><svg viewBox="0 0 24 24">
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
+                    </svg></button><button class="icon-pick" data-icon="plus" title="plus"><svg viewBox="0 0 24 24">
+                      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                    </svg></button><button class="icon-pick" data-icon="search" title="search"><svg viewBox="0 0 24 24">
+                      <path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    </svg></button><button class="icon-pick" data-icon="download" title="download"><svg viewBox="0 0 24 24">
+                      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+                    </svg></button><button class="icon-pick" data-icon="upload" title="upload"><svg viewBox="0 0 24 24">
+                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"></path>
+                    </svg></button><button class="icon-pick" data-icon="refresh" title="refresh"><svg viewBox="0 0 24 24">
+                      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+                    </svg></button><button class="icon-pick" data-icon="settings" title="settings"><svg viewBox="0 0 24 24">
+                      <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path>
+                    </svg></button><button class="icon-pick" data-icon="bell" title="bell"><svg viewBox="0 0 24 24">
+                      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+                    </svg></button><button class="icon-pick" data-icon="user" title="user"><svg viewBox="0 0 24 24">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                    </svg></button><button class="icon-pick" data-icon="magic" title="magic"><svg viewBox="0 0 24 24">
+                      <path d="M7.5 5.6L10 7 8.6 4.5 10 2 7.5 3.4 5 2l1.4 2.5L5 7zm12 9.8L17 14l1.4 2.5L17 19l2.5-1.4L22 19l-1.4-2.5L22 14zM22 2l-2.5 1.4L17 2l1.4 2.5L17 7l2.5-1.4L22 7l-1.4-2.5zm-7.63 5.29a.9959.9959 0 00-1.41 0L1.29 18.96c-.39.39-.39 1.02 0 1.41l2.34 2.34c.39.39 1.02.39 1.41 0L16.7 11.05a.9959.9959 0 000-1.41l-2.33-2.35zm-1.03 5.49l-2.12-2.12 2.44-2.44 2.12 2.12-2.44 2.44z"></path>
+                    </svg></button><button class="icon-pick" data-icon="flame" title="flame"><svg viewBox="0 0 24 24">
+                      <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"></path>
+                    </svg></button><button class="icon-pick" data-icon="sparkle" title="sparkle"><svg viewBox="0 0 24 24">
+                      <path d="M12 1L9 9H1l6.5 5-2.5 8L12 18l7 4-2.5-8L23 9h-8z"></path>
+                    </svg></button><button class="icon-pick" data-icon="eye" title="eye"><svg viewBox="0 0 24 24">
+                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                    </svg></button><button class="icon-pick" data-icon="rocket" title="rocket"><svg viewBox="0 0 24 24">
+                      <path d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 14l3 3-.97 3.43L7.03 19 10 22l1.77-3.62c.31-.13 3.58-1.53 5.87-3.57l-8.45-8.46zM21.26 4c.1-.47-.04-.96-.38-1.3-.34-.34-.83-.48-1.3-.38l-4.3.93c-.56.12-1.53.59-2.17 1.23l1.75 1.75 4.26-1.02-1.02 4.26 1.75 1.75c.64-.64 1.11-1.61 1.23-2.17L21.26 4z"></path>
+                    </svg></button><button class="icon-pick" data-icon="game" title="game"><svg viewBox="0 0 24 24">
+                      <path d="M15 7.5V2H9v5.5l3 3 3-3zM7.5 9H2v6h5.5l3-3-3-3zM9 16.5V22h6v-5.5l-3-3-3 3zM16.5 9l-3 3 3 3H22V9h-5.5z"></path>
+                    </svg></button><button class="icon-pick" data-icon="warning" title="warning"><svg viewBox="0 0 24 24">
+                      <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path>
+                    </svg></button><button class="icon-pick" data-icon="trash" title="trash"><svg viewBox="0 0 24 24">
+                      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+                    </svg></button><button class="icon-pick" data-icon="shield" title="shield"><svg viewBox="0 0 24 24">
+                      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+                    </svg></button></div>
+                <div class="subsection" style="margin-top:3px;">
+                  <div class="subsection-title">Icon Options</div>
+                  <div class="field" id="icon-position-field">
+                    <label>Position</label>
+                    <div class="select-row">
+                      <button class="sel-btn" data-ipos="left" onclick="setIconPos(&#39;left&#39;,this)">← Left</button>
+                      <button class="sel-btn active" data-ipos="right" onclick="setIconPos(&#39;right&#39;,this)">Right →</button>
+                      <button class="sel-btn" data-ipos="above" onclick="setIconPos(&#39;above&#39;,this)">↑ Above</button>
+                      <button class="sel-btn" data-ipos="only" onclick="setIconPos(&#39;only&#39;,this)">Only</button>
+                    </div>
+                  </div>
+                  <div class="slider-field field">
+                    <label>Size <span class="slider-val" id="icon-size-val">20px</span></label>
+                    <input type="range" id="icon-size-slider" min="12" max="40" step="2" value="20" oninput="updateIconSize(this.value)">
+                  </div>
+                  <div class="field">
+                    <label>Color</label>
+                    <div class="swatch-row">
+                      <div class="swatch active" data-icolor="inherit" title="Inherit" style="background:white;border:2px solid #ccc;" onclick="setIconColor(&#39;inherit&#39;,this)"></div>
+                      <div class="swatch" data-icolor="#BFFF00" style="background:#BFFF00;" onclick="setIconColor(&#39;#BFFF00&#39;,this)"></div>
+                      <div class="swatch" data-icolor="#09C12A" style="background:#09C12A;" onclick="setIconColor(&#39;#09C12A&#39;,this)"></div>
+                      <div class="swatch" data-icolor="#FF6C2F" style="background:#FF6C2F;" onclick="setIconColor(&#39;#FF6C2F&#39;,this)"></div>
+                      <div class="swatch" data-icolor="#111111" style="background:#111;" onclick="setIconColor(&#39;#111111&#39;,this)"></div>
+                      <input type="color" id="icon-color-pick" value="#ffffff" style="width:24px;height:24px;border:2px solid var(--border);border-radius:50%;cursor:pointer;padding:1px;background:none;" oninput="setIconColor(this.value, null)">
+                    </div>
+                  </div>
+                </div>
+                <div class="subsection" style="margin-top:3px;">
+                  <div class="subsection-title">Icon Animation</div>
+                  <div class="field">
+                    <label>Motion</label>
+                    <div class="select-row">
+                      <button class="sel-btn active" data-ianim="none" onclick="setIconAnim(&#39;none&#39;,this)">None</button>
+                      <button class="sel-btn" data-ianim="spin" onclick="setIconAnim(&#39;spin&#39;,this)">Spin</button>
+                      <button class="sel-btn" data-ianim="pulse" onclick="setIconAnim(&#39;pulse&#39;,this)">Pulse</button>
+                      <button class="sel-btn" data-ianim="bounce" onclick="setIconAnim(&#39;bounce&#39;,this)">Bounce</button>
+                      <button class="sel-btn" data-ianim="shake" onclick="setIconAnim(&#39;shake&#39;,this)">Shake</button>
+                      <button class="sel-btn" data-ianim="wiggle" onclick="setIconAnim(&#39;wiggle&#39;,this)">Wiggle</button>
+                      <button class="sel-btn" data-ianim="float" onclick="setIconAnim(&#39;float&#39;,this)">Float</button>
+                    </div>
+                  </div>
+                  <div class="field" id="icon-anim-speed-field" style="display:none">
+                    <label>Speed</label>
+                    <div class="select-row-3">
+                      <button class="sel-btn" data-iaspd="slow" onclick="setIconAnimSpeed(&#39;slow&#39;,this)">Slow</button>
+                      <button class="sel-btn active" data-iaspd="normal" onclick="setIconAnimSpeed(&#39;normal&#39;,this)">Normal</button>
+                      <button class="sel-btn" data-iaspd="fast" onclick="setIconAnimSpeed(&#39;fast&#39;,this)">Fast</button>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Trigger</label>
+                    <div class="select-row-3">
+                      <button class="sel-btn active" data-iatrig="always" onclick="setIconAnimTrigger(&#39;always&#39;,this)">Always</button>
+                      <button class="sel-btn" data-iatrig="hover" onclick="setIconAnimTrigger(&#39;hover&#39;,this)">Hover</button>
+                      <button class="sel-btn" data-iatrig="click" onclick="setIconAnimTrigger(&#39;click&#39;,this)">Click</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CLICK ANIM + HOVER -->
+              <div class="field">
+                <label>Click Animation</label>
+                <div class="select-row">
+                  <button class="sel-btn" data-anim="none" onclick="setAnim(&#39;none&#39;,this)">None</button>
+                  <button class="sel-btn active" data-anim="shimmer" onclick="setAnim(&#39;shimmer&#39;,this)">Shimmer</button>
+                  <button class="sel-btn" data-anim="ripple" onclick="setAnim(&#39;ripple&#39;,this)">Ripple</button>
+                  <button class="sel-btn" data-anim="bounce" onclick="setAnim(&#39;bounce&#39;,this)">Bounce</button>
+                  <button class="sel-btn" data-anim="scale" onclick="setAnim(&#39;scale&#39;,this)">Scale</button>
+                  <button class="sel-btn" data-anim="glow" onclick="setAnim(&#39;glow&#39;,this)">Glow</button>
+                </div>
+              </div>
+              <div class="field">
+                <label>Hover Effect</label>
+                <div class="select-row">
+                  <button class="sel-btn" data-hover="none" onclick="setHover(&#39;none&#39;,this)">None</button>
+                  <button class="sel-btn active" data-hover="scale" onclick="setHover(&#39;scale&#39;,this)">Scale</button>
+                  <button class="sel-btn" data-hover="lift" onclick="setHover(&#39;lift&#39;,this)">Lift</button>
+                  <button class="sel-btn" data-hover="ring" onclick="setHover(&#39;ring&#39;,this)">Ring</button>
+                  <button class="sel-btn" data-hover="bright" onclick="setHover(&#39;bright&#39;,this)">Bright</button>
+                </div>
+              </div>
+
+              <!-- DURATION -->
+              <div class="slider-field field">
+                <label>Duration in state (ms) <span class="slider-val" id="dur-val">∞</span></label>
+                <input type="range" id="duration-slider" min="0" max="6000" step="100" value="2000" oninput="updateDuration(this.value)">
+              </div>
+
+              <!-- NEXT STATE -->
+              <div class="field">
+                <label>Then go to</label>
+                <div id="next-state-select" class="select-row"><button class="sel-btn active">Idle</button></div>
+              </div>
+
+              <!-- TRANSITION -->
+              <div class="field">
+                <label>Transition Into This State</label>
+                <div class="subsection">
+                  <div class="subsection-title" style="margin-bottom:5px;">Easing Curve</div>
+                  <div class="curve-grid" id="curve-grid"><button class="curve-btn active" data-easing="spring"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 C8,22 10,2 34,2"></path>
+                      </svg><span>Spring</span></button><button class="curve-btn" data-easing="ease"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 C14,22 20,2 34,2"></path>
+                      </svg><span>Ease</span></button><button class="curve-btn" data-easing="linear"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 L34,2"></path>
+                      </svg><span>Linear</span></button><button class="curve-btn" data-easing="bounce"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 C6,22 8,-4 14,14 C18,28 26,-2 34,2"></path>
+                      </svg><span>Bounce</span></button><button class="curve-btn" data-easing="snap"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 L28,22 L34,2"></path>
+                      </svg><span>Snap</span></button><button class="curve-btn" data-easing="gentle"><svg viewBox="0 0 36 24">
+                        <path d="M2,22 C10,22 24,6 34,2"></path>
+                      </svg><span>Gentle</span></button></div>
+                  <div style="margin-top:7px;display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:8px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Speed</span>
+                    <div class="speed-chips">
+                      <button class="speed-chip" data-tspd="quick" onclick="setTransSpeed(&#39;quick&#39;,this)">Quick</button>
+                      <button class="speed-chip active" data-tspd="normal" onclick="setTransSpeed(&#39;normal&#39;,this)">Normal</button>
+                      <button class="speed-chip" data-tspd="slow" onclick="setTransSpeed(&#39;slow&#39;,this)">Slow</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TYPOGRAPHY -->
+              <div class="field">
+                <label>Typography</label>
+                <div class="subsection">
+                  <div class="slider-field">
+                    <div class="subsection-title" style="margin-bottom:4px;">Size <span class="slider-val" id="font-size-val">16px</span></div>
+                    <input type="range" id="font-size-slider" min="10" max="28" step="1" value="16" oninput="updateFontSize(this.value)">
+                  </div>
+                  <div class="field" style="margin-top:5px;">
+                    <div class="subsection-title" style="margin-bottom:3px;">Weight</div>
+                    <div class="weight-chips" id="weight-chips">
+                      <button class="weight-chip" data-fw="400" onclick="setFontWeight(400,this)" style="font-weight:400;">Regular</button>
+                      <button class="weight-chip active" data-fw="500" onclick="setFontWeight(500,this)" style="font-weight:500;">Medium</button>
+                      <button class="weight-chip" data-fw="600" onclick="setFontWeight(600,this)" style="font-weight:600;">Semi</button>
+                      <button class="weight-chip" data-fw="700" onclick="setFontWeight(700,this)" style="font-weight:700;">Bold</button>
+                    </div>
+                  </div>
+                  <div class="field" style="margin-top:5px;">
+                    <div class="subsection-title" style="margin-bottom:3px;">Letter Spacing <span class="slider-val" id="ls-val">0px</span></div>
+                    <input type="range" id="ls-slider" min="-1" max="6" step="0.5" value="0" style="-webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:#e0e0e0;outline:none;cursor:pointer;" oninput="updateLetterSpacing(this.value)">
+                  </div>
+                  <div class="field" style="margin-top:5px;">
+                    <div class="subsection-title" style="margin-bottom:3px;">Text Color</div>
+                    <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+                      <div class="swatch active" data-tc="auto" title="Auto (from bg)" style="background:linear-gradient(135deg,#fff 50%,#111 50%);border:2px solid #ccc;" onclick="setTextColor(&#39;auto&#39;,this)"></div>
+                      <div class="swatch" data-tc="#ffffff" style="background:#fff;border:2px solid #ccc;" onclick="setTextColor(&#39;#ffffff&#39;,this)"></div>
+                      <div class="swatch" data-tc="#111111" style="background:#111;" onclick="setTextColor(&#39;#111111&#39;,this)"></div>
+                      <div class="swatch" data-tc="#BFFF00" style="background:#BFFF00;" onclick="setTextColor(&#39;#BFFF00&#39;,this)"></div>
+                      <div class="swatch" data-tc="#2979FF" style="background:#2979FF;" onclick="setTextColor(&#39;#2979FF&#39;,this)"></div>
+                      <input type="color" id="text-color-pick" value="#ffffff" style="width:24px;height:24px;border:2px solid var(--border);border-radius:50%;cursor:pointer;padding:1px;background:none;" oninput="setTextColor(this.value,null)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- APPEARANCE -->
+              <div class="field">
+                <label>Appearance</label>
+                <div class="subsection">
+                  <div class="field">
+                    <div class="subsection-title" style="margin-bottom:3px;">Corner Radius</div>
+                    <div class="radius-row" id="radius-row"><button class="radius-btn active" data-radius="999" title="Pill" style="border-radius: 7px;">
+                        <div class="rp" style="border-radius:999px"></div>
+                      </button><button class="radius-btn" data-radius="16" title="Lg" style="border-radius: 7px;">
+                        <div class="rp" style="border-radius:16px"></div>
+                      </button><button class="radius-btn" data-radius="8" title="Sm" style="border-radius: 7px;">
+                        <div class="rp" style="border-radius:8px"></div>
+                      </button><button class="radius-btn" data-radius="0" title="Sq" style="border-radius: 7px;">
+                        <div class="rp" style="border-radius:0px"></div>
+                      </button></div>
+                  </div>
+                  <div class="field" style="margin-top:7px;">
+                    <div class="subsection-title" style="margin-bottom:3px;">Shadow</div>
+                    <div class="shadow-row" id="shadow-row"><button class="shadow-swatch active" data-shadow="none">—</button><button class="shadow-swatch" data-shadow="sm">SM</button><button class="shadow-swatch" data-shadow="md">MD</button><button class="shadow-swatch" data-shadow="lg">LG</button><button class="shadow-swatch" data-shadow="glow">GLW</button></div>
+                  </div>
+                  <div class="field" style="margin-top:7px;">
+                    <div class="subsection-title" style="margin-bottom:3px;">Border / Ring</div>
+                    <div class="select-row-3">
+                      <button class="sel-btn active" data-border="none" onclick="setBorder(&#39;none&#39;,this)">None</button>
+                      <button class="sel-btn" data-border="ring" onclick="setBorder(&#39;ring&#39;,this)">Ring</button>
+                      <button class="sel-btn" data-border="outline" onclick="setBorder(&#39;outline&#39;,this)">Outline</button>
+                    </div>
+                    <div id="border-color-wrap" style="display:none;margin-top:5px;">
+                      <div class="swatch-row" id="border-color-swatches">
+                        <div class="swatch" data-bc="#ffffff" style="background: rgb(255, 255, 255); border: 2px solid rgb(204, 204, 204);"></div>
+                        <div class="swatch" data-bc="#000000" style="background: rgb(0, 0, 0); border: 2px solid transparent;"></div>
+                        <div class="swatch" data-bc="#BFFF00" style="background: rgb(191, 255, 0); border: 2px solid transparent;"></div>
+                        <div class="swatch" data-bc="#09C12A" style="background: rgb(9, 193, 42); border: 2px solid transparent;"></div>
+                        <div class="swatch" data-bc="#2979FF" style="background: rgb(41, 121, 255); border: 2px solid transparent;"></div>
+                        <div class="swatch" data-bc="#E0307A" style="background: rgb(224, 48, 122); border: 2px solid transparent;"></div>
+                        <div class="swatch" data-bc="#7C3AED" style="background: rgb(124, 58, 237); border: 2px solid transparent;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CODE OUTPUT -->
+              <div class="field">
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <label>Generated CSS + JS</label>
+                  <button class="copy-btn" id="copy-btn" onclick="copyCode()">⎘ Copy</button>
+                </div>
+                <div class="code-block" id="code-output"><span class="cm">/* Button States: Idle */</span>
+                  .btn {
+                  <span class="prop">height</span>: <span class="val">52px</span>; <span class="prop">border-radius</span>: <span class="val">999px</span>;
+                  <span class="prop">transition</span>: <span class="str">width 0.52s cubic-bezier(0.34,1.56,0.64,1), background 0.36s ease</span>;
+                  }
+
+                  <span class="cm">/* Idle */</span>
+                  .btn--idle {
+                  <span class="prop">background</span>: <span class="str">#B8AEE8</span>;
+                  <span class="prop">width</span>: <span class="val">100%</span>; <span class="prop">border-radius</span>: <span class="val">999px</span>;
+                  <span class="prop">font-size</span>: <span class="val">16px</span>; <span class="prop">font-weight</span>: <span class="val">500</span>;
+                  }
+
+                  <span class="cm">/* JS: cycle states on click */</span>
+                  <span class="kw">const</span> STATES = [<span class="str">'idle'</span>];
+                  <span class="kw">let</span> idx = <span class="val">0</span>;
+                  btn.onclick = () =&gt; { btn.className = <span class="str">'btn btn--'</span> + STATES[idx = (idx+<span class="val">1</span>)%STATES.length]; };
+                </div>
+              </div>
+
+              <!-- PRESETS -->
+              <div class="field">
+                <div class="section-title">Load Preset</div>
+                <div class="preset-section" id="preset-list"></div>
+              </div>
+
+              <!-- EXPORT -->
+              <div class="field" style="margin-bottom:8px;">
+                <button class="copy-btn" style="width:100%;justify-content:center;" onclick="exportToKit()">
+                  ↗ Copy as UI Kit snippet
+                </button>
+              </div>
+
+            </div><!-- /editor-body -->
+          </aside><!-- /editor-panel -->
+
+          <!-- ── STATE VIEW + STATES COLUMN ── -->
+          <section class="state-gallery" id="state-gallery">
+            <div class="gallery-subheader-row">
+              <div class="gallery-subheader gallery-view-label">Live Preview</div>
+              <button class="gallery-play-btn" id="gallery-play-btn" onclick="playSequence()">▶ Play All</button>
+            </div>
+            <div class="live-preview-bg">
+              <button id="preview-btn" class="proto-btn hover-scale icon-right" onclick="handlePreviewClick(event)" style="background-image: initial; background-position: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(184, 174, 232); color: rgb(17, 17, 17); width: 100%; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; font-size: 16px; font-weight: 500; letter-spacing: 0px;">
+                <div id="btn-bg-layer"></div>
+                <div id="btn-content-layer">
+                  <div class="btn-inner" id="btn-inner" style="display: flex;">
+                    <div class="btn-icon-wrap" id="btn-icon-wrap" style="display: none;"><svg id="btn-icon-svg" viewBox="0 0 24 24"></svg></div>
+                    <span class="btn-label">Continue</span>
+                  </div>
+                  <div class="btn-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="btn-check" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="btn-spinner" style="display: none;"></div>
+                </div>
+              </button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div class="gallery-subheader">All States</div>
+              <div class="gallery-nav-hint">
+                <kbd>←</kbd><kbd>→</kbd> navigate &nbsp;·&nbsp; click to edit
+              </div>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+              <div class="gallery-cell editing-state active-step" data-state-id="idle" draggable="true">
+                <div class="gallery-drag-handle" title="Drag to reorder"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="gallery-cell-header">
+                  <div class="gallery-cell-label">Idle</div>
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    <div class="gallery-cell-edit-badge">editing</div><button class="gallery-info-btn" title="State info &amp; code">ⓘ</button><button class="gallery-del-btn gallery-dup-btn" title="Duplicate state">⎘</button>
+                  </div>
+                </div><button class="proto-btn hover-scale icon-right" id="gallery-btn-idle" style="pointer-events: none; background-image: initial; background-position: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(184, 174, 232); color: rgb(17, 17, 17); width: 100%; border-radius: 999px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; font-size: 16px; font-weight: 500; letter-spacing: 0px;" tabindex="-1">
+                  <div class="btn-inner" style="display: flex;">
+                    <div class="btn-icon-wrap" style="display: none;"><svg viewBox="0 0 24 24"></svg></div><span class="btn-label">Continue</span>
+                  </div>
+                  <div class="btn-dots" style="display: none;"><span></span><span></span><span></span></div>
+                  <div class="btn-check" style="display: none;"><svg viewBox="0 0 24 24" width="20" height="20">
+                      <path d="M4 12l5 5L20 7"></path>
+                    </svg></div>
+                  <div class="btn-spinner" style="display: none;"></div>
+                </button>
+              </div>
+              <div class="gallery-add-cell"><span style="font-size:22px;line-height:1">+</span><span>Add State</span></div>
+            </div>
+          </section><!-- /state-gallery -->
+
+        </div><!-- /builder-panel-body -->
+      </div><!-- /builder-panel -->
+
+    </div><!-- /builder-stage -->
+
+    <!-- ── STATE INFO PANEL ── -->
+    <aside class="state-info-panel" id="state-info-panel">
+      <div class="state-info-panel-header">
+        <div class="state-info-panel-title">
+          <span id="state-info-panel-name">Idle</span>
+          <span class="state-info-modal-badge">State Info</span>
+        </div>
+        <button class="state-info-close" onclick="hideStateInfo()">×</button>
+      </div>
+      <div class="state-info-modal-body" id="state-info-modal-body">
+        <div>
+          <div class="state-info-section-title">Settings</div>
+          <div class="state-info-chips">
+            <div class="state-info-chip">
+              <div class="state-info-color-dot" style="background: rgb(184, 174, 232);"></div><span class="state-info-chip-key">BG</span><span class="state-info-chip-val">#B8AEE8</span>
+            </div>
+            <div class="state-info-chip"><span class="state-info-chip-key">width</span><span class="state-info-chip-val">full</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">content</span><span class="state-info-chip-val">text</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">label</span><span class="state-info-chip-val">"Continue"</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">click anim</span><span class="state-info-chip-val">shimmer</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">hover</span><span class="state-info-chip-val">scale</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">font</span><span class="state-info-chip-val">16px / 500</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">radius</span><span class="state-info-chip-val">pill</span></div>
+            <div class="state-info-chip"><span class="state-info-chip-key">transition</span><span class="state-info-chip-val">spring / normal</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="state-info-section-title">CSS</div>
+          <div class="state-info-code-header">
+            <div class="state-info-code-lang">CSS</div><button class="state-info-copy-btn">⎘ Copy</button>
+          </div>
+          <div class="state-info-code-block"><span class="si-cm">/* Idle state */</span>
+            .<span class="si-prop">btn--idle</span> {
+            <span class="si-prop">background</span>: <span class="si-str">#B8AEE8</span>;
+            <span class="si-prop">width</span>: <span class="si-val">100%</span>;
+            <span class="si-prop">border-radius</span>: <span class="si-val">999px</span>;
+            <span class="si-prop">font-size</span>: <span class="si-val">16px</span>;
+            <span class="si-prop">font-weight</span>: <span class="si-val">500</span>;
+            }
+
+            <span class="si-cm">/* hover */</span>
+            .btn--idle.<span class="si-prop">hover-scale</span>:hover {
+            <span class="si-prop">transform</span>: <span class="si-val">scale(1.05)</span>;
+            }
+          </div>
+        </div>
+        <div>
+          <div class="state-info-section-title">JavaScript</div>
+          <div class="state-info-code-header">
+            <div class="state-info-code-lang">JS</div><button class="state-info-copy-btn">⎘ Copy</button>
+          </div>
+          <div class="state-info-code-block"><span class="si-cm">/* Activate the "Idle" state */</span>
+            <span class="si-kw">function</span> <span class="si-prop">setIdle</span>() {
+            btn.className = <span class="si-str">'btn btn--idle'</span>;
+            btn.classList.add(<span class="si-str">'hover-scale'</span>);
+            }
+          </div>
+        </div>
+        <div>
+          <div class="state-info-section-title">Tailwind</div>
+          <div class="state-info-code-header">
+            <div class="state-info-code-lang">Tailwind CSS</div><button class="state-info-copy-btn">⎘ Copy</button>
+          </div>
+          <div class="state-info-code-block"><span class="si-cm">/* Idle state */</span>
+            <span class="si-str">"bg-[#B8AEE8] w-full rounded-full text-base font-medium hover:data-[hover=scale]:... transition-all duration-200"</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /app-body -->
+</div><!-- /app-section -->
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span class="site-footer-brand">Button State Builder</span>
+    <div class="site-footer-links">
+      <a href="https://codepen.io/Margarita-the-solid" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.03-.03.05-.04.07l-.03.07-.018.06-.015.05L0 8.18v7.497l.003.06.015.05.03.07.043.07.051.07.046.06.051.06.043.04.056.045.046.04 11 7.34c.157.107.36.16.553.16.195 0 .397-.053.554-.16l11-7.34.045-.04.056-.04.044-.04.05-.06.046-.06.05-.07.044-.07.03-.07.015-.05.003-.06V8.182zm-12 8.512l-3.508-2.338 3.508-2.338 3.51 2.338-3.51 2.338zm-4.466-6.8L3.04 12.2 7.534 9.893v.001zm.437 0l3.51 2.338v4.672l-3.51-2.34V9.893zm8.49 0v4.672l-3.51 2.34v-4.672l3.51-2.34zm.437 0l4.495 2.306L16.897 14.6V9.894h-.001z"></path>
+        </svg>
+        Follow on CodePen
+      </a>
+      <a href="https://m.oxoxoxo.online/refactor/api/uploads/hello-82f57983-b09d-411b-9265-0e60b0f4a845.html#builder">Back to top ↑</a>
+    </div>
+    <span class="site-footer-copy">Free tool · No signup · Made for developers and designers</span>
+  </div>
+</footer>

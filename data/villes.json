@@ -1,0 +1,38 @@
+[
+  {
+    "id": "osaka",
+    "nom": "Osaka",
+    "kanji": "大阪",
+    "secteur": "Shinsaibashi · Shimanouchi"
+  },
+  {
+    "id": "kyoto",
+    "nom": "Kyoto",
+    "kanji": "京都",
+    "secteur": "Shimogyo-ku · Arashiyama"
+  },
+  {
+    "id": "nara",
+    "nom": "Nara",
+    "kanji": "奈良",
+    "secteur": "Kintetsu Nara"
+  },
+  {
+    "id": "fuji",
+    "nom": "Fuji",
+    "kanji": "富士山",
+    "secteur": "Kawaguchiko · Fujiyoshida"
+  },
+  {
+    "id": "tokyo",
+    "nom": "Tokyo",
+    "kanji": "東京",
+    "secteur": "Shinjuku-ku · Waseda / Kagurazaka"
+  },
+  {
+    "id": "trajet",
+    "nom": "Trajets",
+    "kanji": "移動",
+    "secteur": "Vols, trains et bus entre les villes"
+  }
+]

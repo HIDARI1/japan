@@ -1,0 +1,42 @@
+[
+  {
+    "id": "osaka",
+    "ville": "osaka",
+    "nom": "Apartment Hotel 11 Shinsaibashi 4",
+    "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+    "lat": 34.673815357007,
+    "lon": 135.509457535103
+  },
+  {
+    "id": "kyoto",
+    "ville": "kyoto",
+    "nom": "Logement Kyoto",
+    "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+    "lat": 34.997646,
+    "lon": 135.757975
+  },
+  {
+    "id": "fuji",
+    "ville": "fuji",
+    "nom": "Logement Fuji / Fujiyoshida",
+    "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+    "lat": 35.485968,
+    "lon": 138.788368
+  },
+  {
+    "id": "tokyo",
+    "ville": "tokyo",
+    "nom": "Logement Tokyo",
+    "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "lat": 35.707239,
+    "lon": 139.734728
+  },
+  {
+    "id": "nara",
+    "ville": "nara",
+    "nom": "Hôtel à confirmer près de Kintetsu Nara",
+    "adresse": "Kintetsu Nara Station, Nara, Japan",
+    "lat": 34.684434,
+    "lon": 135.828554
+  }
+]

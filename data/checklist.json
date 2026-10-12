@@ -1,0 +1,52 @@
+[
+  {
+    "id": "reservations",
+    "titre": "Réservations & billets",
+    "items": [
+      { "id": "shinkansen", "texte": "Réserver le shinkansen vers Tokyo (départ de Nara le 27/12)", "sources": [{ "jour": 9, "activite": 49 }] },
+      { "id": "bus-fuji", "texte": "Bus Tokyo → Kawaguchiko / Fuji-Q Highland : vérifier la gare de départ et le billet", "sources": [{ "jour": 9, "activite": 52 }] },
+      { "id": "harry-potter", "texte": "Warner Bros. Studio Tour Tokyo — Harry Potter : réservation nécessaire, vérifier le créneau exact du billet", "sources": [{ "jour": 13, "activite": 77 }] },
+      { "id": "shibuya-sky", "texte": "Shibuya Sky : réserver un créneau, idéalement proche du coucher du soleil", "sources": [{ "jour": 12, "activite": 75 }] },
+      { "id": "samourai", "texte": "Expérience samouraï : réservation et adresse exacte à confirmer", "sources": [{ "jour": 12, "activite": 71 }] },
+      { "id": "kimono", "texte": "Expérience kimono + katana : remplacer l’horaire par le créneau réel et vérifier l’adresse exacte", "sources": [{ "jour": 7, "activite": 105 }] },
+      { "id": "fuji-q", "texte": "Fuji-Q Highland : vérifier les horaires et billets du 28/12 (entrée générale / attractions)", "sources": [{ "jour": 10, "activite": 109 }] },
+      { "id": "hotel-nara", "texte": "Hôtel à Nara : à confirmer près de Kintetsu Nara", "sources": [{ "jour": 8, "activite": 47 }] },
+      { "id": "halal-kyoto", "texte": "Dîner halal à Kyoto : choisir et vérifier un restaurant à l’avance", "sources": [{ "jour": 5, "activite": 29 }] },
+      { "id": "halal-tokyo", "texte": "Dernier restaurant halal à Tokyo : réserver si nécessaire et confirmer l’ouverture", "sources": [{ "jour": 15, "activite": 90 }] }
+    ]
+  },
+  {
+    "id": "avant",
+    "titre": "Avant le départ",
+    "items": [
+      { "id": "vol-aller", "texte": "Vol Paris → Osaka : vérifier terminal, bagages et documents", "sources": [{ "jour": 1, "activite": 1 }] },
+      { "id": "nuit-avion", "texte": "Pour la nuit dans l’avion : masque de sommeil, écouteurs et boisson", "sources": [{ "jour": 1, "activite": 2 }] },
+      { "id": "arrivee-osaka", "texte": "Arrivée vers 22h30 : vérifier à l’avance les derniers transports vers Shinsaibashi ou prévoir une solution de secours", "sources": [{ "jour": 2, "activite": 4 }] },
+      { "id": "hozugawa-check", "texte": "Bateau Hozugawa : vérifier les trains et l’état de fonctionnement du bateau peu avant la date", "sources": [{ "jour": 6 }] },
+      { "id": "aeroport-retour", "texte": "Vol retour : confirmer l’aéroport (Haneda ou Narita) et l’itinéraire exact", "sources": [{ "jour": 16, "activite": 93 }] }
+    ]
+  },
+  {
+    "id": "valise",
+    "titre": "Dans la valise",
+    "items": [
+      { "id": "chaud", "texte": "Vêtements très chauds : couvrir mains, cou et oreilles (bateau Hozugawa en hiver, Chureito tôt le matin)", "sources": [{ "jour": 6, "activite": 98 }, { "jour": 10, "activite": 60 }] }
+    ]
+  },
+  {
+    "id": "sur-place",
+    "titre": "À vérifier la veille",
+    "items": [
+      { "id": "den-den", "texte": "Den Den Town : horaires et éventuelles fermetures (Super Potato, succursale Donguri Kyowakoku)", "sources": [{ "jour": 4, "activite": 16 }, { "jour": 4, "activite": 18 }] },
+      { "id": "round1-osaka", "texte": "Arcades / Round1 à Osaka : horaires et coût réel", "sources": [{ "jour": 4, "activite": 20 }] },
+      { "id": "kiyomizu", "texte": "Kiyomizu-dera : horaires et billet éventuel", "sources": [{ "jour": 5, "activite": 25 }] },
+      { "id": "kinkaku", "texte": "Kinkaku-ji et Ryoan-ji : horaires de fin d’année et tarif", "sources": [{ "jour": 7, "activite": 36 }, { "jour": 7, "activite": 103 }] },
+      { "id": "nara-hiver", "texte": "Nara : heures de fermeture hivernales (Todai-ji, Kasuga Taisha)", "sources": [{ "jour": 8, "activite": 44 }] },
+      { "id": "tokyo-tower", "texte": "Tokyo Tower Café : ouverture et conditions d’accès le 31 décembre", "sources": [{ "jour": 13, "activite": 68 }] },
+      { "id": "teamlab", "texte": "teamLab Borderless : arriver dans le créneau 19:30–20:00 et vérifier les consignes officielles du billet", "sources": [{ "jour": 13, "activite": 79 }] },
+      { "id": "reveillon", "texte": "Réveillon : événements, restrictions et transports du 31/12", "sources": [{ "jour": 13, "activite": 80 }] },
+      { "id": "round1-tokyo", "texte": "Round1 à Tokyo : vérifier l’ouverture le 1er janvier", "sources": [{ "jour": 14, "activite": 84 }] },
+      { "id": "2-janvier", "texte": "Boutiques anime / gaming : vérifier les horaires du Nouvel An (2 janvier)", "sources": [{ "jour": 15, "activite": 89 }] }
+    ]
+  }
+]

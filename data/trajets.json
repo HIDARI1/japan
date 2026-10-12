@@ -1,0 +1,845 @@
+[
+  {
+    "jour": 2,
+    "hebergement": "Apartment Hotel 11 Shinsaibashi 4",
+    "adresseHebergement": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+    "etapes": [
+      {
+        "id": 2000,
+        "type": "hotel",
+        "nom": "Apartment Hotel 11 Shinsaibashi 4",
+        "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+        "lat": 34.673815357007,
+        "lon": 135.509457535103,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 3,
+    "hebergement": "Apartment Hotel 11 Shinsaibashi 4",
+    "adresseHebergement": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+    "etapes": [
+      {
+        "id": 3000,
+        "type": "hotel",
+        "nom": "Apartment Hotel 11 Shinsaibashi 4",
+        "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+        "lat": 34.673815357007,
+        "lon": 135.509457535103,
+        "mode": "walking"
+      },
+      {
+        "id": 3001,
+        "type": "place",
+        "nom": "Shinsaibashi",
+        "adresse": "Shinsaibashi shopping street, Osaka, Japan",
+        "lat": 34.674219,
+        "lon": 135.501372,
+        "mode": "walking"
+      },
+      {
+        "id": 3002,
+        "type": "place",
+        "nom": "Amerikamura",
+        "adresse": "Amerikamura, Osaka, Japan",
+        "lat": 34.672085,
+        "lon": 135.497947,
+        "mode": "walking"
+      },
+      {
+        "id": 3003,
+        "type": "place",
+        "nom": "Kuromon Market",
+        "adresse": "Kuromon Ichiba Market, Osaka, Japan",
+        "lat": 34.664958,
+        "lon": 135.506985,
+        "mode": "walking"
+      },
+      {
+        "id": 3004,
+        "type": "place",
+        "nom": "Hozen-ji",
+        "adresse": "Hozenji Temple, Osaka, Japan",
+        "lat": 34.668023,
+        "lon": 135.502416,
+        "mode": "walking"
+      },
+      {
+        "id": 3005,
+        "type": "place",
+        "nom": "Dotonbori",
+        "adresse": "Dotonbori, Osaka, Japan",
+        "lat": 34.669031,
+        "lon": 135.501572,
+        "mode": "walking"
+      },
+      {
+        "id": 3006,
+        "type": "place",
+        "nom": "Shinsekai",
+        "adresse": "Shinsekai, Osaka, Japan",
+        "lat": 34.65209,
+        "lon": 135.506191,
+        "mode": "walking"
+      },
+      {
+        "id": 3007,
+        "type": "place",
+        "nom": "Dotonbori illuminé (option)",
+        "adresse": "Dotonbori, Osaka, Japan",
+        "lat": 34.669031,
+        "lon": 135.501572,
+        "mode": "walking"
+      },
+      {
+        "id": 3090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+        "lat": 34.673815357007,
+        "lon": 135.509457535103,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 4,
+    "hebergement": "Apartment Hotel 11 Shinsaibashi 4",
+    "adresseHebergement": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+    "etapes": [
+      {
+        "id": 4000,
+        "type": "hotel",
+        "nom": "Apartment Hotel 11 Shinsaibashi 4",
+        "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+        "lat": 34.673815357007,
+        "lon": 135.509457535103,
+        "mode": "walking"
+      },
+      {
+        "id": 4001,
+        "type": "place",
+        "nom": "Den Den Town",
+        "adresse": "Den Den Town, Nipponbashi, Osaka, Japan",
+        "lat": 34.659215,
+        "lon": 135.505824,
+        "mode": "walking"
+      },
+      {
+        "id": 4002,
+        "type": "place",
+        "nom": "Super Potato Osaka",
+        "adresse": "Super Potato, Nipponbashi, Osaka, Japan",
+        "lat": 34.661894,
+        "lon": 135.50507,
+        "mode": "walking"
+      },
+      {
+        "id": 4003,
+        "type": "place",
+        "nom": "Mandarake Grandchaos",
+        "adresse": "Mandarake Grandchaos, Osaka, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 4004,
+        "type": "place",
+        "nom": "Donguri Kyowakoku",
+        "adresse": "Donguri Kyowakoku, Osaka, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 4005,
+        "type": "place",
+        "nom": "Nipponbashi",
+        "adresse": "Nipponbashi, Osaka, Japan",
+        "lat": 34.667133,
+        "lon": 135.506412,
+        "mode": "walking"
+      },
+      {
+        "id": 4006,
+        "type": "place",
+        "nom": "Round1 (à confirmer)",
+        "adresse": "Round1 Sennichimae, Osaka, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 4007,
+        "type": "place",
+        "nom": "Dotonbori",
+        "adresse": "Dotonbori, Osaka, Japan",
+        "lat": 34.669031,
+        "lon": 135.501572,
+        "mode": "walking"
+      },
+      {
+        "id": 4090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "1-5-17 Shimanouchi, Chuo-ku, Osaka, 542-0082, Japan",
+        "lat": 34.673815357007,
+        "lon": 135.509457535103,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 5,
+    "hebergement": "Logement Kyoto",
+    "adresseHebergement": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+    "etapes": [
+      {
+        "id": 5000,
+        "type": "hotel",
+        "nom": "Logement Kyoto",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "walking"
+      },
+      {
+        "id": 5001,
+        "type": "place",
+        "nom": "Fushimi Inari Taisha",
+        "adresse": "Fushimi Inari Taisha, Kyoto, Japan",
+        "lat": 34.967519,
+        "lon": 135.77971,
+        "mode": "walking"
+      },
+      {
+        "id": 5002,
+        "type": "place",
+        "nom": "Kiyomizu-dera",
+        "adresse": "Kiyomizu-dera, Kyoto, Japan",
+        "lat": 34.994303,
+        "lon": 135.784439,
+        "mode": "walking"
+      },
+      {
+        "id": 5003,
+        "type": "place",
+        "nom": "Sannenzaka / Ninenzaka",
+        "adresse": "Ninenzaka, Higashiyama, Kyoto, Japan",
+        "lat": 34.998448,
+        "lon": 135.78084,
+        "mode": "walking"
+      },
+      {
+        "id": 5004,
+        "type": "place",
+        "nom": "Higashiyama",
+        "adresse": "Higashiyama, Kyoto, Japan",
+        "lat": 34.997093,
+        "lon": 135.776464,
+        "mode": "walking"
+      },
+      {
+        "id": 5005,
+        "type": "place",
+        "nom": "Gion",
+        "adresse": "Gion, Kyoto, Japan",
+        "lat": 35.00469,
+        "lon": 135.778403,
+        "mode": "walking"
+      },
+      {
+        "id": 5006,
+        "type": "place",
+        "nom": "Dîner halal à Kyoto",
+        "adresse": "Halal restaurant near Shijo, Kyoto, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 5090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 6,
+    "hebergement": "Logement Kyoto",
+    "adresseHebergement": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+    "etapes": [
+      {
+        "id": 6000,
+        "type": "hotel",
+        "nom": "Logement Kyoto",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "walking"
+      },
+      {
+        "id": 6001,
+        "type": "place",
+        "nom": "JR Kameoka Station",
+        "adresse": "JR Kameoka Station, Kameoka, Kyoto, Japan",
+        "lat": 35.017147,
+        "lon": 135.582585,
+        "mode": "transit"
+      },
+      {
+        "id": 6002,
+        "type": "place",
+        "nom": "Hozugawa Kudari — embarcadère",
+        "adresse": "Hozugawa River Boat Ride, Hozucho Shimonakajima 2, Kameoka, Kyoto 621-0005, Japan",
+        "lat": 35.017431,
+        "lon": 135.58664,
+        "mode": "walking"
+      },
+      {
+        "id": 6003,
+        "type": "place",
+        "nom": "Hozugawa River Boat Ride — arrivée à Arashiyama",
+        "adresse": "Hozugawa River Boat Ride landing, Arashiyama, Kyoto, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 6004,
+        "type": "place",
+        "nom": "Bambouseraie d’Arashiyama",
+        "adresse": "Arashiyama Bamboo Grove, Kyoto, Japan",
+        "lat": 35.016742,
+        "lon": 135.671148,
+        "mode": "walking"
+      },
+      {
+        "id": 6005,
+        "type": "place",
+        "nom": "Pont Togetsukyo",
+        "adresse": "Togetsukyo Bridge, Arashiyama, Kyoto, Japan",
+        "lat": 35.012871,
+        "lon": 135.677762,
+        "mode": "walking"
+      },
+      {
+        "id": 6090,
+        "type": "place",
+        "nom": "Retour au logement Kyoto",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "transit"
+      }
+    ]
+  },
+  {
+    "jour": 7,
+    "hebergement": "Logement Kyoto",
+    "adresseHebergement": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+    "etapes": [
+      {
+        "id": 7000,
+        "type": "hotel",
+        "nom": "Logement Kyoto",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "transit"
+      },
+      {
+        "id": 7001,
+        "type": "place",
+        "nom": "Kinkaku-ji",
+        "adresse": "Kinkaku-ji, Kyoto, Japan",
+        "lat": 35.039529,
+        "lon": 135.729537,
+        "mode": "walking"
+      },
+      {
+        "id": 7002,
+        "type": "place",
+        "nom": "Ryoan-ji",
+        "adresse": "Ryoan-ji, Kyoto, Japan",
+        "lat": 35.033463,
+        "lon": 135.718088,
+        "mode": "walking"
+      },
+      {
+        "id": 7003,
+        "type": "place",
+        "nom": "Expérience kimono + katana (adresse à confirmer)",
+        "adresse": "Kimono samurai experience, Kyoto, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "transit"
+      },
+      {
+        "id": 7004,
+        "type": "place",
+        "nom": "Marché Nishiki",
+        "adresse": "Nishiki Market, Nakagyo-ku, Kyoto, Japan",
+        "lat": 35.005024,
+        "lon": 135.76557,
+        "mode": "walking"
+      },
+      {
+        "id": 7090,
+        "type": "place",
+        "nom": "Retour au logement Kyoto",
+        "adresse": "211-1 Naginatagiricho, Shimogyo-ku, Kyoto, 600-8438, Japan",
+        "lat": 34.997646,
+        "lon": 135.757975,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 8,
+    "hebergement": "Hôtel à confirmer près de Kintetsu Nara",
+    "adresseHebergement": "Kintetsu Nara Station, Nara, Japan",
+    "etapes": [
+      {
+        "id": 8000,
+        "type": "hotel",
+        "nom": "Hôtel à confirmer près de Kintetsu Nara",
+        "adresse": "Kintetsu Nara Station, Nara, Japan",
+        "lat": 34.684434,
+        "lon": 135.828554,
+        "mode": "walking"
+      },
+      {
+        "id": 8001,
+        "type": "place",
+        "nom": "Parc de Nara",
+        "adresse": "Nara Park, Nara, Japan",
+        "lat": 34.682901,
+        "lon": 135.854598,
+        "mode": "walking"
+      },
+      {
+        "id": 8002,
+        "type": "place",
+        "nom": "Todai-ji",
+        "adresse": "Todai-ji, Nara, Japan",
+        "lat": 34.688244,
+        "lon": 135.839757,
+        "mode": "walking"
+      },
+      {
+        "id": 8003,
+        "type": "place",
+        "nom": "Kasuga Taisha",
+        "adresse": "Kasuga Taisha, Nara, Japan",
+        "lat": 34.680506,
+        "lon": 135.846075,
+        "mode": "walking"
+      },
+      {
+        "id": 8004,
+        "type": "place",
+        "nom": "Balade dans Nara",
+        "adresse": "Naramachi, Nara, Japan",
+        "lat": 34.678357,
+        "lon": 135.837091,
+        "mode": "walking"
+      },
+      {
+        "id": 8090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "Kintetsu Nara Station, Nara, Japan",
+        "lat": 34.684434,
+        "lon": 135.828554,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 9,
+    "hebergement": "Hôtel à confirmer près de Kintetsu Nara",
+    "adresseHebergement": "Kintetsu Nara Station, Nara, Japan",
+    "etapes": [
+      {
+        "id": 9000,
+        "type": "hotel",
+        "nom": "Hôtel à confirmer près de Kintetsu Nara",
+        "adresse": "Kintetsu Nara Station, Nara, Japan",
+        "lat": 34.684434,
+        "lon": 135.828554,
+        "mode": "walking"
+      },
+      {
+        "id": 9001,
+        "type": "place",
+        "nom": "Trajet interurbain Nara → Kyoto → Tokyo → Kawaguchiko",
+        "adresse": "Nara Station to Kawaguchiko Station, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 9002,
+        "type": "place",
+        "nom": "Fuji-Q Highland / arrêt de bus (à confirmer)",
+        "adresse": "Fuji-Q Highland bus stop, Fujiyoshida, Yamanashi, Japan",
+        "lat": 35.484557,
+        "lon": 138.776828,
+        "mode": "walking"
+      },
+      {
+        "id": 9003,
+        "type": "place",
+        "nom": "Logement Fuji / Fujiyoshida",
+        "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+        "lat": 35.485968,
+        "lon": 138.788368,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 10,
+    "hebergement": "Logement Fuji / Fujiyoshida",
+    "adresseHebergement": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+    "etapes": [
+      {
+        "id": 10000,
+        "type": "hotel",
+        "nom": "Logement Fuji / Fujiyoshida",
+        "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+        "lat": 35.485968,
+        "lon": 138.788368,
+        "mode": "walking"
+      },
+      {
+        "id": 10001,
+        "type": "place",
+        "nom": "Pagode Chureito",
+        "adresse": "Arakura Sengen Shrine / Chureito Pagoda, Fujiyoshida, Yamanashi, Japan",
+        "lat": 35.501287,
+        "lon": 138.801356,
+        "mode": "walking"
+      },
+      {
+        "id": 10002,
+        "type": "place",
+        "nom": "Fuji-Q Highland",
+        "adresse": "Fuji-Q Highland, 5-6-1 Shin-Nishihara, Fujiyoshida, Yamanashi, Japan",
+        "lat": 35.489394,
+        "lon": 138.781984,
+        "mode": "transit"
+      },
+      {
+        "id": 10003,
+        "type": "place",
+        "nom": "NARUTO × BORUTO Fuji Hidden Leaf Village",
+        "adresse": "NARUTO × BORUTO Fuji Hidden Leaf Village, Fuji-Q Highland, Fujiyoshida, Yamanashi, Japan",
+        "lat": 35.489394,
+        "lon": 138.781984,
+        "mode": "walking"
+      },
+      {
+        "id": 10004,
+        "type": "place",
+        "nom": "Retour au logement à Fujiyoshida",
+        "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+        "lat": 35.485968,
+        "lon": 138.788368,
+        "mode": "transit"
+      }
+    ]
+  },
+  {
+    "jour": 11,
+    "hebergement": "Logement Fuji / Fujiyoshida",
+    "adresseHebergement": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+    "etapes": [
+      {
+        "id": 11000,
+        "type": "hotel",
+        "nom": "Logement Fuji / Fujiyoshida",
+        "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+        "lat": 35.485968,
+        "lon": 138.788368,
+        "mode": "walking"
+      },
+      {
+        "id": 11001,
+        "type": "place",
+        "nom": "Quartier Kagurazaka / Waseda",
+        "adresse": "Kagurazaka, Shinjuku, Tokyo, Japan",
+        "lat": 35.701085,
+        "lon": 139.741229,
+        "mode": "walking"
+      },
+      {
+        "id": 11002,
+        "type": "place",
+        "nom": "Shinjuku (si énergie)",
+        "adresse": "Shinjuku Station, Tokyo, Japan",
+        "lat": 35.690262,
+        "lon": 139.700514,
+        "mode": "walking"
+      },
+      {
+        "id": 11090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "5-chōme-4-19 Matsuyama, Fujiyoshida, Yamanashi 403-0016, Japan",
+        "lat": 35.485968,
+        "lon": 138.788368,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 12,
+    "hebergement": "Logement Tokyo",
+    "adresseHebergement": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "etapes": [
+      {
+        "id": 12000,
+        "type": "hotel",
+        "nom": "Logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      },
+      {
+        "id": 12001,
+        "type": "place",
+        "nom": "Expérience samouraï (adresse à confirmer)",
+        "adresse": "Samurai experience, Tokyo, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 12002,
+        "type": "place",
+        "nom": "Hachiko",
+        "adresse": "Hachiko Memorial Statue, Shibuya, Tokyo, Japan",
+        "lat": 35.65906,
+        "lon": 139.700628,
+        "mode": "walking"
+      },
+      {
+        "id": 12003,
+        "type": "place",
+        "nom": "Shibuya Crossing",
+        "adresse": "Shibuya Scramble Crossing, Tokyo, Japan",
+        "lat": 35.659495,
+        "lon": 139.700498,
+        "mode": "walking"
+      },
+      {
+        "id": 12004,
+        "type": "place",
+        "nom": "Shibuya Sky",
+        "adresse": "Shibuya Sky, Tokyo, Japan",
+        "lat": 35.658286,
+        "lon": 139.702262,
+        "mode": "walking"
+      },
+      {
+        "id": 12090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 13,
+    "hebergement": "Logement Tokyo",
+    "adresseHebergement": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "etapes": [
+      {
+        "id": 13000,
+        "type": "hotel",
+        "nom": "Logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "transit"
+      },
+      {
+        "id": 13001,
+        "type": "place",
+        "nom": "Warner Bros. Studio Tour Tokyo — Harry Potter",
+        "adresse": "Warner Bros. Studio Tour Tokyo, 1-1-7 Kasugacho, Nerima, Tokyo, Japan",
+        "lat": 35.74562,
+        "lon": 139.645745,
+        "mode": "transit"
+      },
+      {
+        "id": 13002,
+        "type": "place",
+        "nom": "Tokyo Tower Café",
+        "adresse": "Tokyo Tower, 4-2-8 Shibakoen, Minato, Tokyo, Japan",
+        "lat": 35.658449,
+        "lon": 139.745536,
+        "mode": "transit"
+      },
+      {
+        "id": 13003,
+        "type": "place",
+        "nom": "teamLab Borderless — entrée réservée 19:30–20:00",
+        "adresse": "teamLab Borderless, Azabudai Hills, 1-2-4 Azabudai, Minato, Tokyo, Japan",
+        "lat": 35.662002,
+        "lon": 139.743418,
+        "mode": "walking"
+      },
+      {
+        "id": 13090,
+        "type": "place",
+        "nom": "Retour au logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "transit"
+      }
+    ]
+  },
+  {
+    "jour": 14,
+    "hebergement": "Logement Tokyo",
+    "adresseHebergement": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "etapes": [
+      {
+        "id": 14000,
+        "type": "hotel",
+        "nom": "Logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      },
+      {
+        "id": 14001,
+        "type": "place",
+        "nom": "Sanctuaire Meiji Jingu (option)",
+        "adresse": "Meiji Jingu, Shibuya, Tokyo, Japan",
+        "lat": 35.674842,
+        "lon": 139.699627,
+        "mode": "walking"
+      },
+      {
+        "id": 14002,
+        "type": "place",
+        "nom": "Balade dans Tokyo",
+        "adresse": "Shinjuku Gyoen National Garden, Tokyo, Japan",
+        "lat": 35.685072,
+        "lon": 139.709547,
+        "mode": "walking"
+      },
+      {
+        "id": 14003,
+        "type": "place",
+        "nom": "Round1 (si ouvert)",
+        "adresse": "Round1, Tokyo, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 14090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 15,
+    "hebergement": "Logement Tokyo",
+    "adresseHebergement": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "etapes": [
+      {
+        "id": 15000,
+        "type": "hotel",
+        "nom": "Logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      },
+      {
+        "id": 15001,
+        "type": "place",
+        "nom": "Shopping et souvenirs",
+        "adresse": "Shinjuku shopping area, Tokyo, Japan",
+        "lat": 35.692177,
+        "lon": 139.699697,
+        "mode": "walking"
+      },
+      {
+        "id": 15002,
+        "type": "place",
+        "nom": "Boutiques anime / gaming",
+        "adresse": "Akihabara, Tokyo, Japan",
+        "lat": 35.701893,
+        "lon": 139.774368,
+        "mode": "walking"
+      },
+      {
+        "id": 15003,
+        "type": "place",
+        "nom": "Restaurant halal (à choisir)",
+        "adresse": "Halal restaurant, Tokyo, Japan",
+        "lat": null,
+        "lon": null,
+        "mode": "walking"
+      },
+      {
+        "id": 15090,
+        "type": "place",
+        "nom": "Retour au logement",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      }
+    ]
+  },
+  {
+    "jour": 16,
+    "hebergement": "Logement Tokyo",
+    "adresseHebergement": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+    "etapes": [
+      {
+        "id": 16000,
+        "type": "hotel",
+        "nom": "Logement Tokyo",
+        "adresse": "14-7 Kaitaichō, Shinjuku-ku, Tokyo 162-0802, Japan",
+        "lat": 35.707239,
+        "lon": 139.734728,
+        "mode": "walking"
+      },
+      {
+        "id": 16001,
+        "type": "place",
+        "nom": "Aéroport à confirmer (Haneda ou Narita)",
+        "adresse": "Tokyo Haneda Airport, Tokyo, Japan",
+        "lat": 35.545692,
+        "lon": 139.776099,
+        "mode": "walking"
+      }
+    ]
+  }
+]

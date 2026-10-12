@@ -1,0 +1,65 @@
+[
+  {
+    "id": "visite",
+    "label": "Visite",
+    "labelLong": "Visite / Culture",
+    "emoji": "🏛️",
+    "couleur": "#6d5bd0"
+  },
+  {
+    "id": "repas",
+    "label": "Repas",
+    "labelLong": "Repas",
+    "emoji": "🍜",
+    "couleur": "#d48a1c"
+  },
+  {
+    "id": "transport",
+    "label": "Transport",
+    "labelLong": "Transport",
+    "emoji": "🚄",
+    "couleur": "#3f7cc7"
+  },
+  {
+    "id": "hotel",
+    "label": "Hébergement",
+    "labelLong": "Hébergement",
+    "emoji": "🏨",
+    "couleur": "#2f9a7a"
+  },
+  {
+    "id": "activite",
+    "label": "Activité",
+    "labelLong": "Activité",
+    "emoji": "🎯",
+    "couleur": "#d0453a"
+  },
+  {
+    "id": "shopping",
+    "label": "Shopping",
+    "labelLong": "Shopping",
+    "emoji": "🛍️",
+    "couleur": "#c9558d"
+  },
+  {
+    "id": "nature",
+    "label": "Nature",
+    "labelLong": "Nature",
+    "emoji": "🏔️",
+    "couleur": "#5f9a3a"
+  },
+  {
+    "id": "soiree",
+    "label": "Soirée",
+    "labelLong": "Soirée",
+    "emoji": "🌃",
+    "couleur": "#4a55a8"
+  },
+  {
+    "id": "autre",
+    "label": "Autre",
+    "labelLong": "Autre",
+    "emoji": "📌",
+    "couleur": "#8a8378"
+  }
+]
