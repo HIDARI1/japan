@@ -66,8 +66,8 @@
   J.yen = (n) => jpy.format(Math.round(+n || 0));
 
   /* ---------- Données ---------- */
-  J.FILES = ['voyage', 'villes', 'categories', 'hebergements', 'jours', 'trajets', 'checklist'];
-  J.EDITABLE = ['voyage', 'hebergements', 'jours', 'trajets'];
+  J.FILES = ['voyage', 'villes', 'categories', 'hebergements', 'jours', 'trajets', 'checklist', 'durees'];
+  J.EDITABLE = ['voyage', 'hebergements', 'jours', 'trajets', 'durees'];
   J.data = null;
   let base = null;
   let baseHash = '';
@@ -415,6 +415,7 @@
     right: '<path d="m9 18 6-6-6-6"/>',
     chevron: '<path d="m6 15 6-6 6 6"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+    clock: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6M12 2v3"/>',
     cards: '<rect x="5" y="4" width="14" height="16" rx="2"/><path d="M2 7v10M22 7v10"/>',
     list: '<path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/>',
   };

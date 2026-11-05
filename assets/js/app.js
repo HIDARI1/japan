@@ -4,8 +4,8 @@
   const J = window.J;
   const { $, $$ } = J;
 
-  const VIEW_OF = { '': 'home', itineraire: 'itineraire', jour: 'jour', aujourdhui: 'jour', activites: 'activites', carte: 'carte', outils: 'outils' };
-  const TITLES = { home: 'Accueil', itineraire: 'Itinéraire', jour: 'Programme du jour', activites: 'Activités', carte: 'Carte', outils: 'Outils pratiques' };
+  const VIEW_OF = { '': 'home', itineraire: 'itineraire', jour: 'jour', aujourdhui: 'jour', activites: 'activites', temps: 'temps', carte: 'carte', outils: 'outils' };
+  const TITLES = { home: 'Accueil', itineraire: 'Itinéraire', jour: 'Programme du jour', activites: 'Activités', temps: 'Temps de trajet', carte: 'Carte', outils: 'Outils pratiques' };
   const KEEP_SCROLL = ['itineraire', 'activites', 'outils'];
   const scrollMem = {};
   let current = null;

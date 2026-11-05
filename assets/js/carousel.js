@@ -49,6 +49,7 @@
     const isNow = st.now && st.now.id === a.id;
     const isNext = st.next && st.next.id === a.id;
     const place = J.hasCoords(step) ? step : (addr ? { adresse: addr } : null);
+    const tm = J.temps.forAct(a, day);
     return `<article class="acard${done ? ' is-done' : ''}${anim ? ' slide-' + anim : ''}" id="card-${a.id}" data-card="${a.id}" style="--cat:${esc(cat.couleur)}">
       <div class="acard-hero" data-drop="${a.id}">
         <div class="acard-media c-${esc(a.ville)}" data-media="${a.id}">
@@ -91,12 +92,14 @@
               </div>` : ''}
             </div>
           </div>
+          ${tm && tm.leg ? `<div class="acard-leg"><div class="acard-label">Pour venir</div>${J.temps.legHTML(tm.leg)}</div>` : ''}
         </div>
         <aside class="acard-info">
           <h4>Infos importantes</h4>
           ${a.notes ? `<p>${esc(a.notes)}</p>` : '<p class="is-empty">Aucune info particulière.</p>'}
           <div class="acard-facts">
             <span class="fact cost">${+a.cout > 0 ? esc(J.eur(a.cout)) : 'Budget : —'}</span>
+            ${tm && tm.d.max > 0 ? `<a class="fact dur" href="#/temps?jour=${day.id}" title="${esc(J.temps.SOURCES[tm.d.source] || '')}">⏱ ${a.categorie === 'transport' ? 'trajet' : 'sur place'} ${esc(J.temps.range(tm.d.min, tm.d.max))}</a>` : ''}
             ${J.cityChip(a.ville)}
           </div>
         </aside>

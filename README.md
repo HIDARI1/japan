@@ -18,6 +18,7 @@ Tout le contenu est dans des fichiers JSON, modifiables avec n’importe quel é
 | `data/hebergements.json` | les 4 logements (Osaka, Kyoto, Fuji, Tokyo) |
 | `data/voyage.json` | nom du voyage, date et heure de départ (compte à rebours), mention du pied de page |
 | `data/checklist.json` | la checklist « à vérifier & réserver » (tirée des notes du programme) |
+| `data/durees.json` | onglet **Temps** : durée sur place de chaque activité (minutes, avec sa source : tes notes ou estimation), trajets donnés par tes notes (`acces`), vitesses utilisées pour estimer les autres trajets (`reglages`) |
 | `data/categories.json`, `data/villes.json` | libellés, emojis et couleurs |
 
 Pour ajouter une photo à une activité de façon permanente : déposer l’image dans `assets/photos/` et ajouter son chemin dans le champ `photos` de l’activité. Les photos ajoutées depuis le site (📷 ou glisser-déposer sur la carte de l’activité) restent sur l’appareil.

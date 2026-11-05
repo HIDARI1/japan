@@ -24,7 +24,7 @@
     return { now, next };
   };
 
-  J.activityItemHTML = (a, day, st = {}) => {
+  J.activityItemHTML = (a, day, st = {}, tm = null) => {
     const cat = J.cat(a.categorie);
     const done = J.done.is(a.id);
     const step = a.etape != null ? J.idx.step.get(a.etape)?.step : null;
@@ -37,7 +37,7 @@
       <span class="tl-node" aria-hidden="true"></span>
       <article class="tl-card hover-line">
         <div class="tl-head">${J.checkHTML(a.id, done, `Marquer « ${a.nom} » comme fait`)}<h3 class="tl-name">${esc(a.nom)}</h3>${+a.cout > 0 ? `<span class="cost">${J.eur(a.cout)}</span>` : ''}</div>
-        <div class="tl-meta">${isNow ? '<span class="tl-flag">Maintenant</span>' : ''}${isNext ? '<span class="tl-flag next">Ensuite</span>' : ''}${J.isReserved(a) ? '<span class="badge-reserved">Réservé</span>' : ''}${J.catTag(a)}${J.cityChip(a.ville)}</div>
+        <div class="tl-meta">${isNow ? '<span class="tl-flag">Maintenant</span>' : ''}${isNext ? '<span class="tl-flag next">Ensuite</span>' : ''}${J.isReserved(a) ? '<span class="badge-reserved">Réservé</span>' : ''}${J.catTag(a)}${J.cityChip(a.ville)}${tm ? J.temps.durChip(tm.d) : ''}</div>
         ${a.description ? `<p class="tl-desc">${esc(a.description)}</p>` : ''}
         ${a.notes ? `<p class="tl-notes">${esc(a.notes)}</p>` : ''}
         ${J.actAddress(a, day) ? `<p class="tl-addr">${J.icon('pin')}<span>${esc(J.actAddress(a, day))}</span></p>` : ''}
@@ -60,7 +60,12 @@
     const st = J.nowState(day);
     const acts = J.sortedActs(day);
     if (!acts.length) return '<div class="empty"><strong>Aucune activité</strong>Ajoute-en une avec le bouton ci-dessous.</div>';
-    return `<ol class="timeline">${acts.map((a) => J.activityItemHTML(a, day, st)).join('')}</ol>`;
+    const tms = new Map(J.temps.day(day).items.map((x) => [x.a.id, x]));
+    return `<ol class="timeline">${acts.map((a) => {
+      const tm = tms.get(a.id);
+      const leg = tm && tm.leg ? `<li class="tl-legrow" aria-label="Trajet">${J.temps.legHTML(tm.leg)}</li>` : '';
+      return leg + J.activityItemHTML(a, day, st, tm);
+    }).join('')}</ol>`;
   };
 
   J.dayHeadHTML = (day, { tag = 'h2', stepper = false } = {}) => {
@@ -81,6 +86,7 @@
         <span class="pill"><span><b data-tally-done="${day.id}">${J.dayDone(day)}</b>/${day.activites.length} faites</span></span>
         ${cost ? `<span class="pill"><span class="cost">${esc(J.eur(cost))}</span> estimés</span>` : ''}
         ${hotel ? `<span class="pill">🏨 ${esc(hotel.nom)}</span>` : ''}
+        <a class="pill pill-link" href="#/temps?jour=${day.id}">⏱ Temps du jour</a>
         <button class="ibtn" type="button" data-day-edit="${day.id}" title="Renommer ou supprimer ce jour" aria-label="Renommer ou supprimer ce jour">${J.icon('edit')}</button>
         ${stepper ? `<span class="day-stepper">
           ${prev ? `<a class="ibtn" href="#/jour/${prev.id}" title="Jour précédent" aria-label="Jour précédent">${J.icon('left')}</a>` : ''}

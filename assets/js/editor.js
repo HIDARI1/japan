@@ -21,6 +21,7 @@
     if (!day) return;
     const a = info ? info.act : { nom: '', heure: '', categorie: 'visite', ville: J.dayColorCity(day), cout: 0, notes: '', description: '', adresse: '' };
     const timeType = !a.heure || /^\d{2}:\d{2}$/.test(a.heure) ? 'time' : 'text';
+    const dur = J.temps.duree({ ...a, id: info ? a.id : -1 });
     const cats = J.data.categories.map((c) => ({ value: c.id, label: `${c.emoji} ${c.labelLong || c.label}` }));
     const villes = J.data.villes.map((v) => ({ value: v.id, label: v.nom }));
     const jours = J.data.jours.map((d, i) => ({ value: d.id, label: `J${i + 1} — ${J.dayLabel(d)}` }));
@@ -34,6 +35,9 @@
           <label class="field span-2"><span>Adresse</span><input class="input" name="adresse" value="${esc(a.adresse || '')}" placeholder="${esc(J.actAddress(a, day) || 'Adresse ou lieu précis…')}" autocomplete="off"></label>
           <label class="field"><span>Heure</span><input class="input" type="${timeType}" name="heure" value="${esc(a.heure || '')}" ${timeType === 'text' ? 'placeholder="HH:MM"' : ''}></label>
           <label class="field"><span>Coût estimé (€)</span><input class="input" type="number" name="cout" min="0" step="1" inputmode="decimal" placeholder="0" value="${+a.cout || ''}"></label>
+          <div class="field span-2"><span class="field-label">Durée sur place (en minutes) <small class="muted">${esc(J.temps.SOURCES[dur.source] || '')}</small></span>
+            <div class="dur-inputs"><label><span class="sr-only">Durée minimum</span><input class="input" type="number" name="dmin" min="0" step="5" inputmode="numeric" value="${dur.min}"></label><span aria-hidden="true">à</span><label><span class="sr-only">Durée maximum</span><input class="input" type="number" name="dmax" min="0" step="5" inputmode="numeric" value="${dur.max}"></label><span class="muted">min</span></div>
+          </div>
           <label class="field"><span>Catégorie</span><select class="select" name="categorie">${options(cats, a.categorie)}</select></label>
           <label class="field"><span>Ville</span><select class="select" name="ville">${options(villes, a.ville)}</select></label>
           <label class="field span-2"><span>Jour</span><select class="select" name="jour">${options(jours, day.id)}</select></label>
@@ -88,6 +92,12 @@
         }
         const files = form.elements.photos.files;
         if (files && files.length) await J.photos.add(act.id, files);
+        // Durée sur place : enregistrée dans data/durees.json si elle a changé
+        const dmin = Math.max(0, parseInt(v.dmin, 10) || 0), dmax = Math.max(dmin, parseInt(v.dmax, 10) || dmin);
+        if (dmin !== dur.min || dmax !== dur.max) {
+          J.data.durees.activites = J.data.durees.activites || {};
+          J.data.durees.activites[act.id] = { ...(J.data.durees.activites[act.id] || {}), duree: [dmin, dmax], source: 'perso' };
+        }
         J.commit(info ? `✏️ ${nom} modifiée` : `✅ ${nom} ajoutée !`);
         return true;
       },

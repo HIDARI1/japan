@@ -1,0 +1,132 @@
+{
+  "_lisezmoi": "Durées par activité, en minutes [min, max]. source : notes = tiré de tes notes, planning = calculé d'après les horaires, estimation = durée habituelle (à ajuster). acces = trajet pour venir (sinon calculé d'après la carte), arrivee = où l'on se trouve après l'activité (ex. bateau). positions = point approximatif utilisé seulement pour calculer les trajets.",
+  "reglages": {
+    "marcheKmH": 4.5,
+    "veloKmH": 13,
+    "transportsKmH": 24,
+    "accesTransportsMin": 12,
+    "detour": 1.3,
+    "seuilMarcheKm": 1.5
+  },
+  "parDefaut": {
+    "visite": [60, 90],
+    "repas": [45, 75],
+    "transport": [30, 60],
+    "hotel": [20, 30],
+    "activite": [60, 120],
+    "shopping": [60, 120],
+    "nature": [45, 90],
+    "soiree": [60, 120],
+    "autre": [30, 60]
+  },
+  "positions": {
+    "99": [35.01031, 135.681581],
+    "117": [35.483838, 138.795304],
+    "119": [35.498353, 138.768492],
+    "74": [35.660114, 139.699532],
+    "141": [35.643726, 139.671962]
+  },
+  "activites": {
+    "1": { "duree": [1140, 1140], "source": "planning", "texte": "≈ 19 h de voyage d’après les horaires (départ 19:30 heure de Paris, arrivée 22:30 heure du Japon, escale comprise)", "sansCreneau": true },
+    "2": { "duree": [0, 0], "source": "planning", "texte": "Inclus dans le vol", "sansCreneau": true },
+    "3": { "duree": [45, 60], "source": "estimation", "texte": "Immigration et récupération des bagages" },
+    "4": { "duree": [60, 75], "source": "estimation", "texte": "Aéroport du Kansai → Shinsaibashi (train Nankai jusqu’à Namba + métro ou marche)" },
+    "5": { "duree": [20, 30], "source": "estimation" },
+
+    "8": { "duree": [90, 120], "source": "notes", "acces": [60, 80], "accesMode": "transit", "accesSource": "notes", "accesTexte": "Environ 1 h à 1 h 20 depuis le logement (correspondance + bus Hankyu)" },
+    "9": { "duree": [75, 105], "source": "estimation", "acces": [60, 80], "accesMode": "transit", "accesSource": "notes", "accesTexte": "Retour de Katsuo-ji : environ 1 h à 1 h 20" },
+    "12": { "duree": [60, 120], "source": "estimation" },
+    "13": { "duree": [90, 150], "source": "estimation" },
+
+    "15": { "duree": [90, 150], "source": "estimation" },
+    "18": { "duree": [20, 40], "source": "estimation" },
+    "19": { "duree": [60, 120], "source": "estimation" },
+    "20": { "duree": [60, 120], "source": "estimation" },
+
+    "22": { "duree": [45, 60], "source": "estimation", "texte": "Porte à porte depuis Shinsaibashi (métro + train JR ou Keihan)" },
+    "23": { "duree": [15, 30], "source": "estimation" },
+    "24": { "duree": [90, 150], "source": "estimation", "texte": "1 h 30 pour les premiers torii ; 2 h 30 à 3 h pour monter au sommet" },
+    "25": { "duree": [60, 90], "source": "estimation" },
+    "27": { "duree": [30, 60], "source": "estimation" },
+    "26": { "duree": [30, 60], "source": "estimation" },
+    "28": { "duree": [60, 90], "source": "estimation" },
+
+    "95": { "duree": [15, 20], "source": "estimation" },
+    "96": { "duree": [20, 30], "source": "estimation", "texte": "Ligne JR Sagano, gare de Kyoto → JR Kameoka" },
+    "97": { "duree": [10, 15], "source": "estimation" },
+    "98": { "duree": [120, 120], "source": "notes", "texte": "Durée indicative selon les conditions du fleuve ; le bateau arrive à Arashiyama", "arrivee": [35.01031, 135.681581] },
+    "99": { "duree": [60, 75], "source": "estimation" },
+    "100": { "duree": [30, 45], "source": "estimation" },
+    "101": { "duree": [20, 40], "source": "estimation" },
+
+    "36": { "duree": [45, 60], "source": "notes" },
+    "103": { "duree": [30, 45], "source": "estimation" },
+    "104": { "duree": [45, 75], "source": "estimation" },
+    "105": { "duree": [60, 90], "source": "estimation" },
+    "106": { "duree": [45, 75], "source": "estimation" },
+    "148": { "duree": [30, 45], "source": "estimation", "acces": [10, 15], "accesMode": "walking", "accesSource": "notes", "accesTexte": "Depuis le marché Nishiki : environ 10–15 min à pied" },
+    "107": { "duree": [60, 90], "source": "estimation" },
+
+    "42": { "duree": [45, 60], "source": "estimation", "texte": "Kyoto → Nara en train Kintetsu ou JR" },
+    "43": { "duree": [60, 90], "source": "estimation" },
+    "44": { "duree": [45, 75], "source": "estimation" },
+    "45": { "duree": [45, 60], "source": "estimation" },
+    "116": { "duree": [45, 60], "source": "estimation" },
+
+    "51": { "duree": [135, 150], "source": "estimation", "texte": "Shinkansen Nozomi Kyoto → Tokyo ≈ 2 h 15, plus la correspondance" },
+    "52": { "duree": [105, 150], "source": "estimation", "texte": "Bus express ≈ 1 h 45 à 2 h 30 selon la circulation" },
+    "53": { "duree": [15, 30], "source": "estimation" },
+    "54": { "duree": [20, 30], "source": "estimation" },
+    "55": { "duree": [60, 90], "source": "estimation" },
+    "56": { "duree": [60, 120], "source": "estimation" },
+
+    "109": { "duree": [150, 180], "source": "estimation" },
+    "113": { "duree": [45, 60], "source": "estimation" },
+    "117": { "duree": [15, 20], "source": "estimation" },
+    "118": { "duree": [60, 90], "source": "estimation", "texte": "Environ 400 marches jusqu’au point de vue", "accesMode": "cycling" },
+    "119": { "duree": [60, 120], "source": "estimation", "accesMode": "cycling" },
+    "120": { "duree": [60, 120], "source": "estimation" },
+
+    "121": { "duree": [120, 150], "source": "estimation", "texte": "Bus express ≈ 2 h à 2 h 30 jusqu’à Shinjuku selon la circulation" },
+    "122": { "duree": [30, 45], "source": "estimation" },
+    "123": { "duree": [60, 90], "source": "estimation" },
+    "124": { "duree": [60, 90], "source": "estimation" },
+
+    "72": { "duree": [45, 75], "source": "estimation" },
+    "125": { "duree": [45, 75], "source": "estimation" },
+    "126": { "duree": [60, 90], "source": "estimation" },
+    "127": { "duree": [45, 60], "source": "estimation" },
+    "74": { "duree": [90, 120], "source": "estimation" },
+    "75": { "duree": [60, 90], "source": "estimation" },
+    "76": { "duree": [90, 120], "source": "estimation" },
+
+    "77": { "duree": [210, 240], "source": "estimation", "texte": "Tes notes disent « plusieurs heures » : compter 3 h 30 à 4 h" },
+    "129": { "duree": [45, 60], "source": "estimation" },
+    "130": { "duree": [45, 60], "source": "estimation" },
+    "131": { "duree": [45, 60], "source": "estimation" },
+    "79": { "duree": [120, 180], "source": "estimation" },
+    "80": { "duree": [90, 150], "source": "estimation" },
+
+    "81": { "duree": [15, 30], "source": "estimation" },
+    "132": { "duree": [15, 30], "source": "estimation" },
+    "133": { "duree": [60, 90], "source": "estimation" },
+    "134": { "duree": [45, 60], "source": "estimation" },
+    "136": { "duree": [60, 90], "source": "estimation" },
+    "137": { "duree": [120, 150], "source": "estimation" },
+    "84": { "duree": [60, 120], "source": "estimation" },
+
+    "138": { "duree": [60, 90], "source": "estimation" },
+    "139": { "duree": [40, 55], "source": "notes" },
+    "140": { "duree": [15, 30], "source": "estimation" },
+    "141": { "duree": [60, 75], "source": "estimation" },
+    "142": { "duree": [45, 75], "source": "estimation" },
+    "143": { "duree": [60, 90], "source": "estimation" },
+    "144": { "duree": [45, 60], "source": "estimation" },
+    "145": { "duree": [90, 120], "source": "estimation" },
+    "146": { "duree": [60, 120], "source": "estimation" },
+
+    "92": { "duree": [15, 30], "source": "estimation" },
+    "93": { "duree": [45, 90], "source": "estimation", "texte": "Haneda ≈ 45 min – 1 h ; Narita ≈ 1 h 15 – 1 h 30 (aéroport à confirmer)" },
+    "94": { "duree": [840, 900], "source": "estimation", "texte": "Vol direct Tokyo → Paris ≈ 14 h – 15 h", "sansCreneau": true }
+  }
+}

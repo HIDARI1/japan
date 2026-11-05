@@ -25,6 +25,7 @@
 <script src="assets/js/home.js" defer></script>
 <script src="assets/js/itinerary.js" defer></script>
 <script src="assets/js/carousel.js" defer></script>
+<script src="assets/js/temps.js" defer></script>
 <script src="assets/js/activities.js" defer></script>
 <script src="assets/js/map.js" defer></script>
 <script src="assets/js/tools.js" defer></script>
@@ -44,6 +45,7 @@
       <a href="#/" data-nav="home">Accueil</a>
       <a href="#/itineraire" data-nav="itineraire">Itinéraire</a>
       <a href="#/activites" data-nav="activites">Activités</a>
+      <a href="#/temps" data-nav="temps">Temps</a>
       <a href="#/carte" data-nav="carte">Carte</a>
       <a href="#/outils" data-nav="outils">Outils</a>
     </nav>
@@ -64,6 +66,7 @@
   <section class="view" data-view="itineraire" hidden></section>
   <section class="view" data-view="jour" hidden></section>
   <section class="view" data-view="activites" hidden></section>
+  <section class="view" data-view="temps" hidden></section>
   <section class="view view-map" data-view="carte" hidden></section>
   <section class="view" data-view="outils" hidden></section>
   <div class="boot" id="boot">
@@ -99,6 +102,10 @@
   <a href="#/activites" data-nav="activites">
     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
     <span>Activités</span>
+  </a>
+  <a href="#/temps" data-nav="temps">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6M12 2v3"/></svg>
+    <span>Temps</span>
   </a>
   <a href="#/carte" data-nav="carte">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></svg>
